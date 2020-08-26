@@ -40,11 +40,18 @@ $accentColor: rgb(97, 171, 255);
 }
 $navHeight: 60px;
 .App{
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-columns: 100%;
     // display: grid;
     // grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
     // grid-template-rows: [nav] 0 [kv] 100% 100%;
 }
 main{
+    overflow-y: auto;
+    overflow-x: hidden;
+    grid-row-start: 2;
+    grid-row-end: 3;
     height: 100%;
     display: grid;
     grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
@@ -57,8 +64,6 @@ main{
 .nav-container{
     width: 100%;
     height: $navHeight;
-    position: fixed;
-    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,7 +86,7 @@ section{
 // }
 
 .kv-container{
-    padding-top: $navHeight;
+    // padding-top: $navHeight;
     height: 100%;
     @include centered;
     position: relative;
