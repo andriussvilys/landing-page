@@ -10,6 +10,11 @@ function App() {
           <a href="#kv">Andrius Svilys</a>
         </div>
         <div className="nav-links-container">
+          <div className="nav-links-hamburger"
+            onClick={() => {
+              document.querySelector(".nav-links-list").classList.toggle("links-list-display")
+            }}
+          ></div>
           <ul className="nav-links-list">
               <li className="nav-links-listItem">
                 <a href="#examples">Examples</a>
