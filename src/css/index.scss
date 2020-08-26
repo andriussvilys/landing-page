@@ -1,0 +1,154 @@
+$backgroundColor: rgb(226, 233, 243);
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+button{
+    background: none;
+    border: none;
+}
+html,body,#root,.App{
+    height: 100%;
+    width: 100%;
+}
+html, body{
+    overflow-x: hidden;
+}
+body{
+    background-color: $backgroundColor;
+}
+$accentColor: rgb(97, 171, 255);
+@mixin centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin squareCTA{
+    padding: 5px;
+    background: white;
+    margin: 0 5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 3px 12px;
+}
+$navHeight: 60px;
+.App{
+    // display: grid;
+    // grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
+    // grid-template-rows: [nav] 0 [kv] 100% 100%;
+}
+main{
+    height: 100%;
+    display: grid;
+    grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
+    grid-template-rows: [kv] 100% 100%;
+    section{
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+}
+.nav-container{
+    width: 100%;
+    height: $navHeight;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blue;
+}
+.nav-links-list{
+    list-style: none;
+    @include centered;
+}
+.nav-logo, .nav-links-listItem{
+    @include squareCTA;
+}
+section{
+    height: 100%;
+}
+// main{
+//     grid-column-start: 3;
+//     grid-row-start: 2;
+//     grid-row-end: 3;
+// }
+
+.kv-container{
+    padding-top: $navHeight;
+    height: 100%;
+    @include centered;
+    position: relative;
+
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.kv-wrapper{
+    width: 100%;
+}
+.CTA-contact{
+    @include squareCTA;
+}
+@keyframes CTA-seemore{
+    0%{
+        transform: translateY(0px);
+    }
+    15%{
+        transform: translateY(4px);
+    }
+    // 30%{
+    //     transform: translateY(5px);
+    // }
+    30%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.CTA-seemore{
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    @include centered;
+    flex-wrap: wrap;
+    opacity: 0.5;
+
+    animation-name: CTA-seemore;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    // animation-timing-function: ease-in-out;
+}
+.CTA-seemore-text{
+    text-transform: uppercase;
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+.CTA-seemore-line{
+    width: 100%;
+    border-bottom: 3px solid $accentColor;
+    position: relative;
+    z-index: -2;
+}
+$caretHeight: 12px;
+.CTA-seemore-line::after{
+    content: "";
+    height: $caretHeight;
+    width: $caretHeight;
+    border-right: 3px solid $accentColor;
+    border-bottom: 3px solid $accentColor;
+    position: absolute;
+    left: calc(50% - #{$caretHeight / 2});
+    top: -$caretHeight / 2;
+    transform: rotate(45deg);
+    background-color: $backgroundColor;
+    z-index: -1;
+}

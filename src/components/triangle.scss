@@ -1,0 +1,308 @@
+@keyframes rotateTriangle {
+    //CYCLE 1
+    0% {
+        transform: rotate(0deg);
+    }
+    7%{
+        transform: rotate(120deg);  
+    }
+    33.33%{
+        transform: rotate(120deg);
+    }
+    //CYCLE 2
+    40.33%{
+        transform: rotate(240deg);
+    }
+    66.66%{
+        transform: rotate(240deg);
+    }
+    //CYCLE 3
+    73.66%{
+        transform: rotate(360deg)
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+$triangleEdge: 300px;
+$squareRootOf3: 1.73205;
+$triangleHeight: ($triangleEdge / 2) * $squareRootOf3;
+//circle bound to center the triangle
+.spinner-container{
+    height: (($triangleEdge * $squareRootOf3) / 3) * 2;
+    width: ((($triangleEdge * $squareRootOf3) / 3) * 2) + 200px;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: flex;
+}
+.circleBound{
+    position: relative;
+    right: 0;
+
+    width: (($triangleEdge * $squareRootOf3) / 3) * 2;
+    height: (($triangleEdge * $squareRootOf3) / 3) * 2;
+    border-radius: 999px;
+
+    animation-name: rotateTriangle;
+    animation-duration: 9s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.innerCircle{
+    height: 100%;
+    width: 100%;
+    transform: rotate(75deg);
+}
+.triangle-wrapper{
+    width: $triangleEdge;
+    height: $triangleHeight;
+    position: relative;
+    top: 100px;
+    left: 100px;
+
+    position: absolute;
+    top: 0;
+    left: calc(50% - #{$triangleEdge / 2});
+}
+$circleHeight: 70px;
+$circleRadius: $circleHeight / 2;
+$circleBorder: 5px;
+
+@keyframes rotateIcon-pos2{
+    0% {
+        transform: rotate(135deg);  
+    }
+    7%{
+        transform: rotate(15deg);  
+    }
+    33.33%{
+        transform: rotate(15deg);
+    }
+    40.33%{
+        transform: rotate(-105deg);
+    }
+    66.66%{
+        transform: rotate(-105deg);
+    }
+    //CYCLE 3
+    73.66%{
+        transform: rotate(-225deg)
+    }
+    100% {
+      transform: rotate(-225deg);
+    }
+  }
+  @keyframes rotateIcon-pos3{
+    0% {
+        transform: rotate(15deg); 
+    }
+    7%{
+        transform: rotate(-105deg);
+    }
+    33.33%{
+        transform: rotate(-105deg);
+    }
+    40.33%{
+        transform: rotate(-225deg);
+    }
+    66.66%{
+        transform: rotate(-225deg);
+    }
+    //CYCLE 3
+    73.66%{
+        transform: rotate(-345deg);
+    }
+    100% {
+      transform: rotate(-345deg);
+    }
+  }
+  @keyframes rotateIcon-pos1{
+    0% {
+        transform: rotate(255deg); 
+    }
+    7%{
+        transform: rotate(135deg);
+    }
+    33.33%{
+        transform: rotate(135deg);
+    }
+    //CYCLE 2
+    40.33%{
+        transform: rotate(15deg);
+    }
+    66.66%{
+        transform: rotate(15deg);
+    }
+    //CYCLE 3
+    73.66%{
+        transform: rotate(-105deg);
+    }
+    100% {
+      transform: rotate(-105deg);
+    }
+  }
+.circle{
+    height: $circleHeight;
+    width: $circleHeight;
+    border-radius: 999px;
+    background-color: rgb(183, 183, 255);
+    border: $circleBorder solid black;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        height: 80%;
+        width: 80%;
+    }
+}
+//arrow
+.circle::after{
+    content: url('./arrow-2.svg');
+    // content: "";
+    height: 200px;
+    width: $circleHeight;
+    position: absolute;
+    bottom: calc(100% + 20px);
+    font-size: 230px;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.circle-1{
+    bottom: 0 - $circleRadius;
+    left: 0 - $circleRadius;
+}
+.circle-2{
+    top: 0 - $circleRadius;
+    left: calc(50% - #{ $circleRadius});
+}
+.circle-3{
+    bottom: 0 - $circleRadius;
+    right: 0 - $circleRadius;
+}
+
+.circle-1{
+    transform: rotate(30deg);
+    img{
+        transform: rotate(-30deg);
+
+        animation-name: rotateIcon-pos1;
+        animation-duration: 9s;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        // animation-delay: 4s;
+    }
+}
+.circle-2{
+    transform: rotate(150deg);
+    img{
+        transform: rotate(-150deg);
+
+        animation-name: rotateIcon-pos2;
+        animation-duration: 9s;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        // animation-delay: 4s;
+    }
+}
+.circle-3{
+    transform: rotate(270deg);
+    img{
+        transform: rotate(-270deg);
+        // animation-delay: 8s;
+        animation-name: rotateIcon-pos3;
+        animation-duration: 9s;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+.circle-labels{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    font-size: 30px;
+}
+// @keyframes labelFade {
+//     //CYCLE 1
+//     0% {
+//         opacity: 0;
+//         bottom: 0;
+//     }
+//     7%{
+//         opacity: 1;
+//         bottom: 80%;  
+//     }
+//     33.33%{
+//         opacity: 1;
+//         bottom: 80%;  
+//     }
+//     40.33%{
+//         opacity: 0;
+//         bottom: 160%;  
+//     }
+//     100% {
+//         opacity: 0;
+//         bottom: 160%;  
+//     }
+//   }
+
+@keyframes labelFade {
+    //CYCLE 1
+    0% {
+        opacity: 0;
+        bottom: 0%;
+    }
+    
+    2%{
+        opacity: 0;
+        bottom: 0%;  
+    }
+    7%{
+        opacity: 0.4;
+        bottom: 80%;  
+    }
+    33.33%{
+        opacity: 0.4;
+        bottom: 80%;  
+    }
+    40.33%{
+        opacity: 0;
+        bottom: 160%;  
+    }
+    100% {
+        opacity: 0;
+        bottom: 160%;  
+    }
+  }
+.circle-label{
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+
+    animation-name: labelFade;
+    animation-duration: 9s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.circle-label_1{
+    animation-delay: 0s;
+}
+.circle-label_2{
+    animation-delay: 3s;
+}
+.circle-label_3{
+    animation-delay: 6s;
+}

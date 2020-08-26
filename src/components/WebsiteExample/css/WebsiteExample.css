@@ -1,0 +1,167 @@
+.webExample-container {
+  height: 100%;
+  padding-top: 60px;
+  margin: 60px 0 -30px 0;
+}
+
+.webExample-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100%;
+}
+
+.webExample-carousel-container {
+  width: 60%;
+  background-color: #1c1c23;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  min-width: 480px;
+  padding: 20px 40px 40px 40px;
+  height: 100%;
+  position: relative;
+}
+
+.webExample-carousel-slide {
+  position: relative;
+}
+
+.webExample-carousel-slide img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.webExample-carousel-sizeToggle {
+  height: 30px;
+  width: 60px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.1;
+}
+
+.webExample-carousel_fullWidth {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+.webExample-carousel_fullWidth .slick-list {
+  height: 100% !important;
+}
+
+.webExample-details-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 30px;
+  background-color: white;
+}
+
+.webExample-details-description {
+  min-width: 35ch;
+  max-width: 60ch;
+}
+
+.webExample-details-badges, .webExample-details-other {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.webExample-details-title {
+  padding-bottom: 10px;
+  padding-left: 20px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  /* height: 30px; */
+  padding-top: 20px;
+}
+
+.webExample-details-tags {
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #dfdfdf;
+  border-radius: 5px;
+  max-width: 60ch;
+}
+
+.details-CTA-button {
+  padding: 5px;
+  background: white;
+  margin: 0 5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 3px 12px;
+}
+
+.details-badge {
+  background-color: yellow;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  font-size: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px;
+  color: yellow;
+}
+
+.details-badge_other {
+  background-color: white;
+  white-space: nowrap;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 3px;
+  border: 1px solid #b6b6b6;
+  padding: 0 10px;
+  color: #363636;
+}
+
+@media only screen and (max-width: 720px) {
+  .webExample-carousel-container {
+    min-width: unset;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=WebsiteExample.css.map */

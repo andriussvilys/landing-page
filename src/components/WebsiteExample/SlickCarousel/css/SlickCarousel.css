@@ -1,0 +1,58 @@
+.slick-slider, .slick-track {
+  height: 100%;
+}
+
+.slick-list {
+  height: 100%;
+}
+
+.slick-slide div {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.slick-slide div img {
+  max-height: 100%;
+  width: unset !important;
+  max-width: 100%;
+}
+
+.slick-next {
+  right: -30px;
+}
+
+.slick-prev {
+  left: -30px;
+}
+
+.slick-dots li button:before {
+  border: 0;
+  border-radius: 22px;
+  background-color: #c8ffc8;
+  opacity: 0.5;
+  color: #f0f8ff00 !important;
+}
+
+.slick-dots {
+  bottom: -30px;
+}
+
+.slick-dots li.slick-active button:before {
+  background-color: #84fc84;
+}
+
+@media only screen and (max-width: 720px) {
+  .slick-list {
+    min-height: 200px;
+  }
+}
+/*# sourceMappingURL=SlickCarousel.css.map */
