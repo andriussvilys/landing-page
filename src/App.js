@@ -1,5 +1,6 @@
 import React from 'react';
 import Triangle from './components/triangle';
+import Tools from './components/Tools/Tools'
 import WebsiteExample from './components/WebsiteExample/WebsiteExample'
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
 
         <section id="examples">
           <WebsiteExample 
+            open={true}
             id={"personal-website"}
             title={"Personal website"}
             assetDir={"andriussvilys"}
@@ -75,6 +77,7 @@ function App() {
             }}
           />
           <WebsiteExample 
+            open={false}
             id={"image-search"}
             title={"Image search API"}
             assetDir={"image-search"}
@@ -93,7 +96,28 @@ function App() {
           />
         </section>
 
-        <section id="tools"></section>
+        <section id="tools" >
+            <Tools 
+              data={[
+                {
+                  title: "Front-end", 
+                  list: [
+                    {title: "React JS", img: "react.svg"}, 
+                    {title: "Redux", img: "redux.svg"}
+                  ]
+                },
+                {
+                  title: "Graphic design", 
+                  list: [
+                    {title: "React JS", img: "react.svg"}, 
+                    {title: "Redux", img: "redux.svg"},
+                    {title: "React JS", img: "react.svg"}, 
+                    {title: "Redux", img: "redux.svg"}
+                  ]
+                },
+            ]}
+            />
+        </section>
         <section id="about"></section>
       </main>
 

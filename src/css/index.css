@@ -40,7 +40,6 @@ body {
 }
 
 main {
-  overflow-y: auto;
   overflow-x: hidden;
   -ms-grid-row: 2;
       grid-row-start: 2;
@@ -50,8 +49,8 @@ main {
   display: grid;
   -ms-grid-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
       grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
-  -ms-grid-rows: [kv] 100% 100%;
-      grid-template-rows: [kv] 100% 100%;
+  -ms-grid-rows: [kv] 100%;
+      grid-template-rows: [kv] 100%;
   scroll-behavior: smooth;
 }
 
@@ -290,5 +289,47 @@ section {
     width: 60px;
     background-color: white;
   }
+}
+
+.webExample-tools-container {
+  width: 100%;
+  padding: 30px;
+}
+
+.tools-wrapper, .tools-title, .tools-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tools-wrapper {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-bottom: 1px solid black;
+  padding: 10px 20px 5px 10px;
+  margin-left: 10px;
+}
+
+.tools-items {
+  min-width: 300px;
+}
+
+.tools-title {
+  font-weight: 600;
+  padding-right: 30px;
+  white-space: nowrap;
+  width: 150px;
+}
+
+.details-badge {
+  margin: 5px 10px 5px 0 !important;
+}
+
+.webExample-tools-headline {
+  font-size: 24px;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=index.css.map */

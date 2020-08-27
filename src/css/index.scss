@@ -63,14 +63,14 @@ $navHeight: 60px;
     grid-template-columns: 100%;
 }
 main{
-    overflow-y: auto;
+    // overflow-y: auto;
     overflow-x: hidden;
     grid-row-start: 2;
     grid-row-end: 3;
     height: 100%;
     display: grid;
     grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
-    grid-template-rows: [kv] 100% 100%;
+    grid-template-rows: [kv] 100%;
     scroll-behavior: smooth;
     section{
         grid-column-start: 1;
@@ -208,3 +208,5 @@ $caretHeight: 12px;
         background-color: white;
     }
 }
+
+@import 'css/tools'

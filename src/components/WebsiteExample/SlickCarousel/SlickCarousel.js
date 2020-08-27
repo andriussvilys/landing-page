@@ -28,7 +28,7 @@ const SlickCarousel = props => {
                     alt={fileName} 
                     key={`slickCarousel-${fileName}`}
                     />
-            })
+                })
             }
         </Slider>
     )

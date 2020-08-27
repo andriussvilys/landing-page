@@ -1,7 +1,12 @@
+@charset "UTF-8";
 .webExample-container {
   height: 100%;
+  max-height: calc(100vh - 60px);
   overflow: hidden;
   position: relative;
+  -webkit-transition: height 0.3s;
+  transition: height 0.3s;
+  border-bottom: 1px solid white;
 }
 
 .webExample-wrapper {
@@ -52,6 +57,10 @@
   height: 50px !important;
 }
 
+.webExample-hide .webExample-details-title:after {
+  content: "▼";
+}
+
 .webExample-content {
   -ms-grid-row: 2;
       grid-row-start: 2;
@@ -63,13 +72,18 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
 }
 
 .webExample-carousel-container {
   background-color: #1c1c23;
-  min-width: 480px;
-  max-width: 60%;
+  min-width: 60%;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
   padding: 20px 40px 40px 40px;
   height: 100%;
   position: relative;
@@ -97,8 +111,8 @@
 }
 
 .webExample-carousel_fullWidth {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
   max-height: 100% !important;
   max-width: 100% !important;
   position: fixed;
@@ -125,10 +139,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   padding: 30px;
   background-color: white;
+  height: 100%;
 }
 
 .webExample-details-description {
@@ -161,14 +174,11 @@
 }
 
 .webExample-details-title:after {
-  content: -webkit-gradient(linear, left top, right top, from(#dfdfdf), color-stop(1%, #dedfdf), color-stop(40%, rgba(184, 208, 227, 0)), to(rgba(125, 185, 232, 0)));
-  content: linear-gradient(to right, #dfdfdf 0%, #dedfdf 1%, rgba(184, 208, 227, 0) 40%, rgba(125, 185, 232, 0) 100%);
-  opacity: 0.4;
-  height: 2px;
-  width: 100%;
+  content: "▲";
+  color: white;
   position: absolute;
-  left: 0;
-  bottom: 12px;
+  right: 35px;
+  top: calc(50% - 7px);
 }
 
 .webExample-details-tags {
@@ -189,19 +199,15 @@
 }
 
 .details-CTA-button {
-  padding: 5px;
   background: white;
-  margin: 0 5px;
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
-  padding: 3px 12px;
 }
 
 .details-CTA-button a {
-  padding: 5px;
+  font-weight: 600;
   background: white;
-  margin: 0 5px;
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
@@ -270,15 +276,19 @@
 @media only screen and (max-width: 720px) {
   .webExample-container {
     height: unset;
+    max-height: unset;
   }
   .webExample-wrapper {
     height: unset;
   }
   .webExample-carousel-container {
-    max-height: 60vh;
-    max-width: unset;
-    min-width: unset;
+    min-width: 100%;
+    max-width: 100%;
+    height: 60vh;
     width: 100%;
+  }
+  .webExample-content {
+    height: unset;
   }
 }
 /*# sourceMappingURL=WebsiteExample.css.map */

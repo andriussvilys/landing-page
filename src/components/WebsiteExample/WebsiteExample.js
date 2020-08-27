@@ -2,7 +2,9 @@ import React from 'react'
 import SlickCarousel from './SlickCarousel/SlickCarousel'
 import './css/WebsiteExample.css'
 
+
 const WebsiteExample = (props) => {
+    const [open, toggleOpen] = React.useState(props.open)
     const badges = (list) => {
         return list.map((listItem) => {
             return <div 
@@ -28,12 +30,23 @@ const WebsiteExample = (props) => {
         }
         else return null
     }
-    return(<article className="webExample-container" id={props.id}>
+    return(<article className={`webExample-container ${open ? "" : "webExample-hide"}`} id={props.id}>
                 <div className="webExample-wrapper">
                     <div 
                     onClick={e => {
                         e.stopPropagation()
-                        document.getElementById(props.id).classList.toggle("webExample-hide")
+                        const parentBox = document.querySelector(`#${props.id}`)
+                        const contentBox = document.querySelector(`#${props.id} .webExample-content`)
+                        const height = contentBox.clientHeight
+                        const titleHeight = 50
+                        if(open){
+                            parentBox.style = `height: ${height + titleHeight}px`
+                        }
+                        toggleOpen(!open)
+
+                        console.log(`HEIGHT : ${height}`)
+
+                        // document.getElementById(props.id).classList.toggle("webExample-hide")
                     }}
                     className="webExample-details-title">
                         <h3 

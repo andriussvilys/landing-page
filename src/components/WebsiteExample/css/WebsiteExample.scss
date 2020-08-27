@@ -2,17 +2,12 @@ $navHeight: 60px;
 $carouselBG: #1c1c23;
 .webExample-container{
     height: 100%;
+    max-height: calc(100vh - #{$navHeight});
     overflow: hidden;
     position: relative;
+    transition: height 0.3s;
+    border-bottom: 1px solid white;
 }
-// .webExample-container:after{
-//     content: linear-gradient(to right, rgba(28,28,35,1) 0%,rgba(29,30,37,1) 1%,rgba(125,185,232,0) 100%);
-//     height: 10px;
-//     width: 100%;
-//     position: absolute;
-//     left: 0;
-//     bottom: 0;
-// }
 .webExample-wrapper{
     display: flex;
     flex-wrap: wrap;
@@ -43,6 +38,9 @@ $carouselBG: #1c1c23;
 }
 .webExample-hide{
     height: 50px !important;
+    .webExample-details-title:after{
+        content: "▼";
+    }
 }
 .webExample-content{
     grid-row-start: 2;
@@ -51,12 +49,15 @@ $carouselBG: #1c1c23;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     overflow: hidden;
 }
 .webExample-carousel-container{
     background-color: $carouselBG;
-    min-width: 480px;
-    max-width: 60%;
+    // min-width: 480px;
+    min-width: 60%;
+    flex: 2;
+    // max-width: 60%;
     padding: 20px 40px 40px 40px;
     height: 100%;
     position: relative;
@@ -84,8 +85,8 @@ $carouselBG: #1c1c23;
     opacity: 0.1;
 }
 .webExample-carousel_fullWidth{
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
     max-height: 100% !important;
     max-width: 100% !important;
     position: fixed;
@@ -100,12 +101,11 @@ $carouselBG: #1c1c23;
 }
 .webExample-details-container{
     flex: 1;
-    // margin: 20px 20px 20px 20px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     padding: 30px;
     background-color: white;
+    height: 100%;
 }
 .webExample-details-description{
     // min-width: 35ch;
@@ -129,15 +129,21 @@ $carouselBG: #1c1c23;
     position: relative;
     height: 50px;
 }
+// .webExample-details-title:before{
+//     content:linear-gradient(to right, rgba(223,223,223,1) 0%,rgba(222,223,223,1) 1%,rgba(184,208,227,0) 40%,rgba(125,185,232,0) 100%);
+//     opacity: 0.4;
+//     height: 2px;
+//     width: 100%;
+//     position: absolute;
+//     left: 0;
+//     bottom: 12px;
+// }
 .webExample-details-title:after{
-    // content: linear-gradient(to right, rgb(0, 255, 64) 0%,rgb(0, 255, 64) 1%,rgba(125,185,232,0) 100%);
-    content:linear-gradient(to right, rgba(223,223,223,1) 0%,rgba(222,223,223,1) 1%,rgba(184,208,227,0) 40%,rgba(125,185,232,0) 100%);
-    opacity: 0.4;
-    height: 2px;
-    width: 100%;
+    content: "▲";
+    color: white;
     position: absolute;
-    left: 0;
-    bottom: 12px;
+    right: 35px;
+    top: calc(50% - 7px);
 }
 .webExample-details-tags{
     padding: 10px;
@@ -151,17 +157,13 @@ $carouselBG: #1c1c23;
     display: flex;
 }
 .details-CTA-button{
-    padding: 5px;
     background: white;
-    margin: 0 5px;
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
-    padding: 3px 12px;
     a{
-        padding: 5px;
+        font-weight: 600;
         background: white;
-        margin: 0 5px;
         text-transform: uppercase;
         white-space: nowrap;
         cursor: pointer;
@@ -212,15 +214,22 @@ $carouselBG: #1c1c23;
 @media only screen and (max-width: 720px){
     .webExample-container{
         height: unset;
+        max-height: unset;
     }
     .webExample-wrapper{
         height: unset;
     }
     .webExample-carousel-container{
-        max-height: 60vh;
-        max-width: unset;
-        min-width: unset;
+        // max-height: 60vh;
+        // max-width: unset;
+        // min-width: unset;
+        min-width: 100%;
+        max-width: 100%;
+        height: 60vh;
         // max-height: 60%;
         width: 100%;
+    }
+    .webExample-content{
+        height: unset;
     }
 }
