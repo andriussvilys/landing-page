@@ -53,6 +53,7 @@ function App() {
 
         <section id="examples">
           <WebsiteExample 
+            id={"personal-website"}
             title={"Personal website"}
             assetDir={"andriussvilys"}
             href={"https://andriussvilys.com"}
@@ -68,8 +69,13 @@ function App() {
               "personalWebsite-10.jpg",
               ]
             }
+            badges={{
+              badges: [{title: "React JS", img: "react.svg"}, {title: "Sass", img: "sass.svg"}],
+              other: ["React-slick", "filters"]
+            }}
           />
           <WebsiteExample 
+            id={"image-search"}
             title={"Image search API"}
             assetDir={"image-search"}
             href={"https://andriussvilys.github.io/image-search/"}
@@ -80,6 +86,10 @@ function App() {
                 "Screenshot-mobile-3.jpg"
               ]
             }
+            badges={{
+              badges: [{title: "React JS", img: "react.svg"}, {title: "Redux", img: "redux.svg"}, {title: "Sass", img: "sass.svg"}],
+              other: ["unsplash-API"]
+            }}
           />
         </section>
 

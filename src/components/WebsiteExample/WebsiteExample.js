@@ -6,24 +6,41 @@ const WebsiteExample = (props) => {
     const badges = (list) => {
         return list.map((listItem) => {
             return <div 
+                title={listItem.title}
                 className="details-badge"
+                key={`${props.id}-badge-${listItem.title}`}
                 >
-                <span>{listItem}</span>
+                {/* <span>{listItem}</span> */}
+                <img src={`badges/${listItem.img}`} alt={listItem.title}/>
             </div>
         })
     }
     const tags = list => {
-        return list.map(listItem => {
-            return <div 
+        if(list.length > 0){
+            return list.map(listItem => {
+                return <div 
                 className={"details-badge_other"}
-            >
-                <span>{listItem}</span>
-            </div>
-        }) 
+                key={`${props.id}-tag-${listItem}`}
+                >
+                    <span>{listItem}</span>
+                </div>
+            }) 
+        }
+        else return null
     }
-    return(<article className="webExample-container">
+    return(<article className="webExample-container" id={props.id}>
                 <div className="webExample-wrapper">
-                    <h3 className="webExample-details-title">{props.title}</h3>
+                    <div 
+                    onClick={e => {
+                        e.stopPropagation()
+                        document.getElementById(props.id).classList.toggle("webExample-hide")
+                    }}
+                    className="webExample-details-title">
+                        <h3 
+                        // className="webExample-details-title"
+                        >{props.title}</h3>
+
+                    </div>
                     <div className="webExample-content">
 
                         <div className="webExample-carousel-container">
@@ -43,10 +60,11 @@ const WebsiteExample = (props) => {
                             </div>
                             <div className="webExample-details-tags">
                                 <div className="webExample-details-badges">
-                                    {badges(["SASS", "HTML", "JS", "REACT.JS"])}
+                                    {badges(props.badges.badges)}
+                                    {/* {badges(["SASS", "HTML", "JS", "REACT.JS"])} */}
                                 </div>
                                 <div className="webExample-details-other">
-                                    {tags(["React-slick", "node.js", "mongoDB"])}
+                                    {tags(props.badges.other)}
                                 </div>
                             </div>
                             <div className="webExample-details-CTA">

@@ -1,7 +1,18 @@
 $navHeight: 60px;
+$carouselBG: #1c1c23;
 .webExample-container{
     height: 100%;
+    overflow: hidden;
+    position: relative;
 }
+// .webExample-container:after{
+//     content: linear-gradient(to right, rgba(28,28,35,1) 0%,rgba(29,30,37,1) 1%,rgba(125,185,232,0) 100%);
+//     height: 10px;
+//     width: 100%;
+//     position: absolute;
+//     left: 0;
+//     bottom: 0;
+// }
 .webExample-wrapper{
     display: flex;
     flex-wrap: wrap;
@@ -9,7 +20,7 @@ $navHeight: 60px;
     display: grid;
     grid-template-rows: min-content 1fr;
     grid-template-columns: 100%;
-    background-color: #1c1c23;
+    background-color: $carouselBG;
     // grid-template-columns: minmax(480px, 60%) 1fr;
     .webExample-details-title{
         grid-column-start: 1;
@@ -30,6 +41,9 @@ $navHeight: 60px;
         grid-row-end: 3;
     }
 }
+.webExample-hide{
+    height: 50px !important;
+}
 .webExample-content{
     grid-row-start: 2;
     grid-row-end: 3;
@@ -40,7 +54,7 @@ $navHeight: 60px;
     overflow: hidden;
 }
 .webExample-carousel-container{
-    background-color: #1c1c23;
+    background-color: $carouselBG;
     min-width: 480px;
     max-width: 60%;
     padding: 20px 40px 40px 40px;
@@ -79,7 +93,7 @@ $navHeight: 60px;
     top: 0;
     left: 0;
     transition: background-color 0.4s;
-    background-color: #1c1c23;
+    background-color: $carouselBG;
     .slick-list{
         height: 100% !important;
     }
@@ -103,14 +117,27 @@ $navHeight: 60px;
     flex-wrap: wrap;
 }
 .webExample-details-title{
+    user-select: none;
+    cursor: pointer;
     // margin-bottom: 40px;
     padding-bottom: 10px;
     padding-left: 20px;
     background-color: black;
     color: white;
     width: 100%;
-    /* height: 30px; */
     padding-top: 20px;
+    position: relative;
+    height: 50px;
+}
+.webExample-details-title:after{
+    // content: linear-gradient(to right, rgb(0, 255, 64) 0%,rgb(0, 255, 64) 1%,rgba(125,185,232,0) 100%);
+    content:linear-gradient(to right, rgba(223,223,223,1) 0%,rgba(222,223,223,1) 1%,rgba(184,208,227,0) 40%,rgba(125,185,232,0) 100%);
+    opacity: 0.4;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 12px;
 }
 .webExample-details-tags{
     padding: 10px;
@@ -118,6 +145,10 @@ $navHeight: 60px;
     background-color: #dfdfdf;
     border-radius: 5px;
     max-width: 60ch;
+}
+.webExample-details-CTA{
+    flex: 1;
+    display: flex;
 }
 .details-CTA-button{
     padding: 5px;
@@ -127,18 +158,37 @@ $navHeight: 60px;
     white-space: nowrap;
     cursor: pointer;
     padding: 3px 12px;
+    a{
+        padding: 5px;
+        background: white;
+        margin: 0 5px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        cursor: pointer;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        border: 4px solid blue;
+        box-shadow: 0 5px 25px rgba(0, 0, 255, 0.30), 0 6px 6px rgba(255, 127, 0, 0.12);
+    }
 }
 .details-badge{
-    background-color: yellow;
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
+    background-color: $carouselBG;
+    height: 40px;
+    // width: 50px;
+    border-radius: 10px;
     font-size: 14px;
     overflow: hidden;
     display: flex;
     align-items: center;
     margin: 5px;
-    color: yellow;
+    color: rgba(255, 255, 255, 0);
+    padding: 7px;
+    img{
+        height: 100%;
+    }
 }
 .details-badge_other{
     background-color: white;
@@ -161,6 +211,9 @@ $navHeight: 60px;
 // @media only screen and (max-width: 720px){
 @media only screen and (max-width: 720px){
     .webExample-container{
+        height: unset;
+    }
+    .webExample-wrapper{
         height: unset;
     }
     .webExample-carousel-container{

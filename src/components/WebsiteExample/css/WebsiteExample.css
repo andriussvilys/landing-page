@@ -1,5 +1,7 @@
 .webExample-container {
   height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .webExample-wrapper {
@@ -44,6 +46,10 @@
   -ms-grid-row: 2;
       grid-row-start: 2;
   grid-row-end: 3;
+}
+
+.webExample-hide {
+  height: 50px !important;
 }
 
 .webExample-content {
@@ -139,13 +145,30 @@
 }
 
 .webExample-details-title {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
   padding-bottom: 10px;
   padding-left: 20px;
   background-color: black;
   color: white;
   width: 100%;
-  /* height: 30px; */
   padding-top: 20px;
+  position: relative;
+  height: 50px;
+}
+
+.webExample-details-title:after {
+  content: -webkit-gradient(linear, left top, right top, from(#dfdfdf), color-stop(1%, #dedfdf), color-stop(40%, rgba(184, 208, 227, 0)), to(rgba(125, 185, 232, 0)));
+  content: linear-gradient(to right, #dfdfdf 0%, #dedfdf 1%, rgba(184, 208, 227, 0) 40%, rgba(125, 185, 232, 0) 100%);
+  opacity: 0.4;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 12px;
 }
 
 .webExample-details-tags {
@@ -154,6 +177,15 @@
   background-color: #dfdfdf;
   border-radius: 5px;
   max-width: 60ch;
+}
+
+.webExample-details-CTA {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .details-CTA-button {
@@ -166,11 +198,33 @@
   padding: 3px 12px;
 }
 
+.details-CTA-button a {
+  padding: 5px;
+  background: white;
+  margin: 0 5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 15px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 25px;
+  border: 4px solid blue;
+  -webkit-box-shadow: 0 5px 25px rgba(0, 0, 255, 0.3), 0 6px 6px rgba(255, 127, 0, 0.12);
+          box-shadow: 0 5px 25px rgba(0, 0, 255, 0.3), 0 6px 6px rgba(255, 127, 0, 0.12);
+}
+
 .details-badge {
-  background-color: yellow;
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
+  background-color: #1c1c23;
+  height: 40px;
+  border-radius: 10px;
   font-size: 14px;
   overflow: hidden;
   display: -webkit-box;
@@ -180,7 +234,12 @@
       -ms-flex-align: center;
           align-items: center;
   margin: 5px;
-  color: yellow;
+  color: rgba(255, 255, 255, 0);
+  padding: 7px;
+}
+
+.details-badge img {
+  height: 100%;
 }
 
 .details-badge_other {
@@ -210,6 +269,9 @@
 
 @media only screen and (max-width: 720px) {
   .webExample-container {
+    height: unset;
+  }
+  .webExample-wrapper {
     height: unset;
   }
   .webExample-carousel-container {
