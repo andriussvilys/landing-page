@@ -119,6 +119,8 @@ function App() {
             />
         </section>
         <section id="about"></section>
+
+        <div className="footer"></div>
       </main>
 
       <footer></footer>

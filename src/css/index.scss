@@ -1,4 +1,6 @@
 $backgroundColor: rgb(226, 233, 243);
+$marginLeft: 30px;
+$marginRight: 30px;
 *{
     padding: 0;
     margin: 0;
@@ -30,16 +32,24 @@ $accentColor: blue;
     align-items: center;
 }
 @mixin navButton{
-    padding: 5px;
-    background: white;
-    margin: 0 5px;
+    // background: white;
+    // margin: 0 5px;
+    // padding: 7px 17px;
+    font-size: 18px;
+    // font-weight: 600;
+    letter-spacing: 1.9px;
+    // color: rgb(0, 0, 116);
+    color: white;
+    // background: rgb(0, 0, 116);
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
-    padding: 3px 12px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: $marginRight / 2;
+    margin-left: 10px;
+    border-bottom: 2px solid rgba(0, 0, 255, 0);
 }
 @mixin squareCTA{
     padding: 5px;
@@ -87,14 +97,35 @@ main{
     box-shadow: 0 10px 20px rgba(13, 42, 142, 0.19), 0 6px 6px rgba(9, 4, 44, 0.12);
     // position: absolute;
     z-index: 999;
+    overflow: hidden;
+}
+.nav-links-container{
+    margin-right: $marginRight;
 }
 .nav-links-list{
     list-style: none;
     @include centered;
 
 }
-.nav-logo, .nav-links-listItem{
+.nav-links-listItem{
     @include navButton;
+    // margin-left: $marginLeft;
+}
+.nav-links-listItem:hover{
+    border-bottom: 2px solid white;
+}
+.nav-logo{
+    font-size: 20px;
+    color: blue;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: white;
+    font-weight: 600;
+    border: 0 !important;
+    margin-left: 0;
+    height: 100%;
+    padding: 0 $marginLeft;
+    @include centered;
 }
 section{
     height: 100%;
@@ -111,7 +142,18 @@ section{
     grid-column-end: 4;
 }
 .kv-wrapper{
+    position: relative;
+    height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+}
+.kv-image{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    max-width: 1080px;
+    top: 0;
 }
 .CTA-contact{
     @include squareCTA;
@@ -165,10 +207,15 @@ $caretHeight: 12px;
     border-bottom: 3px solid $accentColor;
     position: absolute;
     left: calc(50% - #{$caretHeight / 2});
-    top: -$caretHeight / 2;
+    // top: -$caretHeight / 2;
+    top: -5px;
     transform: rotate(45deg);
     background-color: $backgroundColor;
     z-index: -1;
+}
+.footer{
+    height: 100vh;
+    background: yellow;
 }
 
 @media only screen and (max-width: 720px){
@@ -189,13 +236,20 @@ $caretHeight: 12px;
         transition: transform 0.2s;
         box-shadow: inset 0 10px 20px rgba(9, 47, 44, 0.3), 0 6px 6px rgba(9, 4, 44, 0.68);
     }
+    .nav-links-container{
+        margin-right: 0;
+    }
     .nav-links-listItem{
         height: 40px;
         width: 80%;
-        margin-bottom: 20px;
+        margin-bottom: 9vh;
+        border: none;
+        border-bottom: 2px solid white;
+        // background: white;
+        // color: black;
     }
     .nav-links-listItem:first-of-type{
-        margin-top: 40px;
+        margin-top: 15vh;
     }
     .links-list-display{
         // display: flex;
