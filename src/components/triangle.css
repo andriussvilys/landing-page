@@ -79,6 +79,7 @@
   width: 34.641vmax;
   height: 34.641vmax;
   border-radius: 999px;
+  will-change: transform;
   -webkit-animation-name: rotateTriangle;
           animation-name: rotateTriangle;
   -webkit-animation-duration: 6s;

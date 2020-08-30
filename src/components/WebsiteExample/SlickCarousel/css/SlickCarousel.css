@@ -54,5 +54,13 @@
   .slick-list {
     min-height: 200px;
   }
+  .slick-dots li {
+    height: 14px;
+    width: 14px;
+  }
+  .slick-dots li button::before {
+    height: 100%;
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=SlickCarousel.css.map */

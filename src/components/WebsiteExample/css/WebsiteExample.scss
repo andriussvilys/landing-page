@@ -219,6 +219,9 @@ $carouselBG: #1c1c23;
     .webExample-wrapper{
         height: unset;
     }
+    .webExample-content{
+        height: unset;
+    }
     .webExample-carousel-container{
         // max-height: 60vh;
         // max-width: unset;
@@ -229,7 +232,7 @@ $carouselBG: #1c1c23;
         // max-height: 60%;
         width: 100%;
     }
-    .webExample-content{
-        height: unset;
+    .webExample-details-CTA{
+        flex: unset;
     }
 }

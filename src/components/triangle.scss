@@ -53,6 +53,7 @@ $spinnerContainerHeight: (($triangleEdge * $squareRootOf3) / 3) * 2;
     height: (($triangleEdge * $squareRootOf3) / 3) * 2;
     border-radius: 999px;
 
+    will-change: transform;
     animation-name: rotateTriangle;
     animation-duration: $animationDuration;
     animation-direction: normal;

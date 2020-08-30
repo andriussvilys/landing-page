@@ -281,14 +281,19 @@
   .webExample-wrapper {
     height: unset;
   }
+  .webExample-content {
+    height: unset;
+  }
   .webExample-carousel-container {
     min-width: 100%;
     max-width: 100%;
     height: 60vh;
     width: 100%;
   }
-  .webExample-content {
-    height: unset;
+  .webExample-details-CTA {
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
   }
 }
 /*# sourceMappingURL=WebsiteExample.css.map */
