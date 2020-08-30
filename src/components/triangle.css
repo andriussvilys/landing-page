@@ -316,6 +316,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  will-change: transform;
+  outline: 2px solid transparent;
 }
 
 .circle img {

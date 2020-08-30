@@ -166,6 +166,8 @@ $circleBorder: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    will-change: transform;
+    outline: 2px solid transparent;
     img{
         height: 80%;
         width: 80%;
