@@ -1,0 +1,318 @@
+@-webkit-keyframes rotateTriangle {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateTriangle {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.spinner-container {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 23.094vmin);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.circleBound {
+  position: relative;
+  right: 0;
+  background: white;
+  width: 46.188vmin;
+  height: 46.188vmin;
+  border-radius: 999px;
+  will-change: transform;
+  -webkit-animation-name: rotateTriangle;
+          animation-name: rotateTriangle;
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.innerCircle {
+  height: 100%;
+  width: 100%;
+}
+
+.triangle-wrapper {
+  width: 40vmin;
+  height: calc(20vmin * 1.73205);
+  position: relative;
+  top: 100px;
+  left: 100px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 20vmin);
+}
+
+.circle {
+  height: 7vmax;
+  width: 7vmax;
+  min-height: 70px;
+  min-width: 70px;
+  border-radius: 999px;
+  background-color: #b7b7ff;
+  border: 5px solid black;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  will-change: transform;
+  outline: 2px solid transparent;
+}
+
+.circle img {
+  height: 80%;
+  width: 80%;
+}
+
+.circle-1 {
+  bottom: -3.5vmax;
+  left: -3.5vmax;
+}
+
+.circle-2 {
+  top: -3.5vmax;
+  left: calc(50% - 3.5vmax);
+}
+
+.circle-3 {
+  bottom: -3.5vmax;
+  right: -3.5vmax;
+}
+
+.circle {
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotateIcon-pos1 {
+  0% {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+  100% {
+    -webkit-transform: rotate(-300deg);
+            transform: rotate(-300deg);
+  }
+}
+
+@keyframes rotateIcon-pos1 {
+  0% {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+  100% {
+    -webkit-transform: rotate(-300deg);
+            transform: rotate(-300deg);
+  }
+}
+
+.circle-1 {
+  -webkit-animation-name: rotateIcon-pos1;
+          animation-name: rotateIcon-pos1;
+}
+
+.circle-1 img {
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+}
+
+@-webkit-keyframes rotateIcon-pos2 {
+  0% {
+    -webkit-transform: rotate(150deg);
+            transform: rotate(150deg);
+  }
+  100% {
+    -webkit-transform: rotate(-210deg);
+            transform: rotate(-210deg);
+  }
+}
+
+@keyframes rotateIcon-pos2 {
+  0% {
+    -webkit-transform: rotate(150deg);
+            transform: rotate(150deg);
+  }
+  100% {
+    -webkit-transform: rotate(-210deg);
+            transform: rotate(-210deg);
+  }
+}
+
+.circle-2 {
+  -webkit-animation-name: rotateIcon-pos2;
+          animation-name: rotateIcon-pos2;
+}
+
+.circle-2 img {
+  -webkit-transform: rotate(-150deg);
+          transform: rotate(-150deg);
+}
+
+@-webkit-keyframes rotateIcon-pos3 {
+  0% {
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+  }
+  100% {
+    -webkit-transform: rotate(-420deg);
+            transform: rotate(-420deg);
+  }
+}
+
+@keyframes rotateIcon-pos3 {
+  0% {
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+  }
+  100% {
+    -webkit-transform: rotate(-420deg);
+            transform: rotate(-420deg);
+  }
+}
+
+.circle-3 {
+  -webkit-animation-name: rotateIcon-pos3;
+          animation-name: rotateIcon-pos3;
+}
+
+.circle-3 img {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+.circle-3:after {
+  content: "CIRCLE 3";
+  position: absolute;
+  left: 100px;
+}
+
+.circle-labels {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 30px;
+  width: 120px;
+  margin-right: 20px;
+}
+
+@-webkit-keyframes labelFade {
+  0% {
+    opacity: 0;
+    bottom: 0%;
+  }
+  15% {
+    opacity: 1;
+    bottom: 80%;
+  }
+  33.33% {
+    opacity: 0;
+    bottom: 160%;
+  }
+  66.66% {
+    opacity: 0;
+    bottom: 160%;
+  }
+  100% {
+    opacity: 0;
+    bottom: 160%;
+  }
+}
+
+@keyframes labelFade {
+  0% {
+    opacity: 0;
+    bottom: 0%;
+  }
+  15% {
+    opacity: 1;
+    bottom: 80%;
+  }
+  33.33% {
+    opacity: 0;
+    bottom: 160%;
+  }
+  66.66% {
+    opacity: 0;
+    bottom: 160%;
+  }
+  100% {
+    opacity: 0;
+    bottom: 160%;
+  }
+}
+
+.circle-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-animation-name: labelFade;
+          animation-name: labelFade;
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+.circle-label_1 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.circle-label_2 {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.circle-label_3 {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+/*# sourceMappingURL=triangle.css.map */

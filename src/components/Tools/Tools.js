@@ -2,30 +2,34 @@ import React from 'react'
 
 const Tools = props => {
     const renderRow = (title, list) => {
-        // return(<div className="tools-wrapper">
-        //             <div className="tools-title"><span>{title}:</span></div>
-        //                 <div className="tools-items">
-        //                         {list.map((listItem) => {
-        //                             return (<div 
-        //                                 className="details-badge"
-        //                                 key={`${title}-badge-${listItem.title}`}
-        //                                 >
-        //                                 <img src={`badges/${listItem.img}`} alt={listItem.title}/>
-        //                             </div>)
-        //                             })
-        //                         }
-        //                 </div>
-        //         </div>)
         return(<div className="tools-wrapper">
         <div className="tools-title"><span>{title}:</span></div>
             <div className="tools-items">
                     {list.map((listItem) => {
-                        return (<div 
+                        if(!listItem.img){
+                            return <div 
+                            // className={"details-badge_other"}
+                            className="details-badge"
+                            key={`${title}-badge-${listItem.title}`}
+                            >
+                                <span>{listItem.title}</span>
+                            </div>
+                        }
+                        if(!listItem.title){
+                            return <div 
+                            className="details-badge"
+                            key={`${title}-badge-${listItem.title}`}
+                            >
+                            <img className="details-badge-fullWidth" src={`badges/${listItem.img}`} alt={listItem.img}/>
+                        </div>                            
+                        }
+                        return <div 
                             className="details-badge"
                             key={`${title}-badge-${listItem.title}`}
                             >
                             <img src={`badges/${listItem.img}`} alt={listItem.title}/>
-                        </div>)
+                            <span>{listItem.title}</span>
+                        </div>
                         })
                     }
             </div>

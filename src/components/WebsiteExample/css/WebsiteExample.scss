@@ -120,24 +120,15 @@ $carouselBG: #1c1c23;
     user-select: none;
     cursor: pointer;
     // margin-bottom: 40px;
-    padding-bottom: 10px;
     padding-left: 20px;
-    background-color: black;
+    background-color: #121216;
     color: white;
     width: 100%;
-    padding-top: 20px;
     position: relative;
     height: 50px;
+    display: flex;
+    align-items: center;
 }
-// .webExample-details-title:before{
-//     content:linear-gradient(to right, rgba(223,223,223,1) 0%,rgba(222,223,223,1) 1%,rgba(184,208,227,0) 40%,rgba(125,185,232,0) 100%);
-//     opacity: 0.4;
-//     height: 2px;
-//     width: 100%;
-//     position: absolute;
-//     left: 0;
-//     bottom: 12px;
-// }
 .webExample-details-title:after{
     content: "▲";
     color: white;

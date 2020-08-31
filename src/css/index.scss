@@ -1,3 +1,5 @@
+// @import url('https://fonts.googleapis.com/css?family=Rubik+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 $backgroundColor: rgb(226, 233, 243);
 $marginLeft: 30px;
 $marginRight: 30px;
@@ -5,7 +7,8 @@ $marginRight: 30px;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    // font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Rubik';
 }
 a{
     text-decoration: none;
@@ -29,26 +32,6 @@ $accentColor: blue;
     justify-content: center;
     align-items: center;
 }
-@mixin navButton{
-    // background: white;
-    // margin: 0 5px;
-    // padding: 7px 17px;
-    font-size: 18px;
-    // font-weight: 600;
-    letter-spacing: 1.9px;
-    // color: rgb(0, 0, 116);
-    color: white;
-    // background: rgb(0, 0, 116);
-    text-transform: uppercase;
-    white-space: nowrap;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: $marginRight / 2;
-    margin-left: 10px;
-    border-bottom: 2px solid rgba(0, 0, 255, 0);
-}
 @mixin squareCTA{
     padding: 5px;
     background: white;
@@ -67,8 +50,8 @@ $accentColor: blue;
 $navHeight: 60px;
 .App{
     // display: grid;
-    grid-template-rows: min-content 1fr min-content;
-    grid-template-columns: 100%;
+    // grid-template-rows: min-content 1fr min-content;
+    // grid-template-columns: 100%;
 }
 main{
     // overflow-y: auto;
@@ -97,7 +80,6 @@ main{
     box-shadow: 0 10px 20px rgba(13, 42, 142, 0.19), 0 6px 6px rgba(9, 4, 44, 0.12);
     // position: absolute;
     z-index: 999;
-    overflow: hidden;
 }
 .nav-links-container{
     margin-right: $marginRight;
@@ -108,11 +90,38 @@ main{
 
 }
 .nav-links-listItem{
-    @include navButton;
-    // margin-left: $marginLeft;
+    position: relative;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.9px;
+    color: white;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: $marginRight / 2;
+    margin-left: 10px;
+    padding: 10px 0;
 }
-.nav-links-listItem:hover{
-    border-bottom: 2px solid white;
+.nav-links-listItem:after{
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: white;
+    position: absolute;
+    bottom: 5px;
+    // left: -100%;
+    transform: translateX(-100%);
+}
+.nav-links-listItem:hover::after{
+    left: 0;
+    transform: translateX(0);
+    transition: transform 0.1s;
+    transition-timing-function: ease-out;
+    // border-bottom: 2px solid white;
 }
 .nav-logo{
     font-size: 20px;
@@ -136,6 +145,10 @@ section{
     @include centered;
     position: relative;
 
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    grid-template-columns: 100%;
+
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 3;
@@ -155,7 +168,7 @@ section{
 .kv-image{
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: relative;
     max-width: 1080px;
     top: 0;
     z-index: 0;
@@ -170,9 +183,6 @@ section{
     15%{
         transform: translateY(4px);
     }
-    // 30%{
-    //     transform: translateY(5px);
-    // }
     30%{
         transform: translateY(0);
     }
@@ -181,16 +191,11 @@ section{
     }
 }
 .CTA-seemore{
-    position: absolute;
     width: 100%;
-    bottom: 30px;
+    padding-bottom: 30px;
     @include centered;
     flex-wrap: wrap;
     opacity: 0.5;
-
-    // animation-name: CTA-seemore;
-    // animation-duration: 3s;
-    // animation-iteration-count: infinite;
 }
 .CTA-seemore-text{
     text-transform: uppercase;
@@ -223,12 +228,11 @@ $caretHeight: 12px;
     background: yellow;
 }
 
-@media only screen and (max-width: 720px){
+@media only screen and (max-width: 480px){
+    $navHeight: 40px;
     .nav-links-list{
-        // display: none;
         width: 70vw;
         max-width: 300px;
-        // height: calc(100% - #{$navHeight});
         height: calc(100vh - #{$navHeight});
         position: absolute;
         top: $navHeight;
@@ -250,14 +254,12 @@ $caretHeight: 12px;
         margin-bottom: 9vh;
         border: none;
         border-bottom: 2px solid white;
-        // background: white;
-        // color: black;
     }
     .nav-links-listItem:first-of-type{
         margin-top: 15vh;
     }
     .links-list-display{
-        // display: flex;
+        
         transform: translateX(0);
     }
     .nav-links-hamburger{

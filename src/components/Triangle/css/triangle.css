@@ -61,12 +61,9 @@
 }
 
 .spinner-container {
-  height: 34.641vmax;
-  width: calc(34.641vmax + 200px);
   position: absolute;
   right: 0;
-  top: 0;
-  top: calc(50% - 17.3205vmax);
+  top: calc(50% - 23.094vmin);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,8 +73,8 @@
   position: relative;
   right: 0;
   background: white;
-  width: 34.641vmax;
-  height: 34.641vmax;
+  width: 46.188vmin;
+  height: 46.188vmin;
   border-radius: 999px;
   will-change: transform;
   -webkit-animation-name: rotateTriangle;
@@ -100,14 +97,14 @@
 }
 
 .triangle-wrapper {
-  width: 30vmax;
-  height: calc(15vmax * 1.73205);
+  width: 40vmin;
+  height: calc(20vmin * 1.73205);
   position: relative;
   top: 100px;
   left: 100px;
   position: absolute;
   top: 0;
-  left: calc(50% - 15vmax);
+  left: calc(50% - 20vmin);
 }
 
 @-webkit-keyframes rotateIcon-pos2 {
@@ -326,10 +323,9 @@
 }
 
 .circle::after {
-  height: 30vmax;
+  height: 40vmin;
   width: 7vmax;
   position: absolute;
-  font-size: 230px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -415,6 +411,7 @@
 }
 
 .circle-labels {
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -425,7 +422,8 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
   font-size: 30px;
-  padding-right: 20px;
+  width: 120px;
+  margin-right: 20px;
 }
 
 @-webkit-keyframes labelFade {
@@ -485,6 +483,7 @@
 .circle-label {
   position: absolute;
   bottom: 0;
+  right: 0;
   opacity: 0;
   -webkit-animation-name: labelFade;
           animation-name: labelFade;

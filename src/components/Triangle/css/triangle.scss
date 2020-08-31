@@ -26,20 +26,18 @@ $animationDuration: 6s;
     }
   }
 
-$triangleEdge: 30vmax;
+// $triangleEdge: 30vmax;
+$triangleEdge: 40vmin;
 $squareRootOf3: 1.73205;
-// $triangleHeight: ($triangleEdge / 2) * $squareRootOf3;
 $triangleHeight: calc(#{$triangleEdge / 2} * #{$squareRootOf3});
 
 $spinnerContainerHeight: (($triangleEdge * $squareRootOf3) / 3) * 2;
 //circle bound to center the triangle
 .spinner-container{
-    // height: (($triangleEdge * $squareRootOf3) / 3) * 2;
-    height: $spinnerContainerHeight;
-    width: calc(#{((($triangleEdge * $squareRootOf3) / 3) * 2)} + 200px);
+    // height: $spinnerContainerHeight;
+    // width: calc(#{((($triangleEdge * $squareRootOf3) / 3) * 2)} + 200px);
     position: absolute;
     right: 0;
-    top: 0;
     top: calc(50% - #{$spinnerContainerHeight / 2});
 
     display: flex;
@@ -103,56 +101,56 @@ $circleBorder: 5px;
     100% {
       transform: rotate(-225deg);
     }
-  }
-  @keyframes rotateIcon-pos3{
-    0% {
-        transform: rotate(15deg); 
-    }
-    7%{
-        transform: rotate(-105deg);
-    }
-    33.33%{
-        transform: rotate(-105deg);
-    }
-    40.33%{
-        transform: rotate(-225deg);
-    }
-    66.66%{
-        transform: rotate(-225deg);
-    }
-    //CYCLE 3
-    73.66%{
-        transform: rotate(-345deg);
-    }
-    100% {
-      transform: rotate(-345deg);
-    }
-  }
-  @keyframes rotateIcon-pos1{
-    0% {
-        transform: rotate(255deg); 
-    }
-    7%{
-        transform: rotate(135deg);
-    }
-    33.33%{
-        transform: rotate(135deg);
-    }
-    //CYCLE 2
-    40.33%{
-        transform: rotate(15deg);
-    }
-    66.66%{
-        transform: rotate(15deg);
-    }
-    //CYCLE 3
-    73.66%{
-        transform: rotate(-105deg);
-    }
-    100% {
-      transform: rotate(-105deg);
-    }
-  }
+}
+@keyframes rotateIcon-pos3{
+0% {
+    transform: rotate(15deg); 
+}
+7%{
+    transform: rotate(-105deg);
+}
+33.33%{
+    transform: rotate(-105deg);
+}
+40.33%{
+    transform: rotate(-225deg);
+}
+66.66%{
+    transform: rotate(-225deg);
+}
+//CYCLE 3
+73.66%{
+    transform: rotate(-345deg);
+}
+100% {
+    transform: rotate(-345deg);
+}
+}
+@keyframes rotateIcon-pos1{
+0% {
+    transform: rotate(255deg); 
+}
+7%{
+    transform: rotate(135deg);
+}
+33.33%{
+    transform: rotate(135deg);
+}
+//CYCLE 2
+40.33%{
+    transform: rotate(15deg);
+}
+66.66%{
+    transform: rotate(15deg);
+}
+//CYCLE 3
+73.66%{
+    transform: rotate(-105deg);
+}
+100% {
+    transform: rotate(-105deg);
+}
+}
 .circle{
     height: $circleHeight;
     width: $circleHeight;
@@ -176,14 +174,10 @@ $circleBorder: 5px;
 //arrow
 .circle::after{
     // content: url('./arrow-2.svg');
-    // content: "";
-    // height: 200px;
     height: $triangleEdge;
-    // border: 2px solid red;
     width: $circleHeight;
     position: absolute;
-    // bottom: calc(100% + 20px);
-    font-size: 230px;
+    // font-size: 230px;
 
     overflow: hidden;
     display: flex;
@@ -239,35 +233,14 @@ $circleBorder: 5px;
 }
 
 .circle-labels{
+    position: relative;
     flex: 1;
     display: flex;
     justify-content: flex-end;
     font-size: 30px;
-    padding-right: 20px;
+    width: 120px;
+    margin-right: 20px;
 }
-// @keyframes labelFade {
-//     //CYCLE 1
-//     0% {
-//         opacity: 0;
-//         bottom: 0;
-//     }
-//     7%{
-//         opacity: 1;
-//         bottom: 80%;  
-//     }
-//     33.33%{
-//         opacity: 1;
-//         bottom: 80%;  
-//     }
-//     40.33%{
-//         opacity: 0;
-//         bottom: 160%;  
-//     }
-//     100% {
-//         opacity: 0;
-//         bottom: 160%;  
-//     }
-//   }
 
 @keyframes labelFade {
     //CYCLE 1
@@ -297,9 +270,38 @@ $circleBorder: 5px;
         bottom: 160%;  
     }
   }
+// @keyframes labelFade {
+//     //CYCLE 1
+//     0% {
+//         opacity: 0;
+//         transform: translateY(0);
+//     }
+    
+//     2%{
+//         opacity: 0;
+//         transform: translateY(0);
+//     }
+//     7%{
+//         opacity: 0.4;
+//         transform: translateY(80%);
+//     }
+//     33.33%{
+//         opacity: 0.4;
+//         transform: translateY(80%);
+//     }
+//     40.33%{
+//         opacity: 0;
+//         transform: translateY(160%);
+//     }
+//     100% {
+//         opacity: 0;
+//         transform: translateY(160%);
+//     }
+//   }
 .circle-label{
     position: absolute;
     bottom: 0;
+    right: 0;
     opacity: 0;
 
     animation-name: labelFade;
@@ -313,9 +315,7 @@ $circleBorder: 5px;
 }
 .circle-label_2{
     animation-delay: $animationDuration / 3;
-    // animation-delay: 3s;
 }
 .circle-label_3{
-    // animation-delay: 6s;
     animation-delay: ($animationDuration / 3) * 2;
 }

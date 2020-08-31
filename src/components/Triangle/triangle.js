@@ -1,5 +1,5 @@
 import React from 'react';
-import './triangle.css'
+import './css/alt-css/triangle.css'
 
 const Triangle = () => {
     return <div className="spinner-container">
