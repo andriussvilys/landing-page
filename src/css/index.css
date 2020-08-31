@@ -326,9 +326,9 @@ section {
   .nav-links-list {
     width: 70vw;
     max-width: 300px;
-    height: calc(100vh - 40px);
+    height: calc(100vh - 60px);
     position: absolute;
-    top: 40px;
+    top: 60px;
     background-color: blue;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -367,8 +367,8 @@ section {
   }
   .nav-links-hamburger {
     display: block;
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     background-color: white;
   }
 }
@@ -382,26 +382,22 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 .tools-items {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(min-content, 100px))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(-webkit-min-content, 100px));
-      grid-template-columns: repeat(auto-fit, minmax(min-content, 100px));
-  -ms-grid-rows: 100%;
-      grid-template-rows: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  grid-gap: 5px;
 }
 
-.tools-items .details-badge {
+.details-badge {
+  background-color: #1c1c23;
+  border-radius: 10px;
   color: #cbcbcb;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -416,22 +412,23 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0;
-  height: 100%;
+  margin: 0 5px 5px 0;
+  padding: 8px;
+  min-width: 50px;
 }
 
-.tools-items .details-badge img {
+.details-badge img {
   height: 30px;
 }
 
-.tools-items .details-badge span {
+.details-badge span {
   white-space: nowrap;
   font-size: 12px;
   margin-top: 5px;
 }
 
-.tools-items .details-badge-fullWidth {
-  width: 100% !important;
+.details-badge-fullWidth {
+  max-width: 80px;
   height: unset !important;
   max-height: 45px;
 }
@@ -445,7 +442,7 @@ section {
 }
 
 .tools-items {
-  min-width: 300px;
+  min-width: 70%;
 }
 
 .tools-title {
@@ -456,28 +453,21 @@ section {
   margin-bottom: 15px;
 }
 
-.details-badge {
-  margin: 5px 10px 5px 0;
-}
-
 .webExample-tools-headline {
   font-size: 24px;
   text-transform: uppercase;
 }
 
 @media only screen and (max-width: 720px) {
-  .tools-items {
-    -ms-grid-columns: (minmax(min-content, 80px))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(-webkit-min-content, 80px));
-        grid-template-columns: repeat(auto-fit, minmax(min-content, 80px));
+  .details-badge {
+    margin: 0 3px 3px 0;
   }
-  .tools-items .details-badge img {
+  .details-badge img {
     height: 20px;
   }
-  .tools-items .details-badge-fullWidth {
-    width: 100% !important;
+  .details-badge-fullWidth {
     height: unset !important;
-    max-height: 35px;
+    max-height: 20px;
   }
 }
 /*# sourceMappingURL=index.css.map */

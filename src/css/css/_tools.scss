@@ -1,42 +1,40 @@
 .webExample-tools-container{
     width: 100%;
     padding: 30px;
-    // display: grid;
-    // grid-template-columns: min-content 1fr;
-    // grid-template-rows: max-content;
 }
 .tools-wrapper, .tools-title, .tools-items{
     display: flex;
-    align-items: flex-start;
+    // align-items: flex-start;
 }
 .tools-items{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 100px));
-    grid-template-rows: 100%;
+    display: flex;
+    flex-wrap: wrap;
     flex: 1;
-    grid-gap: 5px;
-    .details-badge{
-        color: #cbcbcb;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        height: 100%;
-        img{
-            height: 30px;
-        }
-        span{
-            white-space: nowrap;
-            font-size: 12px;
-            margin-top: 5px;
-        }
+}
+.details-badge{
+    background-color: #1c1c23;
+    border-radius: 10px;
+    color: #cbcbcb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px 5px 0;
+    padding: 8px;
+    min-width: 50px;
+    img{
+        height: 30px;
     }
-    .details-badge-fullWidth{
-        width: 100% !important;
-        height: unset !important;
-        max-height: 45px;
+    span{
+        white-space: nowrap;
+        font-size: 12px;
+        margin-top: 5px;
     }
+}
+.details-badge-fullWidth{
+    max-width: 80px;
+    height: unset !important;
+    max-height: 45px;
 }
 .tools-wrapper{
     flex-wrap: wrap;
@@ -45,7 +43,7 @@
     margin-left: 10px;
 }
 .tools-items{
-    min-width: 300px;
+    min-width: 70%;
 }
 .tools-title{
     font-weight: 600;
@@ -54,24 +52,20 @@
     width: 150px;
     margin-bottom: 15px;
 }
-.details-badge{
-    margin: 5px 10px 5px 0;
-}
 .webExample-tools-headline{
     font-size: 24px;
     text-transform: uppercase;
 }
 
 @media only screen and (max-width: 720px){
-    .tools-items{
-        grid-template-columns: repeat(auto-fit, minmax(min-content, 80px));
-        .details-badge img{
-                height: 20px;
-        }
-        .details-badge-fullWidth{
-            width: 100% !important;
-            height: unset !important;
-            max-height: 35px;
-        }
+    .details-badge{
+        margin: 0 3px 3px 0;
+    }
+    .details-badge img{
+        height: 20px;
+    }
+    .details-badge-fullWidth{
+        height: unset !important;
+        max-height: 20px;
     }
 }

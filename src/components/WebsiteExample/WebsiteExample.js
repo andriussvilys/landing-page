@@ -1,5 +1,6 @@
 import React from 'react'
 import SlickCarousel from './SlickCarousel/SlickCarousel'
+import Badge from '../Tools/Badge'
 import './css/WebsiteExample.css'
 
 
@@ -7,14 +8,19 @@ const WebsiteExample = (props) => {
     const [open, toggleOpen] = React.useState(props.open)
     const badges = (list) => {
         return list.map((listItem) => {
-            return <div 
-                title={listItem.title}
-                className="details-badge"
-                key={`${props.id}-badge-${listItem.title}`}
-                >
-                {/* <span>{listItem}</span> */}
-                <img src={`badges/${listItem.img}`} alt={listItem.title}/>
-            </div>
+            return <Badge 
+                        section={props.id}
+                        title={listItem.title}
+                        img={listItem.img}
+                    />
+            // return <div 
+            //     title={listItem.title}
+            //     className="details-badge"
+            //     key={`${props.id}-badge-${listItem.title}`}
+            //     >
+            //     {/* <span>{listItem}</span> */}
+            //     <img src={`badges/${listItem.img}`} alt={listItem.title}/>
+            // </div>
         })
     }
     const tags = list => {

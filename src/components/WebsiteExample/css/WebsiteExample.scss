@@ -136,6 +136,11 @@ $carouselBG: #1c1c23;
     right: 35px;
     top: calc(50% - 7px);
 }
+.webExample-details-badges{
+    .details-badge img{
+        height: 24px;
+    }
+}
 .webExample-details-tags{
     padding: 10px;
     margin: 20px 0;
@@ -167,22 +172,23 @@ $carouselBG: #1c1c23;
         box-shadow: 0 5px 25px rgba(0, 0, 255, 0.30), 0 6px 6px rgba(255, 127, 0, 0.12);
     }
 }
-.details-badge{
-    background-color: $carouselBG;
-    height: 40px;
-    // width: 50px;
-    border-radius: 10px;
-    font-size: 14px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    margin: 5px;
-    color: rgba(255, 255, 255, 0);
-    padding: 7px;
-    img{
-        height: 100%;
-    }
-}
+// .details-badge{
+//     background-color: $carouselBG;
+//     height: 40px;
+//     // width: 50px;
+//     border-radius: 10px;
+//     font-size: 14px;
+//     overflow: hidden;
+//     display: flex;
+//     align-items: center;
+//     margin: 5px;
+//     color: rgba(255, 255, 255, 0);
+//     padding: 7px;
+//     img{
+//         height: 100%;
+//     }
+// }
+.details-badge{}
 .details-badge_other{
     background-color: white;
     white-space: nowrap;

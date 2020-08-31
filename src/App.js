@@ -38,7 +38,7 @@ function App() {
               <h1>My name is Andrius.</h1>
               <h3>I am a front-end developer.</h3>
 
-              <button className="CTA-contact">get in touch</button>
+              <a href="#about" className="CTA-contact">get in touch</a>
             </div>
 
             <div className="kv-image">
@@ -72,7 +72,7 @@ function App() {
               ]
             }
             badges={{
-              badges: [{title: "React JS", img: "react.svg"}, {title: "Sass", img: "sass.svg"}, {title: "Digital Ocean", img: "digital-ocean.png"}, ],
+              badges: [{title: "React JS", img: "react.svg"}, {title: null, img: "sass.svg"}, {title: "Digital Ocean", img: "digital-ocean.png"}, ],
               other: ["React-slick", "filters", "Tags", "Related images"]
             }}
           />
@@ -92,9 +92,9 @@ function App() {
             badges={{
               badges: [
                 {title: "React JS", img: "react.svg"}, 
-                {title: "Node.js", img: "node-js.svg"}, 
-                {title: "MongoDB", img: "mongodb.png"},
-                {title: "Sass", img: "sass.svg"}
+                {title: null, img: "node-js.svg"}, 
+                {title: null, img: "mongodb.png"},
+                {title: null, img: "sass.svg"}
               ],
               other: ["Image upload", "CRUD", "Authorization", "Modals", "Progress bar"]
             }}
@@ -113,7 +113,7 @@ function App() {
               ]
             }
             badges={{
-              badges: [{title: "React JS", img: "react.svg"}, {title: "Redux", img: "redux.svg"}, {title: "Sass", img: "sass.svg"}],
+              badges: [{title: "React JS", img: "react.svg"}, {title: "Redux", img: "redux.svg"}, {title: null, img: "sass.svg"}],
               other: ["unsplash-API"]
             }}
           />
@@ -127,13 +127,13 @@ function App() {
               ["dev-challenge-1.png",
               "dev-challenge-3.png",
               "dev-challenge-2.png",
-              "dev-challenge-1.png",
+              "dev-challenge-1-mob.jpg",
               "dev-challenge-3-mob.png",
               "dev-challenge-2-mob.png",
               ]
             }
             badges={{
-              badges: [{title: "HTML5", img: "HTML5.png"}, {title: "Sass", img: "sass.svg"}, {title: "Parcel compiler", img: "parcel-og.png"}],
+              badges: [{title: "HTML5", img: "HTML5.png"}, {title: null, img: "sass.svg"}, {title: "Parcel compiler", img: "parcel-og.png"}],
               other: ["Responsvie design", "Semantic HTML", "Google Maps API"]
             }}
           />
@@ -149,7 +149,7 @@ function App() {
               ]
             }
             badges={{
-              badges: [{title: "HTML5", img: "HTML5.png"}, {title: "Sass", img: "sass.svg"},],
+              badges: [{title: "HTML5", img: "HTML5.png"}, {title: null, img: "sass.svg"},],
               other: ["Responsive design", "Semantic HTML"]
             }}
           />
@@ -166,7 +166,7 @@ function App() {
               ]
             }
             badges={{
-              badges: [{title: "React", img: "react.svg"}, {title: "Sass", img: "sass.svg"}],
+              badges: [{title: "React", img: "react.svg"}, {title: null, img: "sass.svg"}],
               other: []
             }}
           />
@@ -184,7 +184,7 @@ function App() {
                     {title: "Redux", img: "redux.svg"},
                     {title: "CSS3", img: "CSS3.png"},
                     {title: null,
-                    // title: "Sass", 
+                    // title: null, 
                     img: "sass.svg"},
                   ]
                 },
