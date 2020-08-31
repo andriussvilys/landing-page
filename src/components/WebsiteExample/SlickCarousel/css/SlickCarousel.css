@@ -1,5 +1,11 @@
 .slick-slider, .slick-track {
   height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.slick-slider {
+  padding: 0 40px 40px 40px;
 }
 
 .slick-list {
@@ -27,11 +33,16 @@
 }
 
 .slick-next {
-  right: -30px;
+  right: 15px;
 }
 
 .slick-prev {
-  left: -30px;
+  left: 15px;
+}
+
+.slick-dots {
+  left: 0;
+  bottom: 10px;
 }
 
 .slick-dots li button:before {
@@ -40,10 +51,6 @@
   background-color: #c8ffc8;
   opacity: 0.5;
   color: #f0f8ff00 !important;
-}
-
-.slick-dots {
-  bottom: -30px;
 }
 
 .slick-dots li.slick-active button:before {

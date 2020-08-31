@@ -3,6 +3,7 @@
 $backgroundColor: rgb(226, 233, 243);
 $marginLeft: 30px;
 $marginRight: 30px;
+$navHeight: 43px;
 *{
     padding: 0;
     margin: 0;
@@ -33,21 +34,26 @@ $accentColor: blue;
     align-items: center;
 }
 @mixin squareCTA{
-    padding: 5px;
+    position: absolute;
     background: white;
-    margin: 0 5px;
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
     padding: 15px 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
+    border-radius: 99px;
     border: 4px solid $accentColor;
     box-shadow: 0 5px 25px rgba(0, 0, 255, 0.30), 0 6px 6px rgba(255, 127, 0, 0.12);
 }
-$navHeight: 60px;
+.headline{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 24px;
+    text-transform: uppercase;
+    height: 50px;
+    background: white;
+    padding: 30px 20px;
+}
 .App{
     // display: grid;
     // grid-template-rows: min-content 1fr min-content;
@@ -164,6 +170,14 @@ section{
 .kv-text{
     position: absolute;
     z-index: 1;
+    h1{
+        margin-bottom: 10px;
+        font-size: 36px;
+    }
+    h3{
+        margin-bottom: 30px;
+        color: rgb(95, 95, 95);
+    }
 }
 .kv-image{
     height: 100%;
@@ -223,12 +237,46 @@ $caretHeight: 12px;
     background-color: $backgroundColor;
     z-index: -1;
 }
+.about-wrapper{
+    padding: 30px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    p{
+        max-width: 60ch;
+    }
+}
+.about-image-wrapper{
+    min-height: 200px;
+    min-width: 200px;
+    border-radius: 999px;
+    background-color: $accentColor;
+    float: left;
+    margin: 15px;
+    img{
+        opacity: 0;
+    }
+}
 .footer{
-    height: 100vh;
-    background: yellow;
+    height: 80px;
+    width: 100%;
+    background: $accentColor;
+    grid-column-start: 1;
+    grid-column-end: 5;
 }
 
 @media only screen and (max-width: 480px){
+    .kv-text{
+        top: 50px;
+        height: 100%;
+    }
+    .CTA-contact{
+        bottom: 85px;
+        left: calc(50% - 72px)
+    }
+    .CTA-seemore{
+        display: none;
+    }
     .nav-links-list{
         width: 70vw;
         max-width: 300px;
@@ -266,6 +314,21 @@ $caretHeight: 12px;
         height: $navHeight;
         width: $navHeight;
         background-color: white;
+    }
+    .about-wrapper{
+        padding: 20px;
+        p{
+            max-width: 60ch;
+            font-size: 14px;
+        }
+    }
+    .about-image-wrapper{
+        min-height: 80px;
+        min-width: 80px;
+        margin: 7px;
+    }
+    .nav-links-listItem:after{
+        display: none;
     }
 }
 

@@ -13,14 +13,6 @@ const WebsiteExample = (props) => {
                         title={listItem.title}
                         img={listItem.img}
                     />
-            // return <div 
-            //     title={listItem.title}
-            //     className="details-badge"
-            //     key={`${props.id}-badge-${listItem.title}`}
-            //     >
-            //     {/* <span>{listItem}</span> */}
-            //     <img src={`badges/${listItem.img}`} alt={listItem.title}/>
-            // </div>
         })
     }
     const tags = list => {

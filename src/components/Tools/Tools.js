@@ -24,8 +24,11 @@ const Tools = props => {
     }
           
     return ( <div className="webExample-tools-container">
-                <div className="webExample-tools-headline">Toolbox:</div>
-                {renderAll(props.data)}
+                {/* <div className="webExample-tools-headline">Toolbox:</div> */}
+                <h1 className="headline">Toolbox:</h1>
+                <div className="webExample-tools-wrapper">
+                    {renderAll(props.data)}
+                </div>
             </div>)
 }
 export default Tools

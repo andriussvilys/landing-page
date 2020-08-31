@@ -1,5 +1,5 @@
 $animationDuration: 9s;
-$triangleEdge: 40vmin;
+$triangleEdge: 40vh;
 $squareRootOf3: 1.73205;
 $triangleHeight: calc(#{$triangleEdge / 2} * #{$squareRootOf3});
 $spinnerContainerHeight: (($triangleEdge * $squareRootOf3) / 3) * 2;
@@ -44,6 +44,8 @@ $spinnerContainerHeight: (($triangleEdge * $squareRootOf3) / 3) * 2;
 
     width: (($triangleEdge * $squareRootOf3) / 3) * 2;
     height: (($triangleEdge * $squareRootOf3) / 3) * 2;
+    // min-height: 200px;
+    // min-width: 200px;
     border-radius: 999px;
 
     will-change: transform;
@@ -94,17 +96,6 @@ $circleBorder: 5px;
         width: 80%;
     }
 }
-//arrow
-// .circle::after{
-//     content: url('../../arrow-2.svg');
-//     height: $triangleEdge;
-//     width: $circleHeight;
-//     position: absolute;
-
-//     overflow: hidden;
-//     display: flex;
-//     justify-content: center;
-// }
 .circle-1{
     bottom: 0 - $circleRadius;
     left: 0 - $circleRadius;
@@ -166,18 +157,19 @@ $circleBorder: 5px;
         transform: rotate(60deg);
     }
 }
-.circle-3:after{
-    content: "CIRCLE 3";
-    position: absolute;
-    left: 100px;
-}
+// .circle-3:after{
+//     content: "CIRCLE 3";
+//     position: absolute;
+//     left: 100px;
+// }
 
 
 //LABELS
 .circle-labels{
+    // display: flex;
+    display: none;
     position: relative;
     flex: 1;
-    display: flex;
     justify-content: flex-end;
     font-size: 30px;
     width: 120px;
@@ -189,19 +181,7 @@ $circleBorder: 5px;
         opacity: 0;
         bottom: 0%;
     }
-    
-    // 2%{
-    //     opacity: 0;
-    //     bottom: 0%;  
-    // }
-    // 7%{
-    //     opacity: 0.4;
-    //     bottom: 80%;  
-    // }
    15%{
-        // opacity: 1;
-        // bottom: 80%;
-
         opacity: 1;
         bottom: 80%;
     }
@@ -242,4 +222,11 @@ $circleBorder: 5px;
 }
 .circle-label_3{
     animation-delay: ($animationDuration / 3) * 2;
+}
+
+@media only screen and (max-width: 720px){
+    .spinner-container{
+        right: -45vw;
+        top: 30vh;
+    }
 }

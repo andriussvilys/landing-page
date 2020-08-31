@@ -1,10 +1,11 @@
 .webExample-tools-container{
     width: 100%;
-    padding: 30px;
 }
 .tools-wrapper, .tools-title, .tools-items{
     display: flex;
-    // align-items: flex-start;
+}
+.webExample-tools-wrapper{
+    padding: 30px;
 }
 .tools-items{
     display: flex;
@@ -38,9 +39,8 @@
 }
 .tools-wrapper{
     flex-wrap: wrap;
-    border-bottom: 1px solid black;
-    padding: 10px 20px 10px 10px;
-    margin-left: 10px;
+    border-bottom: 1px solid rgb(189, 189, 189);
+    padding: 10px 20px 5px 0;
 }
 .tools-items{
     min-width: 70%;
@@ -51,10 +51,6 @@
     white-space: nowrap;
     width: 150px;
     margin-bottom: 15px;
-}
-.webExample-tools-headline{
-    font-size: 24px;
-    text-transform: uppercase;
 }
 
 @media only screen and (max-width: 720px){
