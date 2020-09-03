@@ -23,8 +23,12 @@ const SlickCarousel = props => {
         <Slider {...settings}>
             {
                 props.imageList.map(fileName => {
-                    return <img src={`carousel/${props.assetDir}/${fileName}`} alt={fileName} />
-            })
+                    return <img 
+                    src={`carousel/${props.assetDir}/${fileName}`} 
+                    alt={fileName} 
+                    key={`slickCarousel-${fileName}`}
+                    />
+                })
             }
         </Slider>
     )

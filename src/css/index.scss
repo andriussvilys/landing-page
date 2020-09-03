@@ -1,9 +1,18 @@
-$backgroundColor: rgb(226, 233, 243);
+// @import url('https://fonts.googleapis.com/css?family=Rubik+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+// $backgroundColor: rgb(226, 233, 243);
+$backgroundColor: #f9f9f9;
+$marginLeft: 30px;
+$marginRight: 30px;
+$navHeight: 43px;
+$headlineHeight: 50px;
+$footerHeight: 80px;
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    // font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Rubik';
 }
 a{
     text-decoration: none;
@@ -16,71 +25,129 @@ button{
 html,body,#root,.App{
     height: 100%;
     width: 100%;
-}
-html, body{
-    overflow-x: hidden;
+    overflow: hidden;
 }
 body{
     background-color: $backgroundColor;
 }
-$accentColor: rgb(97, 171, 255);
+$accentColor: blue;
 @mixin centered{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 @mixin squareCTA{
-    padding: 5px;
+    position: absolute;
     background: white;
-    margin: 0 5px;
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
-    padding: 3px 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 15px 30px;
+    border-radius: 99px;
+    border: 4px solid $accentColor;
+    background-color: white;
+    box-shadow: 0px 3px 10px rgba(14, 14, 14, 0.3), 0 6px 6px rgba(255, 255, 255, 0.12);
 }
-$navHeight: 60px;
+.headline{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 24px;
+    text-transform: uppercase;
+    height: $headlineHeight;
+    background: $accentColor;
+    color: white;
+    padding: 25px $marginLeft;
+    max-height: $headlineHeight;
+}
 .App{
-    display: grid;
-    grid-template-rows: min-content 1fr min-content;
-    grid-template-columns: 100%;
     // display: grid;
-    // grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
-    // grid-template-rows: [nav] 0 [kv] 100% 100%;
+    // grid-template-rows: min-content 1fr min-content;
+    // grid-template-columns: 100%;
 }
 main{
-    overflow-y: auto;
+    // overflow-y: auto;
     overflow-x: hidden;
     grid-row-start: 2;
     grid-row-end: 3;
-    height: 100%;
+    height: calc(100% - #{$navHeight});
     display: grid;
     grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
-    grid-template-rows: [kv] 100% 100%;
+    grid-template-rows: [kv] 100% [examples] auto [toolbox] auto [about] calc(100% - #{$footerHeight});
     scroll-behavior: smooth;
+    margin-top: $navHeight;
     section{
         grid-column-start: 1;
         grid-column-end: 5;
     }
 }
 .nav-container{
+    position: fixed;
     width: 100%;
     height: $navHeight;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: blue;
-    box-shadow:0 10px 20px rgba(189, 189, 189, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 10px 20px rgba(13, 42, 142, 0.19), 0 6px 6px rgba(9, 4, 44, 0.12);
+    // position: absolute;
+    z-index: 999;
+}
+.nav-links-container{
+    margin-right: $marginRight;
 }
 .nav-links-list{
     list-style: none;
     @include centered;
 
 }
-.nav-logo, .nav-links-listItem{
-    @include squareCTA;
+.nav-links-listItem{
+    position: relative;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.9px;
+    color: white;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: $marginRight / 2;
+    margin-left: 10px;
+    padding: 10px 0;
+}
+.nav-links-listItem:after{
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: white;
+    position: absolute;
+    bottom: 5px;
+    // left: -100%;
+    transform: translateX(-120%);
+    transition-timing-function: ease-in-out;
+}
+.nav-links-listItem:hover::after{
+    left: 0;
+    transform: translateX(0);
+    transition: transform 0.25s;
+    transition-timing-function: ease-out;
+    // border-bottom: 2px solid white;
+}
+.nav-logo{
+    font-size: 20px;
+    color: blue;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: white;
+    font-weight: 600;
+    border: 0 !important;
+    margin-left: 0;
+    height: 100%;
+    padding: 0 $marginLeft;
+    @include centered;
 }
 section{
     height: 100%;
@@ -91,13 +158,41 @@ section{
     @include centered;
     position: relative;
 
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    grid-template-columns: 100%;
+
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 3;
     grid-column-end: 4;
 }
 .kv-wrapper{
+    position: relative;
+    height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+}
+.kv-text{
+    position: absolute;
+    z-index: 1;
+    h1{
+        margin-bottom: 10px;
+        font-size: 36px;
+    }
+    h3{
+        margin-bottom: 30px;
+        color: rgb(95, 95, 95);
+    }
+}
+.kv-image{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    max-width: 1080px;
+    top: 0;
+    z-index: 0;
 }
 .CTA-contact{
     @include squareCTA;
@@ -109,9 +204,6 @@ section{
     15%{
         transform: translateY(4px);
     }
-    // 30%{
-    //     transform: translateY(5px);
-    // }
     30%{
         transform: translateY(0);
     }
@@ -120,16 +212,11 @@ section{
     }
 }
 .CTA-seemore{
-    position: absolute;
     width: 100%;
-    bottom: 30px;
+    padding-bottom: 30px;
     @include centered;
     flex-wrap: wrap;
     opacity: 0.5;
-
-    // animation-name: CTA-seemore;
-    // animation-duration: 3s;
-    // animation-iteration-count: infinite;
 }
 .CTA-seemore-text{
     text-transform: uppercase;
@@ -151,38 +238,84 @@ $caretHeight: 12px;
     border-bottom: 3px solid $accentColor;
     position: absolute;
     left: calc(50% - #{$caretHeight / 2});
-    top: -$caretHeight / 2;
+    // top: -$caretHeight / 2;
+    top: -5px;
     transform: rotate(45deg);
     background-color: $backgroundColor;
     z-index: -1;
 }
+.about-wrapper{
+    padding: 30px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    p{
+        max-width: 60ch;
+    }
+}
+.about-image-wrapper{
+    min-height: 200px;
+    min-width: 200px;
+    border-radius: 999px;
+    background-color: $accentColor;
+    float: left;
+    margin: 15px;
+    img{
+        opacity: 0;
+    }
+}
+footer{
+    height: $footerHeight;
+    width: 100%;
+    background: $accentColor;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
 
-@media only screen and (max-width: 720px){
+@media only screen and (max-width: 480px){
+    .kv-text{
+        // top: 50px;
+        padding-top: 50px;
+        height: 100%;
+    }
+    .CTA-contact{
+        // bottom: 85px;
+        // left: calc(50% - 72px)
+        bottom: 50px;
+    }
+    .CTA-seemore{
+        display: none;
+    }
     .nav-links-list{
-        // display: none;
         width: 70vw;
         max-width: 300px;
-        height: calc(100% - #{$navHeight});
+        height: calc(100vh - #{$navHeight});
+        position: absolute;
+        top: $navHeight;
         background-color: blue;
         flex-direction: column;
         justify-content: flex-start;
-        position: fixed;
-        z-index: 999;
+        z-index: 8;
         right: 0;
-        transform: translateX(100%);
+        transform: translateX(115%);
         transition: transform 0.2s;
-        box-shadow:0 10px 20px rgba(189, 189, 189, 0), 0 6px 6px rgba(0, 0, 0, 0.15);
+        box-shadow: inset 0 10px 20px rgba(9, 47, 44, 0.3), 0 6px 6px rgba(9, 4, 44, 0.68);
+    }
+    .nav-links-container{
+        margin: 0;
     }
     .nav-links-listItem{
         height: 40px;
         width: 80%;
-        margin-bottom: 20px;
+        margin-bottom: 9vh;
+        border: none;
+        border-bottom: 2px solid white;
     }
     .nav-links-listItem:first-of-type{
-        margin-top: 40px;
+        margin-top: 15vh;
     }
     .links-list-display{
-        // display: flex;
+        
         transform: translateX(0);
     }
     .nav-links-hamburger{
@@ -191,4 +324,21 @@ $caretHeight: 12px;
         width: $navHeight;
         background-color: white;
     }
+    .about-wrapper{
+        padding: 20px;
+        p{
+            max-width: 60ch;
+            font-size: 14px;
+        }
+    }
+    .about-image-wrapper{
+        min-height: 80px;
+        min-width: 80px;
+        margin: 7px;
+    }
+    .nav-links-listItem:after{
+        display: none;
+    }
 }
+
+@import 'css/tools'

@@ -1,3 +1,4 @@
+$animationDuration: 15s;
 @keyframes rotateTriangle {
     //CYCLE 1
     0% {
@@ -24,30 +25,34 @@
       transform: rotate(360deg);
     }
   }
-
-$triangleEdge: 300px;
+// $triangleEdge: 30vmax;
+$triangleEdge: 40vmin;
 $squareRootOf3: 1.73205;
-$triangleHeight: ($triangleEdge / 2) * $squareRootOf3;
+$triangleHeight: calc(#{$triangleEdge / 2} * #{$squareRootOf3});
+
+$spinnerContainerHeight: (($triangleEdge * $squareRootOf3) / 3) * 2;
 //circle bound to center the triangle
 .spinner-container{
-    height: (($triangleEdge * $squareRootOf3) / 3) * 2;
-    width: ((($triangleEdge * $squareRootOf3) / 3) * 2) + 200px;
     position: absolute;
     right: 0;
-    top: 0;
+    top: calc(50% - #{$spinnerContainerHeight / 2});
 
     display: flex;
 }
 .circleBound{
     position: relative;
     right: 0;
+    background: white;
 
     width: (($triangleEdge * $squareRootOf3) / 3) * 2;
     height: (($triangleEdge * $squareRootOf3) / 3) * 2;
+    min-width: 200px;
+    min-width: 200px;
     border-radius: 999px;
 
+    will-change: transform;
     animation-name: rotateTriangle;
-    animation-duration: 9s;
+    animation-duration: $animationDuration;
     animation-direction: normal;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -68,7 +73,7 @@ $triangleHeight: ($triangleEdge / 2) * $squareRootOf3;
     top: 0;
     left: calc(50% - #{$triangleEdge / 2});
 }
-$circleHeight: 70px;
+$circleHeight: 7vmax;
 $circleRadius: $circleHeight / 2;
 $circleBorder: 5px;
 
@@ -95,8 +100,8 @@ $circleBorder: 5px;
     100% {
       transform: rotate(-225deg);
     }
-  }
-  @keyframes rotateIcon-pos3{
+}
+@keyframes rotateIcon-pos3{
     0% {
         transform: rotate(15deg); 
     }
@@ -117,10 +122,10 @@ $circleBorder: 5px;
         transform: rotate(-345deg);
     }
     100% {
-      transform: rotate(-345deg);
+        transform: rotate(-345deg);
     }
-  }
-  @keyframes rotateIcon-pos1{
+}
+@keyframes rotateIcon-pos1{
     0% {
         transform: rotate(255deg); 
     }
@@ -142,12 +147,14 @@ $circleBorder: 5px;
         transform: rotate(-105deg);
     }
     100% {
-      transform: rotate(-105deg);
+        transform: rotate(-105deg);
     }
-  }
+}
 .circle{
     height: $circleHeight;
     width: $circleHeight;
+    min-height: 70px;
+    min-width: 70px;
     border-radius: 999px;
     background-color: rgb(183, 183, 255);
     border: $circleBorder solid black;
@@ -156,6 +163,8 @@ $circleBorder: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    will-change: transform;
+    outline: 2px solid transparent;
     img{
         height: 80%;
         width: 80%;
@@ -163,14 +172,10 @@ $circleBorder: 5px;
 }
 //arrow
 .circle::after{
-    content: url('./arrow-2.svg');
-    // content: "";
-    height: 200px;
+    // content: url('./arrow-2.svg');
+    height: $triangleEdge;
     width: $circleHeight;
     position: absolute;
-    bottom: calc(100% + 20px);
-    font-size: 230px;
-
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -194,11 +199,10 @@ $circleBorder: 5px;
         transform: rotate(-30deg);
 
         animation-name: rotateIcon-pos1;
-        animation-duration: 9s;
+        animation-duration: $animationDuration;
         animation-direction: normal;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
-        // animation-delay: 4s;
     }
 }
 .circle-2{
@@ -207,20 +211,18 @@ $circleBorder: 5px;
         transform: rotate(-150deg);
 
         animation-name: rotateIcon-pos2;
-        animation-duration: 9s;
+        animation-duration: $animationDuration;
         animation-direction: normal;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
-        // animation-delay: 4s;
     }
 }
 .circle-3{
     transform: rotate(270deg);
     img{
         transform: rotate(-270deg);
-        // animation-delay: 8s;
         animation-name: rotateIcon-pos3;
-        animation-duration: 9s;
+        animation-duration: $animationDuration;
         animation-direction: normal;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
@@ -228,35 +230,17 @@ $circleBorder: 5px;
 }
 
 .circle-labels{
+    // display: flex;
+    display: none;
+    position: relative;
     flex: 1;
-    display: flex;
-    justify-content: center;
-    padding: 40px;
+    justify-content: flex-end;
     font-size: 30px;
+    width: 120px;
+    margin-right: 20px;
+
+    opacity: 0;
 }
-// @keyframes labelFade {
-//     //CYCLE 1
-//     0% {
-//         opacity: 0;
-//         bottom: 0;
-//     }
-//     7%{
-//         opacity: 1;
-//         bottom: 80%;  
-//     }
-//     33.33%{
-//         opacity: 1;
-//         bottom: 80%;  
-//     }
-//     40.33%{
-//         opacity: 0;
-//         bottom: 160%;  
-//     }
-//     100% {
-//         opacity: 0;
-//         bottom: 160%;  
-//     }
-//   }
 
 @keyframes labelFade {
     //CYCLE 1
@@ -289,10 +273,11 @@ $circleBorder: 5px;
 .circle-label{
     position: absolute;
     bottom: 0;
+    right: 0;
     opacity: 0;
 
     animation-name: labelFade;
-    animation-duration: 9s;
+    animation-duration: $animationDuration;
     animation-direction: normal;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -301,8 +286,8 @@ $circleBorder: 5px;
     animation-delay: 0s;
 }
 .circle-label_2{
-    animation-delay: 3s;
+    animation-delay: $animationDuration / 3;
 }
 .circle-label_3{
-    animation-delay: 6s;
+    animation-delay: ($animationDuration / 3) * 2;
 }

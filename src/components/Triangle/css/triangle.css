@@ -61,11 +61,9 @@
 }
 
 .spinner-container {
-  height: 346.41px;
-  width: 546.41px;
   position: absolute;
   right: 0;
-  top: 0;
+  top: calc(50% - 23.094vmin);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,13 +72,17 @@
 .circleBound {
   position: relative;
   right: 0;
-  width: 346.41px;
-  height: 346.41px;
+  background: white;
+  width: 46.188vmin;
+  height: 46.188vmin;
+  min-width: 200px;
+  min-width: 200px;
   border-radius: 999px;
+  will-change: transform;
   -webkit-animation-name: rotateTriangle;
           animation-name: rotateTriangle;
-  -webkit-animation-duration: 9s;
-          animation-duration: 9s;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-iteration-count: infinite;
@@ -97,14 +99,14 @@
 }
 
 .triangle-wrapper {
-  width: 300px;
-  height: 259.8075px;
+  width: 40vmin;
+  height: calc(20vmin * 1.73205);
   position: relative;
   top: 100px;
   left: 100px;
   position: absolute;
   top: 0;
-  left: calc(50% - 150px);
+  left: calc(50% - 20vmin);
 }
 
 @-webkit-keyframes rotateIcon-pos2 {
@@ -294,8 +296,10 @@
 }
 
 .circle {
-  height: 70px;
-  width: 70px;
+  height: 7vmax;
+  width: 7vmax;
+  min-height: 70px;
+  min-width: 70px;
   border-radius: 999px;
   background-color: #b7b7ff;
   border: 5px solid black;
@@ -311,6 +315,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  will-change: transform;
+  outline: 2px solid transparent;
 }
 
 .circle img {
@@ -319,12 +325,9 @@
 }
 
 .circle::after {
-  content: url("./arrow-2.svg");
-  height: 200px;
-  width: 70px;
+  height: 40vmin;
+  width: 7vmax;
   position: absolute;
-  bottom: calc(100% + 20px);
-  font-size: 230px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -335,18 +338,18 @@
 }
 
 .circle-1 {
-  bottom: -35px;
-  left: -35px;
+  bottom: -3.5vmax;
+  left: -3.5vmax;
 }
 
 .circle-2 {
-  top: -35px;
-  left: calc(50% - 35px);
+  top: -3.5vmax;
+  left: calc(50% - 3.5vmax);
 }
 
 .circle-3 {
-  bottom: -35px;
-  right: -35px;
+  bottom: -3.5vmax;
+  right: -3.5vmax;
 }
 
 .circle-1 {
@@ -359,8 +362,8 @@
           transform: rotate(-30deg);
   -webkit-animation-name: rotateIcon-pos1;
           animation-name: rotateIcon-pos1;
-  -webkit-animation-duration: 9s;
-          animation-duration: 9s;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-iteration-count: infinite;
@@ -379,8 +382,8 @@
           transform: rotate(-150deg);
   -webkit-animation-name: rotateIcon-pos2;
           animation-name: rotateIcon-pos2;
-  -webkit-animation-duration: 9s;
-          animation-duration: 9s;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-iteration-count: infinite;
@@ -399,8 +402,8 @@
           transform: rotate(-270deg);
   -webkit-animation-name: rotateIcon-pos3;
           animation-name: rotateIcon-pos3;
-  -webkit-animation-duration: 9s;
-          animation-duration: 9s;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-iteration-count: infinite;
@@ -410,17 +413,18 @@
 }
 
 .circle-labels {
+  display: none;
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 40px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   font-size: 30px;
+  width: 120px;
+  margin-right: 20px;
+  opacity: 0;
 }
 
 @-webkit-keyframes labelFade {
@@ -480,11 +484,12 @@
 .circle-label {
   position: absolute;
   bottom: 0;
+  right: 0;
   opacity: 0;
   -webkit-animation-name: labelFade;
           animation-name: labelFade;
-  -webkit-animation-duration: 9s;
-          animation-duration: 9s;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-iteration-count: infinite;
@@ -499,12 +504,12 @@
 }
 
 .circle-label_2 {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
 }
 
 .circle-label_3 {
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
 }
 /*# sourceMappingURL=triangle.css.map */

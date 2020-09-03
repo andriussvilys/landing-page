@@ -1,29 +1,57 @@
 import React from 'react'
 import SlickCarousel from './SlickCarousel/SlickCarousel'
+import Badge from '../Tools/Badge'
 import './css/WebsiteExample.css'
 
+
 const WebsiteExample = (props) => {
+    const [open, toggleOpen] = React.useState(props.open)
     const badges = (list) => {
-        return list.map((listItem) => {
-            return <div 
-                className="details-badge"
-                >
-                <span>{listItem}</span>
-            </div>
+        return list.map((listItem, index) => {
+            return <Badge 
+                        key={`websiteExample-${props.id}-${index}`}
+                        section={props.id}
+                        title={listItem.title}
+                        img={listItem.img}
+                    />
         })
     }
     const tags = list => {
-        return list.map(listItem => {
-            return <div 
+        if(list.length > 0){
+            return list.map(listItem => {
+                return <div 
                 className={"details-badge_other"}
-            >
-                <span>{listItem}</span>
-            </div>
-        }) 
+                key={`${props.id}-tag-${listItem}`}
+                >
+                    <span>{listItem}</span>
+                </div>
+            }) 
+        }
+        else return null
     }
-    return(<article className="webExample-container">
+    return(<article className={`webExample-container ${open ? "" : "webExample-hide"}`} id={props.id}>
                 <div className="webExample-wrapper">
-                    <h3 className="webExample-details-title">{props.title}</h3>
+                    <div 
+                    onClick={e => {
+                        e.stopPropagation()
+
+                        const parentBox = document.querySelector(`#${props.id}`)
+                        const contentBox = document.querySelector(`#${props.id} .webExample-content`)
+                        const height = contentBox.clientHeight
+                        const titleHeight = 50
+                        if(open){
+                            parentBox.style = `height: ${height + titleHeight}px`
+                        }
+                        toggleOpen(!open)
+
+                        // console.log(`HEIGHT : ${height}`)
+                    }}
+                    className="webExample-details-title">
+                        <h3 
+                        // className="webExample-details-title"
+                        >• {props.title}</h3>
+
+                    </div>
                     <div className="webExample-content">
 
                         <div className="webExample-carousel-container">
@@ -43,10 +71,11 @@ const WebsiteExample = (props) => {
                             </div>
                             <div className="webExample-details-tags">
                                 <div className="webExample-details-badges">
-                                    {badges(["SASS", "HTML", "JS", "REACT.JS"])}
+                                    {badges(props.badges.badges)}
+                                    {/* {badges(["SASS", "HTML", "JS", "REACT.JS"])} */}
                                 </div>
                                 <div className="webExample-details-other">
-                                    {tags(["React-slick", "node.js", "mongoDB"])}
+                                    {tags(props.badges.other)}
                                 </div>
                             </div>
                             <div className="webExample-details-CTA">

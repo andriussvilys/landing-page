@@ -1,0 +1,454 @@
+@charset "UTF-8";
+@-webkit-keyframes rotateTriangle {
+  0% {
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+  }
+  100% {
+    -webkit-transform: rotate(300deg);
+            transform: rotate(300deg);
+  }
+}
+@keyframes rotateTriangle {
+  0% {
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+  }
+  100% {
+    -webkit-transform: rotate(300deg);
+            transform: rotate(300deg);
+  }
+}
+
+.spinner-container {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 23.094vh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.circleBound {
+  position: relative;
+  right: 0;
+  width: 46.188vh;
+  height: 46.188vh;
+  border-radius: 999px;
+  will-change: transform;
+  -webkit-animation-name: rotateTriangle;
+          animation-name: rotateTriangle;
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.innerCircle {
+  height: 100%;
+  width: 100%;
+  border-radius: 999px;
+  border: 2px solid blue;
+}
+
+.triangle-wrapper {
+  width: 40vh;
+  height: calc(20vh * 1.73205);
+  position: relative;
+  top: 100px;
+  left: 100px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 20vh);
+}
+
+.circle {
+  height: 7vmax;
+  width: 7vmax;
+  min-height: 70px;
+  min-width: 70px;
+  border-radius: 999px;
+  background-color: white;
+  border: 3px solid blue;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  will-change: transform;
+  outline: 2px solid transparent;
+}
+
+.circle img {
+  height: 80%;
+  width: 80%;
+}
+
+.circle-1 {
+  bottom: -3.5vmax;
+  left: -3.5vmax;
+}
+
+.circle-2 {
+  top: -3.5vmax;
+  left: calc(50% - 3.5vmax);
+}
+
+.circle-3 {
+  bottom: -3.5vmax;
+  right: -3.5vmax;
+}
+
+.circle {
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.circle, .circleBound {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rotateIcon-pos1 {
+  0% {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+  100% {
+    -webkit-transform: rotate(-300deg);
+            transform: rotate(-300deg);
+  }
+}
+
+@keyframes rotateIcon-pos1 {
+  0% {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+  }
+  100% {
+    -webkit-transform: rotate(-300deg);
+            transform: rotate(-300deg);
+  }
+}
+
+.circle-1 {
+  -webkit-animation-name: rotateIcon-pos1;
+          animation-name: rotateIcon-pos1;
+}
+
+@-webkit-keyframes rotateIcon-pos2 {
+  0% {
+    -webkit-transform: rotate(150deg);
+            transform: rotate(150deg);
+  }
+  100% {
+    -webkit-transform: rotate(-210deg);
+            transform: rotate(-210deg);
+  }
+}
+
+@keyframes rotateIcon-pos2 {
+  0% {
+    -webkit-transform: rotate(150deg);
+            transform: rotate(150deg);
+  }
+  100% {
+    -webkit-transform: rotate(-210deg);
+            transform: rotate(-210deg);
+  }
+}
+
+.circle-2 {
+  -webkit-animation-name: rotateIcon-pos2;
+          animation-name: rotateIcon-pos2;
+}
+
+@-webkit-keyframes rotateIcon-pos3 {
+  0% {
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+  }
+  100% {
+    -webkit-transform: rotate(-420deg);
+            transform: rotate(-420deg);
+  }
+}
+
+@keyframes rotateIcon-pos3 {
+  0% {
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+  }
+  100% {
+    -webkit-transform: rotate(-420deg);
+            transform: rotate(-420deg);
+  }
+}
+
+.circle-3 {
+  -webkit-animation-name: rotateIcon-pos3;
+          animation-name: rotateIcon-pos3;
+}
+
+.circle:before {
+  content: '•';
+  position: absolute;
+  top: -23px;
+  left: 44%;
+  color: red;
+  font-size: 24px;
+}
+
+.circle-inner {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px;
+}
+
+@-webkit-keyframes circle-inner-after {
+  0% {
+    top: 75%;
+    opacity: 0;
+  }
+  11.11% {
+    top: calc(50% - 12px);
+    opacity: 0.75;
+  }
+  22.22% {
+    top: calc(50% - 12px);
+    opacity: 0.75;
+  }
+  33.33% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes circle-inner-after {
+  0% {
+    top: 75%;
+    opacity: 0;
+  }
+  11.11% {
+    top: calc(50% - 12px);
+    opacity: 0.75;
+  }
+  22.22% {
+    top: calc(50% - 12px);
+    opacity: 0.75;
+  }
+  33.33% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.circle-inner_1:after {
+  content: "IMAGINE";
+  position: absolute;
+  top: calc(50% - 12px);
+  left: -150%;
+  font-size: 24px;
+  line-height: 24px;
+  -webkit-animation-name: circle-inner-after;
+          animation-name: circle-inner-after;
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+
+.circle-inner_2:after {
+  content: "CODE";
+  position: absolute;
+  top: calc(50% - 12px);
+  left: -150%;
+  font-size: 24px;
+  line-height: 24px;
+  -webkit-animation-name: circle-inner-after;
+          animation-name: circle-inner-after;
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 6.3s;
+          animation-delay: 6.3s;
+}
+
+.circle-inner_3:after {
+  content: "PLAN";
+  position: absolute;
+  top: calc(50% - 12px);
+  left: -150%;
+  font-size: 24px;
+  line-height: 24px;
+  -webkit-animation-name: circle-inner-after;
+          animation-name: circle-inner-after;
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
+}
+
+.spinner-container {
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+}
+
+.circle-inner_1 {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+.circle-inner_2 {
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.circle-inner_3 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.circle-labels {
+  display: none;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 30px;
+  width: 120px;
+  margin-right: 20px;
+}
+
+@-webkit-keyframes labelFade {
+  0% {
+    opacity: 0;
+    bottom: 0%;
+  }
+  15% {
+    opacity: 1;
+    bottom: 80%;
+  }
+  33.33% {
+    opacity: 0;
+    bottom: 160%;
+  }
+  66.66% {
+    opacity: 0;
+    bottom: 160%;
+  }
+  100% {
+    opacity: 0;
+    bottom: 160%;
+  }
+}
+
+@keyframes labelFade {
+  0% {
+    opacity: 0;
+    bottom: 0%;
+  }
+  15% {
+    opacity: 1;
+    bottom: 80%;
+  }
+  33.33% {
+    opacity: 0;
+    bottom: 160%;
+  }
+  66.66% {
+    opacity: 0;
+    bottom: 160%;
+  }
+  100% {
+    opacity: 0;
+    bottom: 160%;
+  }
+}
+
+.circle-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-animation-name: labelFade;
+          animation-name: labelFade;
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+.circle-label_1 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.circle-label_2 {
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
+}
+
+.circle-label_3 {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+
+@media only screen and (max-width: 720px) {
+  .spinner-container {
+    right: -45vw;
+    top: 30vh;
+  }
+}
+/*# sourceMappingURL=triangle.css.map */
