@@ -50,6 +50,13 @@
         // height: unset;
         min-height: 200px;
     }
+    .slick-slider{
+        padding: 0 10px 40px 10px;
+    }
+    .slick-arrow{
+        display: none !important;
+    }
+
     .slick-dots li{
         height: 14px;
         width: 14px;

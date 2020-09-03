@@ -7,8 +7,9 @@ import './css/WebsiteExample.css'
 const WebsiteExample = (props) => {
     const [open, toggleOpen] = React.useState(props.open)
     const badges = (list) => {
-        return list.map((listItem) => {
+        return list.map((listItem, index) => {
             return <Badge 
+                        key={`websiteExample-${props.id}-${index}`}
                         section={props.id}
                         title={listItem.title}
                         img={listItem.img}
@@ -33,6 +34,7 @@ const WebsiteExample = (props) => {
                     <div 
                     onClick={e => {
                         e.stopPropagation()
+
                         const parentBox = document.querySelector(`#${props.id}`)
                         const contentBox = document.querySelector(`#${props.id} .webExample-content`)
                         const height = contentBox.clientHeight
@@ -42,14 +44,12 @@ const WebsiteExample = (props) => {
                         }
                         toggleOpen(!open)
 
-                        console.log(`HEIGHT : ${height}`)
-
-                        // document.getElementById(props.id).classList.toggle("webExample-hide")
+                        // console.log(`HEIGHT : ${height}`)
                     }}
                     className="webExample-details-title">
                         <h3 
                         // className="webExample-details-title"
-                        >{props.title}</h3>
+                        >• {props.title}</h3>
 
                     </div>
                     <div className="webExample-content">

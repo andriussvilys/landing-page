@@ -1,9 +1,12 @@
 // @import url('https://fonts.googleapis.com/css?family=Rubik+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Rubik');
-$backgroundColor: rgb(226, 233, 243);
+// $backgroundColor: rgb(226, 233, 243);
+$backgroundColor: white;
 $marginLeft: 30px;
 $marginRight: 30px;
 $navHeight: 43px;
+$headlineHeight: 50px;
+$footerHeight: 80px;
 *{
     padding: 0;
     margin: 0;
@@ -42,7 +45,7 @@ $accentColor: blue;
     padding: 15px 30px;
     border-radius: 99px;
     border: 4px solid $accentColor;
-    box-shadow: 0 5px 25px rgba(0, 0, 255, 0.30), 0 6px 6px rgba(255, 127, 0, 0.12);
+    box-shadow: 0px 3px 10px rgba(14, 14, 14, 0.3), 0 6px 6px rgba(255, 255, 255, 0.12);
 }
 .headline{
     display: flex;
@@ -50,9 +53,11 @@ $accentColor: blue;
     width: 100%;
     font-size: 24px;
     text-transform: uppercase;
-    height: 50px;
-    background: white;
-    padding: 30px 20px;
+    height: $headlineHeight;
+    background: $accentColor;
+    color: white;
+    padding: 25px $marginLeft;
+    max-height: $headlineHeight;
 }
 .App{
     // display: grid;
@@ -64,10 +69,10 @@ main{
     overflow-x: hidden;
     grid-row-start: 2;
     grid-row-end: 3;
-    height: calc(100vh - #{$navHeight});
+    height: calc(100% - #{$navHeight});
     display: grid;
     grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
-    grid-template-rows: [kv] 100%;
+    grid-template-rows: [kv] 100% [examples] auto [toolbox] auto [about] calc(100% - #{$footerHeight});
     scroll-behavior: smooth;
     margin-top: $navHeight;
     section{
@@ -120,12 +125,13 @@ main{
     position: absolute;
     bottom: 5px;
     // left: -100%;
-    transform: translateX(-100%);
+    transform: translateX(-120%);
+    transition-timing-function: ease-in-out;
 }
 .nav-links-listItem:hover::after{
     left: 0;
     transform: translateX(0);
-    transition: transform 0.1s;
+    transition: transform 0.25s;
     transition-timing-function: ease-out;
     // border-bottom: 2px solid white;
 }
@@ -257,8 +263,8 @@ $caretHeight: 12px;
         opacity: 0;
     }
 }
-.footer{
-    height: 80px;
+footer{
+    height: $footerHeight;
     width: 100%;
     background: $accentColor;
     grid-column-start: 1;
@@ -267,12 +273,14 @@ $caretHeight: 12px;
 
 @media only screen and (max-width: 480px){
     .kv-text{
-        top: 50px;
+        // top: 50px;
+        padding-top: 50px;
         height: 100%;
     }
     .CTA-contact{
-        bottom: 85px;
-        left: calc(50% - 72px)
+        // bottom: 85px;
+        // left: calc(50% - 72px)
+        bottom: 50px;
     }
     .CTA-seemore{
         display: none;
@@ -288,12 +296,12 @@ $caretHeight: 12px;
         justify-content: flex-start;
         z-index: 8;
         right: 0;
-        transform: translateX(100%);
+        transform: translateX(115%);
         transition: transform 0.2s;
         box-shadow: inset 0 10px 20px rgba(9, 47, 44, 0.3), 0 6px 6px rgba(9, 4, 44, 0.68);
     }
     .nav-links-container{
-        margin-right: 0;
+        margin: 0;
     }
     .nav-links-listItem{
         height: 40px;

@@ -12,13 +12,19 @@ const Triangle = () => {
                         <div className="innerCircle">
                             <div className="triangle-wrapper">
                                 <div className="circle circle-1">
-                                    <img src="triangle/write-emoji.png" alt="write emoji" />
+                                    <div className="circle-inner circle-inner_1">
+                                        <img src="triangle/lightbulb-emoji.png" alt="lightbulb emoji" />
+                                    </div>
                                 </div>
                                 <div className="circle circle-2">
-                                    <img src="triangle/plan-emoji.png" alt="map emoji" />
+                                    <div className="circle-inner circle-inner_2">
+                                        <img src="triangle/write-emoji.png" alt="write emoji" />
+                                    </div>
                                 </div>
                                 <div className="circle circle-3">
-                                    <img src="triangle/lightbulb-emoji.png" alt="lightbulb emoji" />
+                                    <div className="circle-inner circle-inner_3">
+                                        <img src="triangle/plan-emoji.png" alt="map emoji" />
+                                    </div>
                                 </div>
                             </div>
                         </div>

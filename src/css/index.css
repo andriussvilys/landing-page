@@ -24,7 +24,7 @@ html, body, #root, .App {
 }
 
 body {
-  background-color: #e2e9f3;
+  background-color: white;
 }
 
 .headline {
@@ -38,8 +38,10 @@ body {
   font-size: 24px;
   text-transform: uppercase;
   height: 50px;
-  background: white;
-  padding: 30px 20px;
+  background: blue;
+  color: white;
+  padding: 25px 30px;
+  max-height: 50px;
 }
 
 main {
@@ -47,13 +49,13 @@ main {
   -ms-grid-row: 2;
       grid-row-start: 2;
   grid-row-end: 3;
-  height: calc(100vh - 43px);
+  height: calc(100% - 43px);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
       grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
-  -ms-grid-rows: [kv] 100%;
-      grid-template-rows: [kv] 100%;
+  -ms-grid-rows: [kv] 100% [examples] auto [toolbox] auto [about] calc(100% - 80px);
+      grid-template-rows: [kv] 100% [examples] auto [toolbox] auto [about] calc(100% - 80px);
   scroll-behavior: smooth;
   margin-top: 43px;
 }
@@ -131,18 +133,20 @@ main section {
   background: white;
   position: absolute;
   bottom: 5px;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  -webkit-transform: translateX(-120%);
+          transform: translateX(-120%);
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
 }
 
 .nav-links-listItem:hover::after {
   left: 0;
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  -webkit-transition: -webkit-transform 0.1s;
-  transition: -webkit-transform 0.1s;
-  transition: transform 0.1s;
-  transition: transform 0.1s, -webkit-transform 0.1s;
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
 }
@@ -245,8 +249,8 @@ section {
   padding: 15px 30px;
   border-radius: 99px;
   border: 4px solid blue;
-  -webkit-box-shadow: 0 5px 25px rgba(0, 0, 255, 0.3), 0 6px 6px rgba(255, 127, 0, 0.12);
-          box-shadow: 0 5px 25px rgba(0, 0, 255, 0.3), 0 6px 6px rgba(255, 127, 0, 0.12);
+  -webkit-box-shadow: 0px 3px 10px rgba(14, 14, 14, 0.3), 0 6px 6px rgba(255, 255, 255, 0.12);
+          box-shadow: 0px 3px 10px rgba(14, 14, 14, 0.3), 0 6px 6px rgba(255, 255, 255, 0.12);
 }
 
 @-webkit-keyframes CTA-seemore {
@@ -328,7 +332,7 @@ section {
   top: -5px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  background-color: #e2e9f3;
+  background-color: white;
   z-index: -1;
 }
 
@@ -353,7 +357,7 @@ section {
   opacity: 0;
 }
 
-.footer {
+footer {
   height: 80px;
   width: 100%;
   background: blue;
@@ -364,12 +368,11 @@ section {
 
 @media only screen and (max-width: 480px) {
   .kv-text {
-    top: 50px;
+    padding-top: 50px;
     height: 100%;
   }
   .CTA-contact {
-    bottom: 85px;
-    left: calc(50% - 72px);
+    bottom: 50px;
   }
   .CTA-seemore {
     display: none;
@@ -390,8 +393,8 @@ section {
             justify-content: flex-start;
     z-index: 8;
     right: 0;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(115%);
+            transform: translateX(115%);
     -webkit-transition: -webkit-transform 0.2s;
     transition: -webkit-transform 0.2s;
     transition: transform 0.2s;
@@ -400,7 +403,7 @@ section {
             box-shadow: inset 0 10px 20px rgba(9, 47, 44, 0.3), 0 6px 6px rgba(9, 4, 44, 0.68);
   }
   .nav-links-container {
-    margin-right: 0;
+    margin: 0;
   }
   .nav-links-listItem {
     height: 40px;
@@ -506,7 +509,11 @@ section {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   border-bottom: 1px solid #bdbdbd;
-  padding: 10px 20px 5px 0;
+  padding: 10px 20px 15px 0;
+}
+
+.tools-wrapper:last-of-type {
+  border-bottom: 0;
 }
 
 .tools-items {

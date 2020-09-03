@@ -53,6 +53,9 @@ function App() {
         </section>
 
         <section id="examples">
+          <h1 className="headline">
+            EXAMPLES
+          </h1>
           <WebsiteExample 
             open={true}
             id={"personal-website"}
@@ -173,6 +176,7 @@ function App() {
         </section>
 
         <section id="tools" >
+          <h1 className="headline">Toolbox</h1>
             <Tools 
               data={[
                 {
@@ -230,7 +234,7 @@ function App() {
         </section>
         <section id="about">
           <h1 className="headline">
-            ABOUT:
+            ABOUT
           </h1>
           <div className="about-wrapper">
             <div className="about-image-wrapper">
@@ -242,11 +246,9 @@ function App() {
               </p>
             </div>
         </section>
-
-        <div className="footer"></div>
+      <footer></footer>
       </main>
 
-      <footer></footer>
     </div>
   );
 }

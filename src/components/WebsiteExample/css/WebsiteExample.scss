@@ -1,21 +1,24 @@
 $navHeight: 43px;
-$carouselBG: #1c1c23;
+$carouselBG: #161641;
 $webExampleTitle: 50px;
+$accordionAccent: white;
 .webExample-container{
-    // height: 100%;
-    // max-height: calc(100vh - #{$navHeight});
-    // min-height: calc(100vh - #{$navHeight});
     overflow: hidden;
     position: relative;
-    border-bottom: 1px solid white;
-    background: #1c1c23;
+    border-bottom: 1px solid #d6d6d680;
+    background: $carouselBG;
+    transition: height 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.webExample-container:last-of-type{
+    border: 0;
 }
 .webExample-details-title{
     user-select: none;
     cursor: pointer;
-    padding-left: 20px;
-    background-color: #121216;
-    color: white;
+    padding-left: 30px;
+    background-color: #007;
+    color: $accordionAccent;
     width: 100%;
     position: relative;
     height: $webExampleTitle;
@@ -126,7 +129,7 @@ $webExampleTitle: 50px;
 
 .webExample-details-title:after{
     content: "▲";
-    color: white;
+    color: $accordionAccent;
     position: absolute;
     right: 35px;
     top: calc(50% - 7px);
@@ -148,7 +151,6 @@ $webExampleTitle: 50px;
     display: flex;
 }
 .details-CTA-button{
-    background: white;
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
@@ -187,10 +189,6 @@ $webExampleTitle: 50px;
 
 // @media only screen and (max-width: 720px){
 @media only screen and (max-width: 720px){
-    .webExample-container{
-        // height: unset;
-        // max-height: unset;
-    }
     .webExample-wrapper{
         height: unset;
     }

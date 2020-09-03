@@ -3,19 +3,22 @@ import Badge from './Badge'
 
 const Tools = props => {
     const renderRow = (title, list) => {
-        return(<div className="tools-wrapper">
-        <div className="tools-title"><span>{title}:</span></div>
-            <div className="tools-items">
-                    {list.map((listItem) => {
-                        return <Badge 
-                            section={title}
-                            title={listItem.title}
-                            img={listItem.img}
-                        />
-                        })
-                    }
-            </div>
-    </div>)
+        return(<div 
+                key={`tools-${title}`}
+                className="tools-wrapper">
+                <div className="tools-title"><span>{title}:</span></div>
+                    <div className="tools-items">
+                            {list.map((listItem, index) => {
+                                return <Badge 
+                                    key={`tools-${title}-${listItem.title}-${index}`}
+                                    section={title}
+                                    title={listItem.title}
+                                    img={listItem.img}
+                                />
+                                })
+                            }
+                    </div>
+            </div>)
     }
     const renderAll = (data) => {
         return data.map(obj => {
@@ -25,7 +28,6 @@ const Tools = props => {
           
     return ( <div className="webExample-tools-container">
                 {/* <div className="webExample-tools-headline">Toolbox:</div> */}
-                <h1 className="headline">Toolbox:</h1>
                 <div className="webExample-tools-wrapper">
                     {renderAll(props.data)}
                 </div>
