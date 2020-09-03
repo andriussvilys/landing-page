@@ -38,12 +38,13 @@
   will-change: transform;
   -webkit-animation-name: rotateTriangle;
           animation-name: rotateTriangle;
-  -webkit-animation-duration: 9s;
-          animation-duration: 9s;
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .innerCircle {
@@ -109,8 +110,8 @@
 }
 
 .circle {
-  -webkit-animation-duration: 9s;
-          animation-duration: 9s;
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-timing-function: linear;
@@ -229,13 +230,19 @@
 
 @-webkit-keyframes circle-inner-after {
   0% {
+    top: 75%;
     opacity: 0;
   }
-  33.33% {
+  11.11% {
+    top: calc(50% - 12px);
     opacity: 0.75;
   }
-  66.66% {
-    opacity: 1;
+  22.22% {
+    top: calc(50% - 12px);
+    opacity: 0.75;
+  }
+  33.33% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
@@ -244,13 +251,19 @@
 
 @keyframes circle-inner-after {
   0% {
+    top: 75%;
     opacity: 0;
   }
-  33.33% {
+  11.11% {
+    top: calc(50% - 12px);
     opacity: 0.75;
   }
-  66.66% {
-    opacity: 1;
+  22.22% {
+    top: calc(50% - 12px);
+    opacity: 0.75;
+  }
+  33.33% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
@@ -258,7 +271,7 @@
 }
 
 .circle-inner_1:after {
-  content: "CIRCLE";
+  content: "IMAGINE";
   position: absolute;
   top: calc(50% - 12px);
   left: -150%;
@@ -266,20 +279,20 @@
   line-height: 24px;
   -webkit-animation-name: circle-inner-after;
           animation-name: circle-inner-after;
-  -webkit-animation-duration: 4.5s;
-          animation-duration: 4.5s;
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
 }
 
 .circle-inner_2:after {
-  content: "CIRCLE";
+  content: "CODE";
   position: absolute;
   top: calc(50% - 12px);
   left: -150%;
@@ -287,20 +300,20 @@
   line-height: 24px;
   -webkit-animation-name: circle-inner-after;
           animation-name: circle-inner-after;
-  -webkit-animation-duration: 4.5s;
-          animation-duration: 4.5s;
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 6.3s;
+          animation-delay: 6.3s;
 }
 
 .circle-inner_3:after {
-  content: "CIRCLE";
+  content: "PLAN";
   position: absolute;
   top: calc(50% - 12px);
   left: -150%;
@@ -308,16 +321,16 @@
   line-height: 24px;
   -webkit-animation-name: circle-inner-after;
           animation-name: circle-inner-after;
-  -webkit-animation-duration: 4.5s;
-          animation-duration: 4.5s;
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
 }
 
 .spinner-container {
@@ -407,8 +420,8 @@
   opacity: 0;
   -webkit-animation-name: labelFade;
           animation-name: labelFade;
-  -webkit-animation-duration: 9s;
-          animation-duration: 9s;
+  -webkit-animation-duration: 6.3s;
+          animation-duration: 6.3s;
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-iteration-count: infinite;
@@ -423,13 +436,13 @@
 }
 
 .circle-label_2 {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
 }
 
 .circle-label_3 {
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
 }
 
 @media only screen and (max-width: 720px) {

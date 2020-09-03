@@ -1,5 +1,5 @@
 $borderColor: blue;
-$animationDuration: 9s;
+$animationDuration: 6.3s;
 $triangleEdge: 40vh;
 $squareRootOf3: 1.73205;
 $triangleHeight: calc(#{$triangleEdge / 2} * #{$squareRootOf3});
@@ -42,6 +42,7 @@ $circle-3-angle: -60deg;
     animation-direction: normal;
     // animation-iteration-count: infinite;
     animation-timing-function: linear;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 .innerCircle{
     height: 100%;
@@ -154,7 +155,7 @@ $circleBorder: 3px;
 
 $circleAfterLineHeight: 24px;
 @mixin  circleAfter {
-    content: "CIRCLE";
+    // content: "CIRCLE";
     position: absolute;
     top: calc(50% - #{$circleAfterLineHeight / 2});
     left: -150%;
@@ -197,16 +198,21 @@ $circleAfterLineHeight: 24px;
 // }
 @keyframes circle-inner-after{
     0%{
-        // top: 200%;
+        top: 75%;
         opacity: 0;
     }
-    33.33%{
-        // top: calc(50% - #{$circleAfterLineHeight / 2});
+    11.11%{
+        top: calc(50% - 12px);
         opacity: 0.75;
     }
-    66.66%{
+    22.22%{
+        top: calc(50% - 12px);
+        opacity: 0.75;
+    }
+    33.33%{
+        // top: -200%;
         // top: calc(50% - #{$circleAfterLineHeight / 2});
-        opacity: 1;
+        opacity: 0;
     }
     100%{
         // top: -200%;
@@ -215,22 +221,25 @@ $circleAfterLineHeight: 24px;
 }
 @mixin  circleAfterAnim{
     animation-name: circle-inner-after;
-    animation-duration: $animationDuration / 2;
+    animation-duration: $animationDuration;
     animation-direction: normal;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 .circle-inner_1:after{
-    @include circleAfter();
-    @include circleAfterAnim();
-    animation-delay: ($animationDuration / 3) * 0;
-}
-.circle-inner_2:after{
+    content:"IMAGINE";
     @include circleAfter();
     @include circleAfterAnim();
     animation-delay: ($animationDuration / 3) * 1;
 }
+.circle-inner_2:after{
+    content:"CODE";
+    @include circleAfter();
+    @include circleAfterAnim();
+    animation-delay: ($animationDuration / 3) * 3;
+}
 .circle-inner_3:after{
+    content:"PLAN";
     @include circleAfter();
     @include circleAfterAnim();
     animation-delay: ($animationDuration / 3) * 2;
@@ -240,19 +249,12 @@ $circleAfterLineHeight: 24px;
         transform: rotate($container-angle);
     }
     .circle-inner_1{
-        // transform: rotate(#{$circle-1-angle + $container-angle});
-        // transform: rotate(-$circle-1-angle);
         transform: rotate(60deg);
     }
     .circle-inner_2{
-        // transform: rotate(#{$circle-2-angle + $container-angle});
-        // transform: rotate(-150deg);
-        // transform: rotate($container-angle);
         transform: rotate(-30deg);
     }
     .circle-inner_3{
-        // transform: rotate(#{$circle-2-angle + $container-angle});
-        // transform: rotate(60deg);
         transform: rotate(180deg);    
     }
 
@@ -281,10 +283,6 @@ $circleAfterLineHeight: 24px;
         opacity: 0;
         bottom: 160%;  
     }
-    // 40.33%{
-    //     opacity: 0;
-    //     bottom: 160%;  
-    // }
     66.66% {
         opacity: 0;
         bottom: 160%;
@@ -310,10 +308,10 @@ $circleAfterLineHeight: 24px;
     animation-delay: 0s;
 }
 .circle-label_2{
-    animation-delay: $animationDuration / 3;
+    animation-delay: ($animationDuration / 3) * 2;
 }
 .circle-label_3{
-    animation-delay: ($animationDuration / 3) * 2;
+    animation-delay: ($animationDuration / 3);
 }
 
 @media only screen and (max-width: 720px){
