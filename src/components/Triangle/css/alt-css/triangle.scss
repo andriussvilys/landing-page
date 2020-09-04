@@ -1,4 +1,5 @@
 $borderColor: blue;
+// $animationDuration: 30s;
 $animationDuration: 6.3s;
 $triangleEdge: 40vh;
 $squareRootOf3: 1.73205;
@@ -8,16 +9,19 @@ $spinnerContainerHeight: (($triangleEdge * $squareRootOf3) / 3) * 2;
 $container-angle: -60deg;
 
 $circle-1-angle: 60deg;
-$circle-2-angle: 150deg;
-$circle-3-angle: -60deg;
+$circle-2-angle: 60deg;
+$circle-3-angle: 60deg;
 
 @keyframes rotateTriangle {
     //CYCLE 1
     0% {
-        transform: rotate($container-angle);
+        transform: rotate(0);
+    }
+    10%{
+        background-color: transparent;
     }
     100% {
-        transform: rotate(#{360deg + $container-angle});
+        transform: rotate(360deg);
     }
 }
 //circle bound to center the triangle
@@ -111,21 +115,21 @@ $circleBorder: 3px;
 .spinner-container{
     // transform: rotate(-60deg);
 }
-// @keyframes rotateIcon-pos1{
-//     0%{
-//         transform: rotate(60deg);
-//     }
-//     100%{
-//         transform: rotate(-300deg);
-//     }
-// }
 @keyframes rotateIcon-pos1{
+    // 0%{
+    //     transform: rotate($circle-1-angle);
+    // }
+    // 100%{
+    //     transform: rotate(#{$circle-1-angle - 360deg});
+    // }
+    
     0%{
-        transform: rotate($circle-1-angle);
+        transform: rotate(0);
     }
     100%{
-        transform: rotate(#{$circle-1-angle - 360deg});
+        transform: rotate(-360deg);
     }
+    
 }
 .circle-1{
     animation-name: rotateIcon-pos1;
@@ -139,18 +143,24 @@ $circleBorder: 3px;
     }
 }
 .circle-2{
-    animation-name: rotateIcon-pos2;
+    animation-name: rotateIcon-pos1;
 }
 @keyframes rotateIcon-pos3{
     0%{
-        transform: rotate($circle-3-angle);
+        transform: rotate(30deg);
     }
     100%{
-        transform: rotate(#{$circle-3-angle - 360deg});
+        transform: rotate(-330deg);
     }
+    // 0%{
+    //     transform: rotate($circle-3-angle);
+    // }
+    // 100%{
+    //     transform: rotate(#{$circle-3-angle - 360deg});
+    // }
 }
 .circle-3{
-    animation-name: rotateIcon-pos3;
+    animation-name: rotateIcon-pos1;
 }
 
 $circleAfterLineHeight: 24px;
@@ -161,6 +171,7 @@ $circleAfterLineHeight: 24px;
     left: -150%;
     font-size: 24px;
     line-height: 24px;
+    display: none;
 }
 .circle:before{
     content: '•';
@@ -178,24 +189,6 @@ $circleAfterLineHeight: 24px;
     justify-content: center;
     padding: 5px;
 }
-// @keyframes circle-inner-after{
-//     0%{
-//         top: 200%;
-//         opacity: 0;
-//     }
-//     66.66%{
-//         top: 200%;
-//         opacity: 0;
-//     }
-//     83.31%{
-//         top: calc(50% - #{$circleAfterLineHeight});
-//         opacity: 1;
-//     }
-//     100%{
-//         top: -200%;
-//         opacity: 0;
-//     }
-// }
 @keyframes circle-inner-after{
     0%{
         top: 75%;
@@ -230,19 +223,19 @@ $circleAfterLineHeight: 24px;
     content:"IMAGINE";
     @include circleAfter();
     @include circleAfterAnim();
-    animation-delay: ($animationDuration / 3) * 1;
+    animation-delay: ($animationDuration / 3) * 0;
 }
 .circle-inner_2:after{
     content:"CODE";
     @include circleAfter();
     @include circleAfterAnim();
-    animation-delay: ($animationDuration / 3) * 3;
+    animation-delay: ($animationDuration / 3) * 2;
 }
 .circle-inner_3:after{
     content:"PLAN";
     @include circleAfter();
     @include circleAfterAnim();
-    animation-delay: ($animationDuration / 3) * 2;
+    animation-delay: ($animationDuration / 3) * 1;
 }
 
     .spinner-container{
@@ -252,66 +245,66 @@ $circleAfterLineHeight: 24px;
         transform: rotate(60deg);
     }
     .circle-inner_2{
-        transform: rotate(-30deg);
+        transform: rotate($circle-2-angle);
     }
     .circle-inner_3{
-        transform: rotate(180deg);    
+        transform: rotate($circle-3-angle);    
     }
 
 //LABELS ------------------------------------------------------
-.circle-labels{
-    // display: flex;
-    display: none;
-    position: relative;
-    flex: 1;
+$labelHeight: 30px;
+.circle-label-wrapper{
+    display: flex;
+    position: absolute;
+    flex: 1 1;
     justify-content: flex-end;
-    font-size: 30px;
+    font-size: $labelHeight;
     width: 120px;
     margin-right: 20px;
+    height: $labelHeight;
+    align-items: center;
+    right: 100%;
 }
-@keyframes labelFade {
-    //CYCLE 1
-    0% {
-        opacity: 0;
-        bottom: 0%;
-    }
-   15%{
-        opacity: 1;
-        bottom: 80%;
-    }
-    33.33%{
-        opacity: 0;
-        bottom: 160%;  
-    }
-    66.66% {
-        opacity: 0;
-        bottom: 160%;
-    }
-    100%{
-        opacity: 0;
-        bottom: 160%;  
-    }
-  }
 .circle-label{
     position: absolute;
     bottom: 0;
     right: 0;
+    line-height: $labelHeight;
     opacity: 0;
+    // opacity: 0;
 
     animation-name: labelFade;
     animation-duration: $animationDuration;
     animation-direction: normal;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    // animation-timing-function: ease-in-out;
 }
+@keyframes labelFade {
+        0%{
+        opacity: 0;
+    }
+        10%{
+        opacity: 0;
+    }
+        30%{
+        opacity: 1;
+    }
+        50%{
+        opacity: 0;
+    }
+        100%{
+        opacity: 0;
+    }
+  }
+
 .circle-label_1{
-    animation-delay: 0s;
+    animation-delay: ($animationDuration / 3) * 0;
 }
 .circle-label_2{
     animation-delay: ($animationDuration / 3) * 2;
 }
 .circle-label_3{
-    animation-delay: ($animationDuration / 3);
+    animation-delay: ($animationDuration / 3) * 1;
 }
 
 @media only screen and (max-width: 720px){
