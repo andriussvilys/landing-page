@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 // $backgroundColor: rgb(226, 233, 243);
 $backgroundColor: #f9f9f9;
+$accentColor: #1a1ad7;
+$primary: #1a1ad7;
 $marginLeft: 30px;
 $marginRight: 30px;
 $navHeight: 43px;
@@ -30,7 +32,6 @@ html,body,#root,.App{
 body{
     background-color: $backgroundColor;
 }
-$accentColor: blue;
 @mixin centered{
     display: flex;
     justify-content: center;
@@ -60,26 +61,14 @@ $accentColor: blue;
     padding: 25px $marginLeft;
     max-height: $headlineHeight;
 }
-.App{
-    // display: grid;
-    // grid-template-rows: min-content 1fr min-content;
-    // grid-template-columns: 100%;
-}
 main{
     // overflow-y: auto;
     overflow-x: hidden;
     grid-row-start: 2;
     grid-row-end: 3;
     height: calc(100% - #{$navHeight});
-    display: grid;
-    grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
-    grid-template-rows: [kv] 100% [examples] auto [toolbox] auto [about] minmax(calc(100% - 80px), auto);;
     scroll-behavior: smooth;
     margin-top: $navHeight;
-    section{
-        grid-column-start: 1;
-        grid-column-end: 5;
-    }
 }
 .nav-container{
     position: fixed;
@@ -88,9 +77,8 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: blue;
+    background-color: $accentColor;
     box-shadow: 0 10px 20px rgba(13, 42, 142, 0.19), 0 6px 6px rgba(9, 4, 44, 0.12);
-    // position: absolute;
     z-index: 999;
 }
 .nav-links-container{
@@ -149,23 +137,15 @@ main{
     padding: 0 $marginLeft;
     @include centered;
 }
-section{
-    height: 100%;
-}
-
 .kv-container{
     height: 100%;
     @include centered;
     position: relative;
+    padding: 0 30px;
 
     display: grid;
     grid-template-rows: 1fr min-content;
     grid-template-columns: 100%;
-
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 3;
-    grid-column-end: 4;
 }
 .kv-wrapper{
     position: relative;
@@ -243,16 +223,21 @@ $caretHeight: 12px;
     background-color: $backgroundColor;
     z-index: -1;
 }
+.about-container{
+    min-height: calc(100% - 80px);
+}
 .about-wrapper{
     padding: 30px;
     display: flex;
-    p{
-        max-width: 60ch;
-    }
+}
+.about-description{
+    max-width: 60ch;
 }
 .about-image-wrapper{
-    min-height: 200px;
-    min-width: 200px;
+    height: 15vw;
+    width: 15vw;
+    min-width: 15vw;
+    min-height: 15vw;
     border-radius: 999px;
     background-color: $accentColor;
     float: left;
@@ -261,6 +246,8 @@ $caretHeight: 12px;
     align-self: flex-start;
     img{
         opacity: 0;
+        height: 100%;
+        width: 100%;
     }
 }
 footer{
@@ -324,6 +311,7 @@ footer{
         background-color: white;
     }
     .about-wrapper{
+        display: block;
         padding: 20px;
         p{
             max-width: 60ch;
@@ -331,9 +319,10 @@ footer{
         }
     }
     .about-image-wrapper{
-        min-height: 80px;
-        min-width: 80px;
-        margin: 7px;
+        height: 25vw;
+        width: 25vw;
+        margin-right: 10px;
+        margin-bottom: 5px;
     }
     .nav-links-listItem:after{
         display: none;
