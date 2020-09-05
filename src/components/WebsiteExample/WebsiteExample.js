@@ -6,6 +6,7 @@ import './css/WebsiteExample.css'
 
 const WebsiteExample = (props) => {
     const [open, toggleOpen] = React.useState(props.open)
+    const [fullSize, toggleFullSize] = React.useState(false)
     const badges = (list) => {
         return list.map((listItem, index) => {
             return <Badge 
@@ -54,16 +55,23 @@ const WebsiteExample = (props) => {
                     </div>
                     <div className="webExample-content">
 
-                        <div className="webExample-carousel-container">
+                        <div className={`webExample-carousel-container ${fullSize ? "webExample-carousel_fullWidth" : ""}`}>
                             <SlickCarousel 
                                 assetDir={props.assetDir}
                                 imageList={props.imageList}
                             />
-                            <div className="webExample-carousel-sizeToggle"
+                            <div 
+                            title={`Click to ${fullSize ? "shrink" : "expand"}`}
+                            className="webExample-carousel-sizeToggle"
                                 onClick={e => {
-                                    e.target.parentNode.classList.toggle("webExample-carousel_fullWidth")
+                                    toggleFullSize(!fullSize)
+                                    // e.target.parentNode.classList.toggle("webExample-carousel_fullWidth")
                                 }}
-                            ></div>
+                            >
+                                <img 
+                                src={`icons/${fullSize ? "shrink_new.png" : "expand_new.png"}`}  
+                                alt={fullSize ? "shrink" : "expand"}/>
+                            </div>
                         </div>
                         <div className="webExample-details-container">
                             <div className="webExample-details-description">
