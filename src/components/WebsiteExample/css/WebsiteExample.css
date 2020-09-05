@@ -109,7 +109,7 @@
   height: 100%;
   position: relative;
   overflow: hidden;
-  max-height: calc(100vh - (43px + 50px));
+  max-height: calc(100vh - (143px));
 }
 
 .webExample-carousel-slide {
@@ -163,7 +163,7 @@
           flex-direction: column;
   padding: 30px;
   background-color: white;
-  min-height: calc(100vh - 93px);
+  min-height: calc(100vh - 143px);
 }
 
 .webExample-details-description {

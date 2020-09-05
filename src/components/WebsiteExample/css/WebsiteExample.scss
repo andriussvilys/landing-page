@@ -1,6 +1,7 @@
 $navHeight: 43px;
 $carouselBG: #161641;
 $webExampleTitle: 50px;
+$mainHeadlineHeight: 50px;
 $accordionAccent: white;
 .webExample-container{
     overflow: hidden;
@@ -75,7 +76,7 @@ $accordionAccent: white;
     height: 100%;
     position: relative;
     overflow: hidden;
-    max-height: calc(100vh - (#{$navHeight} + #{$webExampleTitle}));
+    max-height: calc(100vh - (#{$navHeight + $webExampleTitle + $mainHeadlineHeight}));
 }
 .webExample-carousel-slide{
     position: relative;
@@ -115,7 +116,7 @@ $accordionAccent: white;
     flex-direction: column;
     padding: 30px;
     background-color: white;
-    min-height: calc(100vh - #{$navHeight + $webExampleTitle});
+    min-height: calc(100vh - #{$navHeight + $webExampleTitle + $mainHeadlineHeight});
 }
 .webExample-details-description{
     // min-width: 35ch;

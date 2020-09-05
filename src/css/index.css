@@ -38,7 +38,7 @@ body {
   font-size: 24px;
   text-transform: uppercase;
   height: 50px;
-  background: blue;
+  background: #1a1ad7;
   color: white;
   padding: 25px 30px;
   max-height: 50px;
@@ -50,20 +50,8 @@ main {
       grid-row-start: 2;
   grid-row-end: 3;
   height: calc(100% - 43px);
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
-      grid-template-columns: [indent] 10px [content margin] 20px [content] calc(100% - 50px) [content margin] 20px;
-  -ms-grid-rows: [kv] 100% [examples] auto [toolbox] auto [about] minmax(calc(100% - 80px), auto);
-      grid-template-rows: [kv] 100% [examples] auto [toolbox] auto [about] minmax(calc(100% - 80px), auto);
   scroll-behavior: smooth;
   margin-top: 43px;
-}
-
-main section {
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 5;
 }
 
 .nav-container {
@@ -79,7 +67,7 @@ main section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: blue;
+  background-color: #1a1ad7;
   -webkit-box-shadow: 0 10px 20px rgba(13, 42, 142, 0.19), 0 6px 6px rgba(9, 4, 44, 0.12);
           box-shadow: 0 10px 20px rgba(13, 42, 142, 0.19), 0 6px 6px rgba(9, 4, 44, 0.12);
   z-index: 999;
@@ -173,10 +161,6 @@ main section {
           align-items: center;
 }
 
-section {
-  height: 100%;
-}
-
 .kv-container {
   height: 100%;
   display: -webkit-box;
@@ -189,6 +173,7 @@ section {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  padding: 0 30px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr min-content;
@@ -196,12 +181,6 @@ section {
       grid-template-rows: 1fr min-content;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  grid-row-end: 2;
-  -ms-grid-column: 3;
-      grid-column-start: 3;
-  grid-column-end: 4;
 }
 
 .kv-wrapper {
@@ -247,7 +226,7 @@ section {
   cursor: pointer;
   padding: 15px 30px;
   border-radius: 99px;
-  border: 4px solid blue;
+  border: 4px solid #1a1ad7;
   background-color: white;
   -webkit-box-shadow: 0px 3px 10px rgba(14, 14, 14, 0.3), 0 6px 6px rgba(255, 255, 255, 0.12);
           box-shadow: 0px 3px 10px rgba(14, 14, 14, 0.3), 0 6px 6px rgba(255, 255, 255, 0.12);
@@ -316,7 +295,7 @@ section {
 
 .CTA-seemore-line {
   width: 100%;
-  border-bottom: 3px solid blue;
+  border-bottom: 3px solid #1a1ad7;
   position: relative;
   z-index: -2;
 }
@@ -325,8 +304,8 @@ section {
   content: "";
   height: 12px;
   width: 12px;
-  border-right: 3px solid blue;
-  border-bottom: 3px solid blue;
+  border-right: 3px solid #1a1ad7;
+  border-bottom: 3px solid #1a1ad7;
   position: absolute;
   left: calc(50% - 6px);
   top: -5px;
@@ -336,6 +315,10 @@ section {
   z-index: -1;
 }
 
+.about-container {
+  min-height: calc(100% - 80px);
+}
+
 .about-wrapper {
   padding: 30px;
   display: -webkit-box;
@@ -343,15 +326,17 @@ section {
   display: flex;
 }
 
-.about-wrapper p {
+.about-description {
   max-width: 60ch;
 }
 
 .about-image-wrapper {
-  min-height: 200px;
-  min-width: 200px;
+  height: 15vw;
+  width: 15vw;
+  min-width: 15vw;
+  min-height: 15vw;
   border-radius: 999px;
-  background-color: blue;
+  background-color: #1a1ad7;
   float: left;
   margin-right: 30px;
   -ms-flex-item-align: start;
@@ -360,12 +345,14 @@ section {
 
 .about-image-wrapper img {
   opacity: 0;
+  height: 100%;
+  width: 100%;
 }
 
 footer {
   height: 80px;
   width: 100%;
-  background: blue;
+  background: #1a1ad7;
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 5;
@@ -431,6 +418,7 @@ footer {
     background-color: white;
   }
   .about-wrapper {
+    display: block;
     padding: 20px;
   }
   .about-wrapper p {
@@ -438,9 +426,10 @@ footer {
     font-size: 14px;
   }
   .about-image-wrapper {
-    min-height: 80px;
-    min-width: 80px;
-    margin: 7px;
+    height: 25vw;
+    width: 25vw;
+    margin-right: 10px;
+    margin-bottom: 5px;
   }
   .nav-links-listItem:after {
     display: none;
