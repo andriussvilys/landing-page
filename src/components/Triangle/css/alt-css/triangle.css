@@ -26,8 +26,8 @@
 
 .spinner-container {
   position: absolute;
-  right: 5vh;
-  top: calc(50% - 23.094vh);
+  right: 5.625vh;
+  top: calc(50% - 25.98075vh);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,8 +36,8 @@
 .circleBound {
   position: relative;
   right: 0;
-  width: 46.188vh;
-  height: 46.188vh;
+  width: 51.9615vh;
+  height: 51.9615vh;
   border-radius: 999px;
   will-change: transform;
   -webkit-animation-name: rotateTriangle;
@@ -61,19 +61,19 @@
 }
 
 .triangle-wrapper {
-  width: 40vh;
-  height: calc(20vh * 1.73205);
+  width: 45vh;
+  height: calc(22.5vh * 1.73205);
   position: relative;
   top: 100px;
   left: 100px;
   position: absolute;
   top: 0;
-  left: calc(50% - 20vh);
+  left: calc(50% - 22.5vh);
 }
 
 .circle {
-  height: 10vh;
-  width: 10vh;
+  height: 11.25vh;
+  width: 11.25vh;
   border-radius: 999px;
   background-color: white;
   border: 3px solid blue;
@@ -99,18 +99,18 @@
 }
 
 .circle-1 {
-  bottom: -5vh;
-  left: -5vh;
+  bottom: -5.625vh;
+  left: -5.625vh;
 }
 
 .circle-2 {
-  top: -5vh;
-  left: calc(50% - 5vh);
+  top: -5.625vh;
+  left: calc(50% - 5.625vh);
 }
 
 .circle-3 {
-  bottom: -5vh;
-  right: -5vh;
+  bottom: -5.625vh;
+  right: -5.625vh;
 }
 
 .circle {
@@ -359,6 +359,14 @@
 }
 
 @media only screen and (max-width: 720px) {
+  .circle-label-wrapper {
+    left: 100%;
+    right: unset;
+  }
+  .circle-label {
+    right: unset;
+    left: 0;
+  }
   .circle:before {
     display: none;
   }
