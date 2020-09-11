@@ -17,7 +17,7 @@ function App() {
               document.querySelector(".nav-links-list").classList.toggle("links-list-display")
             }}
           >
-            <img src="/icons/burger.svg" alt="hamburger menu icon" />
+            <img src="icons/burger.svg" alt="hamburger menu icon" />
           </div>
           <ul className="nav-links-list">
               <li className="nav-links-listItem">
