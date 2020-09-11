@@ -227,6 +227,7 @@ $caretHeight: 12px;
 }
 .about-wrapper{
     padding: 30px;
+    padding-bottom: 60px;
     display: flex;
 }
 .about-description{
@@ -325,6 +326,7 @@ footer{
     .about-wrapper{
         display: block;
         padding: 20px;
+        padding-bottom: 60px;
         p{
             max-width: 60ch;
             font-size: 14px;

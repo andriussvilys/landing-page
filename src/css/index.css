@@ -321,6 +321,7 @@ main {
 
 .about-wrapper {
   padding: 30px;
+  padding-bottom: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -438,6 +439,7 @@ footer {
   .about-wrapper {
     display: block;
     padding: 20px;
+    padding-bottom: 60px;
   }
   .about-wrapper p {
     max-width: 60ch;

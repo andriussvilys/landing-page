@@ -5,6 +5,11 @@ import WebsiteExample from './components/WebsiteExample/WebsiteExample'
 import Contact from './components/Contact/Contact';
 
 function App() {
+  const closeNavList = () => {
+    setTimeout(() => {
+      document.querySelector(".nav-links-list").classList.toggle("links-list-display")
+    }, 500);
+  }
   return (
     <div className="App">
       <nav id="nav" className="nav-container">
@@ -20,17 +25,17 @@ function App() {
             <img src="icons/burger.svg" alt="hamburger menu icon" />
           </div>
           <ul className="nav-links-list">
-              <li className="nav-links-listItem">
-                <a href="#examples">Examples</a>
+              <li className="nav-links-listItem" >
+                <a onClick={() => closeNavList()} href="#examples">Examples</a>
               </li>
-              <li className="nav-links-listItem">
-                <a href="#tools">Toolbox</a>
+              <li className="nav-links-listItem" >
+                <a onClick={() => closeNavList()} href="#tools">Toolbox</a>
               </li>
-              <li className="nav-links-listItem">
-                <a href="#about">About</a>
+              <li className="nav-links-listItem" >
+                <a onClick={() => closeNavList()} href="#about">About</a>
               </li>
-              <li className="nav-links-listItem">
-                <a href="#contact">Contact</a>
+              <li className="nav-links-listItem" >
+                <a onClick={() => closeNavList()} href="#contact">Contact</a>
               </li>
           </ul>
         </div>
