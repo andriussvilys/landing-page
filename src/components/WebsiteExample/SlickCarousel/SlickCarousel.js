@@ -12,12 +12,6 @@ const SlickCarousel = props => {
         slidesToShow: 1,
         slidesToScroll: 1,
         lazyLoading: "progressive",
-        // className: "slider variable-width",
-        // variableWidth: true
-        
-        // vertical: true,
-        // verticalSwiping: true,
-        // adaptiveHeight: true
       };
     return(
         <Slider {...settings}>

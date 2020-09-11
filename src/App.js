@@ -2,6 +2,7 @@ import React from 'react';
 import Triangle from './components/Triangle/triangle';
 import Tools from './components/Tools/Tools'
 import WebsiteExample from './components/WebsiteExample/WebsiteExample'
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -15,16 +16,21 @@ function App() {
             onClick={() => {
               document.querySelector(".nav-links-list").classList.toggle("links-list-display")
             }}
-          ></div>
+          >
+            <img src="/icons/burger.svg" alt="hamburger menu icon" />
+          </div>
           <ul className="nav-links-list">
               <li className="nav-links-listItem">
                 <a href="#examples">Examples</a>
               </li>
               <li className="nav-links-listItem">
-                <a href="#tools">Tools</a>
+                <a href="#tools">Toolbox</a>
               </li>
               <li className="nav-links-listItem">
                 <a href="#about">About</a>
+              </li>
+              <li className="nav-links-listItem">
+                <a href="#contact">Contact</a>
               </li>
           </ul>
         </div>
@@ -38,7 +44,7 @@ function App() {
               <h1>My name is Andrius.</h1>
               <h3>I am a front-end developer.</h3>
 
-              <a href="#about" className="CTA-contact">get in touch</a>
+              <a href="#contact" className="CTA-contact">get in touch</a>
             </div>
 
             <div className="kv-image">
@@ -244,6 +250,10 @@ function App() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
               </p>
             </div>
+        </section>
+        <section className="contact-container" id="contact">
+            <h1 className="headline">Contact</h1>
+            <Contact />
         </section>
       <footer></footer>
       </main>

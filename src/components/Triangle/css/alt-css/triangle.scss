@@ -1,7 +1,7 @@
 $borderColor: blue;
 // $animationDuration: 30s;
 $animationDuration: 6.3s;
-$triangleEdge: 40vh;
+$triangleEdge: 45vh;
 $squareRootOf3: 1.73205;
 $triangleHeight: calc(#{$triangleEdge / 2} * #{$squareRootOf3});
 $spinnerContainerHeight: (($triangleEdge * $squareRootOf3) / 3) * 2;
@@ -16,18 +16,6 @@ $circle-1-angle: 60deg;
 $circle-2-angle: 150deg;
 $circle-3-angle: -60deg;
 
-// @keyframes rotateTriangle {
-//     //CYCLE 1
-//     0% {
-//         transform: rotate(0);
-//     }
-//     10%{
-//         background-color: transparent;
-//     }
-//     100% {
-//         transform: rotate(360deg);
-//     }
-// }
 @keyframes rotateTriangle {
     //CYCLE 1
     0% {
@@ -298,6 +286,15 @@ $labelHeight: 30px;
     animation-play-state: paused;
 }
 @media only screen and (max-width: 720px){
+    .circle-label-wrapper{
+        left: 100%;
+        right: unset;
+    }
+    .circle-label{
+        right: unset;
+        left: 0;
+    }
+
     .circle:before{
         display: none;
     }
