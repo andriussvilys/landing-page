@@ -1,7 +1,7 @@
 $borderColor: blue;
 // $animationDuration: 30s;
 $animationDuration: 6.3s;
-$triangleEdge: 45vh;
+$triangleEdge: 44vh;
 $squareRootOf3: 1.73205;
 $triangleHeight: calc(#{$triangleEdge / 2} * #{$squareRootOf3});
 $spinnerContainerHeight: (($triangleEdge * $squareRootOf3) / 3) * 2;
@@ -300,6 +300,7 @@ $labelHeight: 30px;
     }
     .spinner-container{
         // right: -45vw;
-        top: 30vh;
+        right: -#{$circleRadius * 2};
+        top: 28vh;
     }
 }

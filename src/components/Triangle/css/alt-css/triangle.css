@@ -26,8 +26,8 @@
 
 .spinner-container {
   position: absolute;
-  right: 5.625vh;
-  top: calc(50% - 25.98075vh);
+  right: 5.5vh;
+  top: calc(50% - 25.4034vh);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,8 +36,8 @@
 .circleBound {
   position: relative;
   right: 0;
-  width: 51.9615vh;
-  height: 51.9615vh;
+  width: 50.8068vh;
+  height: 50.8068vh;
   border-radius: 999px;
   will-change: transform;
   -webkit-animation-name: rotateTriangle;
@@ -61,19 +61,19 @@
 }
 
 .triangle-wrapper {
-  width: 45vh;
-  height: calc(22.5vh * 1.73205);
+  width: 44vh;
+  height: calc(22vh * 1.73205);
   position: relative;
   top: 100px;
   left: 100px;
   position: absolute;
   top: 0;
-  left: calc(50% - 22.5vh);
+  left: calc(50% - 22vh);
 }
 
 .circle {
-  height: 11.25vh;
-  width: 11.25vh;
+  height: 11vh;
+  width: 11vh;
   border-radius: 999px;
   background-color: white;
   border: 3px solid blue;
@@ -99,18 +99,18 @@
 }
 
 .circle-1 {
-  bottom: -5.625vh;
-  left: -5.625vh;
+  bottom: -5.5vh;
+  left: -5.5vh;
 }
 
 .circle-2 {
-  top: -5.625vh;
-  left: calc(50% - 5.625vh);
+  top: -5.5vh;
+  left: calc(50% - 5.5vh);
 }
 
 .circle-3 {
-  bottom: -5.625vh;
-  right: -5.625vh;
+  bottom: -5.5vh;
+  right: -5.5vh;
 }
 
 .circle {
@@ -371,7 +371,8 @@
     display: none;
   }
   .spinner-container {
-    top: 30vh;
+    right: -11vh;
+    top: 28vh;
   }
 }
 /*# sourceMappingURL=triangle.css.map */

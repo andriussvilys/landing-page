@@ -78,7 +78,7 @@ main{
     align-items: center;
     background-color: $accentColor;
     box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
-    z-index: 999;
+    z-index: 899;
 }
 .nav-links-container{
     margin-right: $marginRight;
@@ -98,6 +98,7 @@ main{
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
+    user-select: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,7 +141,7 @@ main{
     height: 100%;
     @include centered;
     position: relative;
-    padding: 0 30px;
+    padding-left: 30px;
 
     display: grid;
     grid-template-rows: 1fr min-content;
@@ -265,6 +266,9 @@ footer{
 }
 
 @media only screen and (max-width: 1080px){
+    .kv-text{
+        max-width: 25ch;
+    }
     .kv-image{
         left: 150px;
     }
