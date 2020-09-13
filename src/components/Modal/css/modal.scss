@@ -34,7 +34,7 @@
 .modal-wrapper{
     padding: 20px;
     position: absolute;
-    top: -100%;
+    top: 43px;
     width: 100%;
     height: 90%;
     transition: 0.3s all;
@@ -65,9 +65,9 @@
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 }
-.show-wrapper{
-    top: 0;
-}
+// .show-wrapper{
+//     top: 0;
+// }
 
 
 

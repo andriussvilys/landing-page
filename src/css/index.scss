@@ -232,9 +232,15 @@ $caretHeight: 12px;
     display: flex;
 }
 .about-description{
+    position: relative;
     max-width: 60ch;
+    .CTA-contact{
+        position: relative;
+        margin: 30px 0 10px 0;
+    }
 }
 .about-image-wrapper{
+    position: relative;
     height: 15vw;
     width: 15vw;
     min-width: 15vw;
