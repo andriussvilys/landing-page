@@ -1,25 +1,63 @@
 import React from 'react';
+import Modal from './components/Modal/Modal'
 import Triangle from './components/Triangle/triangle';
 import Tools from './components/Tools/Tools'
 import WebsiteExample from './components/WebsiteExample/WebsiteExample'
 import Contact from './components/Contact/Contact';
 
 function App() {
+
+  const burgerList = document.querySelector(".nav-links-list")
+
+  const [showModal, toggleShowModal] = React.useState(null)
   const closeNavList = () => {
+  const burgerList = document.querySelector(".nav-links-list")
+    if(showModal){
+      toggleModal()
+    }
     setTimeout(() => {
-      document.querySelector(".nav-links-list").classList.toggle("links-list-display")
-    }, 500);
+      burgerList.classList.toggle("links-list-display")
+    }, 200);
   }
+
+  const toggleModal = () => {
+      let delay = 0
+      const burgerList = document.querySelector(".nav-links-list")
+      if(burgerList.classList.contains("links-list-display")){
+        burgerList.classList.remove("links-list-display")
+        delay = 200
+      }
+      setTimeout(() => {
+        toggleShowModal(!showModal)
+      }, delay);
+  
+  }
+
+  // const showModal = () => {
+  //   const container = document.getElementById("modal-container")
+  //   const wrapper = document.getElementById("modal-wrapper")
+
+  //   container.classList.toggle("show-container")
+  //   setTimeout(() => {
+  //       wrapper.classList.toggle("show-wrapper")
+  //   }, 200);
+  // }
   return (
     <div className="App">
+      <Modal 
+       close={toggleShowModal}
+       showModal={showModal}
+      />
       <nav id="nav" className="nav-container">
         <div className="nav-logo">
-          <a href="#kv">Andrius Svilys</a>
+          <a onClick={() => { if(showModal)toggleModal() } } href="#kv">Andrius Svilys</a>
         </div>
         <div className="nav-links-container">
           <div className="nav-links-hamburger"
             onClick={() => {
-              document.querySelector(".nav-links-list").classList.toggle("links-list-display")
+              // toggleModal()
+              // document.querySelector(".nav-links-list").classList.toggle("links-list-display")
+              closeNavList()
             }}
           >
             <img src="icons/burger.svg" alt="hamburger menu icon" />
@@ -35,7 +73,10 @@ function App() {
                 <a onClick={() => closeNavList()} href="#about">About</a>
               </li>
               <li className="nav-links-listItem" >
-                <a onClick={() => closeNavList()} href="#contact">Contact</a>
+                {/* <a onClick={() => closeNavList()} href="#contact">Contact</a> */}
+                <a onClick={() => {
+                  toggleModal()
+                }}>Contact</a>
               </li>
           </ul>
         </div>
@@ -49,7 +90,14 @@ function App() {
               <h1>My name is Andrius.</h1>
               <h3>I am a front-end developer.</h3>
 
-              <a href="#contact" className="CTA-contact">get in touch</a>
+              {/* <a href="#contact" className="CTA-contact">get in touch</a> */}
+              <button className="CTA-contact"
+              onClick={() => {
+                toggleModal()
+              }}>
+                get in touch
+              </button>
+              {/* <a className="CTA-contact">get in touch</a> */}
             </div>
 
             <div className="kv-image">
@@ -256,10 +304,10 @@ function App() {
               </p>
             </div>
         </section>
-        <section className="contact-container" id="contact">
+        {/* <section className="contact-container" id="contact">
             <h1 className="headline">Contact</h1>
             <Contact />
-        </section>
+        </section> */}
       <footer></footer>
       </main>
 

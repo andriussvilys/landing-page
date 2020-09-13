@@ -70,7 +70,7 @@ main {
   background-color: #1a1ad7;
   -webkit-box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
           box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
-  z-index: 999;
+  z-index: 899;
 }
 
 .nav-links-container {
@@ -100,6 +100,10 @@ main {
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,7 +177,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  padding: 0 30px;
+  padding-left: 30px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr min-content;
@@ -368,6 +372,9 @@ footer {
 }
 
 @media only screen and (max-width: 1080px) {
+  .kv-text {
+    max-width: 25ch;
+  }
   .kv-image {
     left: 150px;
   }
