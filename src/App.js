@@ -91,18 +91,20 @@ function App() {
               <h3>I am a front-end developer.</h3>
 
               {/* <a href="#contact" className="CTA-contact">get in touch</a> */}
-              <button className="CTA-contact"
-              onClick={() => {
-                toggleModal()
-              }}>
-                get in touch
-              </button>
+
               {/* <a className="CTA-contact">get in touch</a> */}
             </div>
 
             <div className="kv-image">
               <Triangle />
             </div>
+
+            <button className="CTA-contact"
+              onClick={() => {
+                toggleModal()
+              }}>
+                get in touch
+              </button>
           </div>
 
             <div className="CTA-seemore">

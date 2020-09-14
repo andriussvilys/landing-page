@@ -200,6 +200,7 @@ main {
 }
 
 .kv-text {
+  white-space: nowrap;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -222,26 +223,20 @@ main {
           flex: 2;
   height: 100%;
   width: 100%;
-  padding-right: 30px;
   position: relative;
   top: 0;
   z-index: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.kv-text, .kv-image {
-  border: 2px solid;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(180px, 1fr) 1fr 65px;
+      grid-template-columns: minmax(180px, 1fr) 1fr 65px;
 }
 
 .CTA-contact {
+  bottom: 0;
   position: absolute;
   background: white;
   text-transform: uppercase;
@@ -398,7 +393,7 @@ footer {
   display: none;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 801px) {
   .kv-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -408,7 +403,12 @@ footer {
         -ms-flex-align: start;
             align-items: flex-start;
   }
+  .kv-wrapper .CTA-contact {
+    position: static;
+    margin: 30px 0;
+  }
   .kv-text {
+    white-space: normal;
     position: static;
     -webkit-box-flex: 0;
         -ms-flex: 0;
@@ -416,8 +416,9 @@ footer {
     padding-top: 50px;
     height: 100%;
   }
-  .CTA-contact {
-    bottom: 5%;
+  .kv-image {
+    -ms-grid-columns: unset;
+        grid-template-columns: unset;
   }
   .CTA-seemore {
     display: none;

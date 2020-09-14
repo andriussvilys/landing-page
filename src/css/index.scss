@@ -37,6 +37,7 @@ body{
     align-items: center;
 }
 @mixin squareCTA{
+    bottom: 0;
     position: absolute;
     background: white;
     text-transform: uppercase;
@@ -156,6 +157,7 @@ main{
 }
 .kv-text{
     // position: absolute;
+    white-space: nowrap;
     flex: 1;
     z-index: 1;
     h1{
@@ -168,21 +170,24 @@ main{
     }
 }
 .kv-image{
+    // left: 180px;
     flex: 2;
     height: 100%;
     width: 100%;
-    padding-right: 30px;
     position: relative;
     top: 0;
     z-index: 0;
 
-    display: flex;
+    // display: flex;
+    // justify-content: flex-end;
     align-items: center;
-    justify-content: flex-end;
+
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) 1fr 65px;
 }
-.kv-text, .kv-image{
-    border: 2px solid;
-}
+// .kv-text, .kv-image{
+//     border: 2px solid;
+// }
 .CTA-contact{
     @include squareCTA;
 }
@@ -284,12 +289,17 @@ footer{
 
 @media only screen and (max-width: 1080px){
 }
-@media only screen and (max-width: 720px){
+@media only screen and (max-width: 801px){
     .kv-wrapper{
         flex-direction: column;
         align-items: flex-start;
+        .CTA-contact{
+            position: static;
+            margin: 30px 0;
+        }
     }
     .kv-text{
+        white-space: normal;
         position: static;
         flex: 0;
         // position: relative;
@@ -297,8 +307,9 @@ footer{
         padding-top: 50px;
         height: 100%;
     }
-    .CTA-contact{
-        bottom: 5%;
+    .kv-image{
+        // left: 180px;
+        grid-template-columns: unset;
     }
     .CTA-seemore{
         display: none;
