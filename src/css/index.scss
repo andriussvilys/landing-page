@@ -38,7 +38,7 @@ body{
 }
 @mixin squareCTA{
     bottom: 0;
-    position: absolute;
+    // position: absolute;
     background: white;
     text-transform: uppercase;
     white-space: nowrap;
@@ -147,6 +147,7 @@ main{
     display: grid;
     grid-template-rows: 1fr min-content;
     grid-template-columns: 100%;
+    overflow: hidden;
 }
 .kv-wrapper{
     position: relative;

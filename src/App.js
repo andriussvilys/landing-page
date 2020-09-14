@@ -90,6 +90,13 @@ function App() {
               <h1>My name is Andrius.</h1>
               <h3>I am a front-end developer.</h3>
 
+              <button 
+                  className="CTA-contact"
+                  onClick={() => {
+                    toggleModal()
+                  }}>
+                  get in touch
+                </button>
               {/* <a href="#contact" className="CTA-contact">get in touch</a> */}
 
               {/* <a className="CTA-contact">get in touch</a> */}
@@ -99,12 +106,12 @@ function App() {
               <Triangle />
             </div>
 
-            <button className="CTA-contact"
+            {/* <button className="CTA-contact"
               onClick={() => {
                 toggleModal()
               }}>
                 get in touch
-              </button>
+              </button> */}
           </div>
 
             <div className="CTA-seemore">

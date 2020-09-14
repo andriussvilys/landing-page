@@ -185,6 +185,7 @@ main {
       grid-template-rows: 1fr min-content;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
+  overflow: hidden;
 }
 
 .kv-wrapper {
@@ -237,7 +238,6 @@ main {
 
 .CTA-contact {
   bottom: 0;
-  position: absolute;
   background: white;
   text-transform: uppercase;
   white-space: nowrap;
