@@ -25,19 +25,33 @@
 }
 
 .spinner-container {
-  position: absolute;
-  right: 5.5vh;
-  top: calc(50% - 25.4034vh);
+  position: relative;
+  margin-left: 180px;
+  margin-right: 35px;
+  width: 100%;
+  max-width: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.spinner-container:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 .circleBound {
-  position: relative;
+  position: absolute;
   right: 0;
-  width: 50.8068vh;
-  height: 50.8068vh;
+  width: 80%;
+  height: 80%;
   border-radius: 999px;
   will-change: transform;
   -webkit-animation-name: rotateTriangle;
@@ -61,19 +75,19 @@
 }
 
 .triangle-wrapper {
-  width: 44vh;
-  height: calc(22vh * 1.73205);
+  width: 86.60258%;
+  height: 75%;
   position: relative;
   top: 100px;
   left: 100px;
   position: absolute;
   top: 0;
-  left: calc(50% - 22vh);
+  left: calc(50% - 43.30129%);
 }
 
 .circle {
-  height: 11vh;
-  width: 11vh;
+  height: 70px;
+  width: 70px;
   border-radius: 999px;
   background-color: white;
   border: 3px solid blue;
@@ -99,18 +113,18 @@
 }
 
 .circle-1 {
-  bottom: -5.5vh;
-  left: -5.5vh;
+  bottom: -35px;
+  left: -35px;
 }
 
 .circle-2 {
-  top: -5.5vh;
-  left: calc(50% - 5.5vh);
+  top: -35px;
+  left: calc(50% - 35px);
 }
 
 .circle-3 {
-  bottom: -5.5vh;
-  right: -5.5vh;
+  bottom: -35px;
+  right: -35px;
 }
 
 .circle {
@@ -359,20 +373,18 @@
 }
 
 @media only screen and (max-width: 720px) {
-  .circle-label-wrapper {
-    left: 100%;
+  .circleBound {
     right: unset;
-  }
-  .circle-label {
-    right: unset;
-    left: 0;
+    left: 180px;
   }
   .circle:before {
     display: none;
   }
+  .kv-image {
+    padding: 0;
+  }
   .spinner-container {
-    right: -11vh;
-    top: 28vh;
+    margin: 0;
   }
 }
 /*# sourceMappingURL=triangle.css.map */

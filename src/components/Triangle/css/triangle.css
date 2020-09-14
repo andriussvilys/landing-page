@@ -61,9 +61,7 @@
 }
 
 .spinner-container {
-  position: absolute;
-  right: 0;
-  top: calc(50% - 23.094vmin);
+  margin-left: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
