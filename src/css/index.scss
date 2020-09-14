@@ -37,7 +37,8 @@ body{
     align-items: center;
 }
 @mixin squareCTA{
-    position: absolute;
+    bottom: 0;
+    // position: absolute;
     background: white;
     text-transform: uppercase;
     white-space: nowrap;
@@ -146,6 +147,7 @@ main{
     display: grid;
     grid-template-rows: 1fr min-content;
     grid-template-columns: 100%;
+    overflow: hidden;
 }
 .kv-wrapper{
     position: relative;
@@ -155,7 +157,9 @@ main{
     align-items: center;
 }
 .kv-text{
-    position: absolute;
+    // position: absolute;
+    white-space: nowrap;
+    flex: 1;
     z-index: 1;
     h1{
         margin-bottom: 10px;
@@ -167,12 +171,24 @@ main{
     }
 }
 .kv-image{
+    // left: 180px;
+    flex: 2;
     height: 100%;
     width: 100%;
     position: relative;
     top: 0;
     z-index: 0;
+
+    // display: flex;
+    // justify-content: flex-end;
+    align-items: center;
+
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) 1fr 65px;
 }
+// .kv-text, .kv-image{
+//     border: 2px solid;
+// }
 .CTA-contact{
     @include squareCTA;
 }
@@ -191,6 +207,7 @@ main{
     }
 }
 .CTA-seemore{
+    padding-right: 30px;
     width: 100%;
     padding-bottom: 30px;
     @include centered;
@@ -272,21 +289,28 @@ footer{
 }
 
 @media only screen and (max-width: 1080px){
-    .kv-text{
-        max-width: 25ch;
-    }
-    .kv-image{
-        left: 150px;
-    }
 }
-@media only screen and (max-width: 720px){
+@media only screen and (max-width: 801px){
+    .kv-wrapper{
+        flex-direction: column;
+        align-items: flex-start;
+        .CTA-contact{
+            position: static;
+            margin: 30px 0;
+        }
+    }
     .kv-text{
-        // top: 50px;
+        white-space: normal;
+        position: static;
+        flex: 0;
+        // position: relative;
+        // flex: 0;
         padding-top: 50px;
         height: 100%;
     }
-    .CTA-contact{
-        bottom: 5%;
+    .kv-image{
+        // left: 180px;
+        grid-template-columns: unset;
     }
     .CTA-seemore{
         display: none;

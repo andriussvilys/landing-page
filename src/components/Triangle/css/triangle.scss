@@ -33,10 +33,10 @@ $triangleHeight: calc(#{$triangleEdge / 2} * #{$squareRootOf3});
 $spinnerContainerHeight: (($triangleEdge * $squareRootOf3) / 3) * 2;
 //circle bound to center the triangle
 .spinner-container{
-    position: absolute;
-    right: 0;
-    top: calc(50% - #{$spinnerContainerHeight / 2});
-
+    // position: absolute;
+    // right: 0;
+    // top: calc(50% - #{$spinnerContainerHeight / 2});
+    margin-left: 150px;
     display: flex;
 }
 .circleBound{
