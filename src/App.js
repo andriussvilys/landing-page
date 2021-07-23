@@ -4,6 +4,8 @@ import Triangle from './components/Triangle/triangle';
 import Tools from './components/Tools/Tools'
 import WebsiteExample from './components/WebsiteExample/WebsiteExample'
 import Contact from './components/Contact/Contact';
+import Selector from './components/WebsiteExample/Selector/Selector';
+import WebsiteSlider from './components/WebsiteExample/WebsiteSlider/WebsiteSlider';
 
 function App() {
 
@@ -32,16 +34,6 @@ function App() {
       }, delay);
   
   }
-
-  // const showModal = () => {
-  //   const container = document.getElementById("modal-container")
-  //   const wrapper = document.getElementById("modal-wrapper")
-
-  //   container.classList.toggle("show-container")
-  //   setTimeout(() => {
-  //       wrapper.classList.toggle("show-wrapper")
-  //   }, 200);
-  // }
   return (
     <div className="App">
       <Modal 
@@ -74,9 +66,9 @@ function App() {
               </li>
               <li className="nav-links-listItem" >
                 {/* <a onClick={() => closeNavList()} href="#contact">Contact</a> */}
-                <a onClick={() => {
+                <button onClick={() => {
                   toggleModal()
-                }}>Contact</a>
+                }}>Contact</button>
               </li>
           </ul>
         </div>
@@ -97,21 +89,12 @@ function App() {
                   }}>
                   get in touch
                 </button>
-              {/* <a href="#contact" className="CTA-contact">get in touch</a> */}
-
-              {/* <a className="CTA-contact">get in touch</a> */}
             </div>
 
             <div className="kv-image">
               <Triangle />
             </div>
 
-            {/* <button className="CTA-contact"
-              onClick={() => {
-                toggleModal()
-              }}>
-                get in touch
-              </button> */}
           </div>
 
             <div className="CTA-seemore">
@@ -124,123 +107,44 @@ function App() {
           <h1 className="headline">
             EXAMPLES
           </h1>
-          <WebsiteExample 
+    
+          <Selector 
+              imageList={
+                [
+                  "andriussvilys/personalWebsite-2.png",
+                  "admin/admin-1.png", 
+                  "image-search/Screenshot-desktop-1.png",
+                  "devChallenge/dev-challenge-1.png",
+                  "responsive/responsive-eg-1.jpg",
+                  "t-pose/t-pose-desktop-1.png"
+                ]
+              }
+          />
+          <WebsiteSlider />
+          {/* <WebsiteExample 
             open={true}
             id={"personal-website"}
             title={"Image archive"}
             assetDir={"andriussvilys"}
             href={"https://andriussvilys.com"}
             imageList={
-              ["personalWebsite-2.png", 
-              "personalWebsite-3.png", 
-              "personalWebsite-4.png",
-              "personalWebsite-5.png", 
-              "personalWebsite-6.jpg",
-              "personalWebsite-7.jpg", 
-              "personalWebsite-8.jpg",
-              "personalWebsite-9.jpg", 
-              "personalWebsite-10.jpg",
+              [
+                "personalWebsite-2.png", 
+                "personalWebsite-3.png", 
+                "personalWebsite-4.png",
+                "personalWebsite-5.png", 
+                "personalWebsite-6.jpg",
+                "personalWebsite-7.jpg", 
+                "personalWebsite-8.jpg",
+                "personalWebsite-9.jpg", 
+                "personalWebsite-10.jpg",
               ]
             }
             badges={{
               badges: [{title: "React JS", img: "react.svg"}, {title: null, img: "sass.svg"}, {title: "Digital Ocean", img: "digital-ocean.png"}, ],
               other: ["React-slick", "filters", "Tags", "Related images"]
             }}
-          />
-          <WebsiteExample 
-            open={false}
-            id={"personal-website-admin"}
-            title={"Image archive (admin page)"}
-            assetDir={"admin"}
-            href={"https://andriussvilys.com/admin"}
-            imageList={
-              ["admin-1.png", 
-              "admin-2.png",
-              "admin-3.png",
-              "admin-4.png",
-              ]
-            }
-            badges={{
-              badges: [
-                {title: "React JS", img: "react.svg"}, 
-                {title: null, img: "node-js.svg"}, 
-                {title: null, img: "mongodb.png"},
-                {title: null, img: "sass.svg"}
-              ],
-              other: ["Image upload", "CRUD", "Authorization", "Modals", "Progress bar"]
-            }}
-          />
-          <WebsiteExample 
-            open={false}
-            id={"image-search"}
-            title={"Image search API"}
-            assetDir={"image-search"}
-            href={"https://andriussvilys.github.io/image-search/"}
-            imageList={
-              ["Screenshot-desktop-1.png",
-                "Screenshot-mobile-1.jpg",
-                "Screenshot-mobile-2.jpg",
-                "Screenshot-mobile-3.jpg"
-              ]
-            }
-            badges={{
-              badges: [{title: "React JS", img: "react.svg"}, {title: "Redux", img: "redux.svg"}, {title: null, img: "sass.svg"}],
-              other: ["unsplash-API"]
-            }}
-          />
-          <WebsiteExample 
-            open={false}
-            id={"dev-challenge"}
-            title={"Built from a mockup"}
-            assetDir={"devChallenge"}
-            href={"https://andriussvilys.github.io/bmb-challenge/"}
-            imageList={
-              ["dev-challenge-1.png",
-              "dev-challenge-3.png",
-              "dev-challenge-2.png",
-              "dev-challenge-1-mob.jpg",
-              "dev-challenge-3-mob.png",
-              "dev-challenge-2-mob.png",
-              ]
-            }
-            badges={{
-              badges: [{title: "HTML5", img: "HTML5.png"}, {title: null, img: "sass.svg"}, {title: "Parcel compiler", img: "parcel-og.png"}],
-              other: ["Responsvie design", "Semantic HTML", "Google Maps API"]
-            }}
-          />
-          <WebsiteExample 
-            open={false}
-            id={"responsive"}
-            title={"Responsive design"}
-            assetDir={"responsive"}
-            href={"https://andriussvilys.github.io/responsive-eg1/"}
-            imageList={
-              ["responsive-eg-1.jpg",
-                "responsive-eg-2.jpg",
-              ]
-            }
-            badges={{
-              badges: [{title: "HTML5", img: "HTML5.png"}, {title: null, img: "sass.svg"},],
-              other: ["Responsive design", "Semantic HTML"]
-            }}
-          />
-          <WebsiteExample 
-            open={false}
-            id={"t-pose"}
-            title={"T-Pose"}
-            assetDir={"t-pose"}
-            href={"https://andriussvilys.github.io/t-pose/"}
-            imageList={
-              ["t-pose-desktop-1.png",
-                "t-pose-desktop-2.png",
-                "t-pose-mob.png"
-              ]
-            }
-            badges={{
-              badges: [{title: "React", img: "react.svg"}, {title: null, img: "sass.svg"}],
-              other: []
-            }}
-          />
+          />*/}
         </section>
 
         <section id="tools" >
@@ -300,6 +204,7 @@ function App() {
             ]}
             />
         </section>
+        
         <section className="about-container" id="about">
           <h1 className="headline">
             ABOUT
@@ -321,10 +226,7 @@ function App() {
               </div>
             </div>
         </section>
-        {/* <section className="contact-container" id="contact">
-            <h1 className="headline">Contact</h1>
-            <Contact />
-        </section> */}
+
       <footer></footer>
       </main>
 

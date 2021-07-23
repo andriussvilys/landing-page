@@ -31,74 +31,58 @@ const WebsiteExample = (props) => {
         }
         else return null
     }
-    return(<article className={`webExample-container ${open ? "" : "webExample-hide"}`} id={props.id}>
-                <Selector 
-                    imageList={props.imageList}
-                    assetDir={props.assetDir}
-                />
-                <div className="webExample-wrapper">
-                    <div 
-                    onClick={e => {
-                        e.stopPropagation()
+    return(
+            <div className="webExample-wrapper" id={props.id}>
 
-                        const parentBox = document.querySelector(`#${props.id}`)
-                        const contentBox = document.querySelector(`#${props.id} .webExample-content`)
-                        const height = contentBox.clientHeight
-                        const titleHeight = 50
-                        if(open){
-                            parentBox.style = `height: ${height + titleHeight}px`
-                        }
-                        toggleOpen(!open)
+                <div className="webExample-content">
 
-                        // console.log(`HEIGHT : ${height}`)
-                    }}
-                    className="webExample-details-title">
-                        <h3 
-                        // className="webExample-details-title"
-                        >• {props.title}</h3>
+                    <div className="webExample-details-container">
 
-                    </div>
-                    <div className="webExample-content">
+                        <h3 className={"webExample-title"}>{props.title}</h3>
 
-                        <div className={`webExample-carousel-container ${fullSize ? "webExample-carousel_fullWidth" : ""}`}>
-                            <SlickCarousel 
-                                assetDir={props.assetDir}
-                                imageList={props.imageList}
-                            />
-                            <div 
-                            title={`Click to ${fullSize ? "shrink" : "expand"}`}
-                            className="webExample-carousel-sizeToggle"
-                                onClick={e => {
-                                    toggleFullSize(!fullSize)
-                                    // e.target.parentNode.classList.toggle("webExample-carousel_fullWidth")
-                                }}
-                            >
-                                <img 
-                                src={`icons/${fullSize ? "shrink_new.png" : "expand_new.png"}`}  
-                                alt={fullSize ? "shrink" : "expand"}/>
+                        <div className="webExample-details-description">
+                            {props.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}
+                        </div>
+
+                        <div className="webExample-details-tags">
+                            <div className="webExample-details-badges">
+                                {badges(props.badges.badges)}
+                                {/* {badges(["SASS", "HTML", "JS", "REACT.JS"])} */}
+                            </div>
+                            <div className="webExample-details-other">
+                                {tags(props.badges.other)}
                             </div>
                         </div>
-                        <div className="webExample-details-container">
-                            <div className="webExample-details-description">
-                                {props.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}
-                            </div>
-                            <div className="webExample-details-tags">
-                                <div className="webExample-details-badges">
-                                    {badges(props.badges.badges)}
-                                    {/* {badges(["SASS", "HTML", "JS", "REACT.JS"])} */}
-                                </div>
-                                <div className="webExample-details-other">
-                                    {tags(props.badges.other)}
-                                </div>
-                            </div>
-                            <div className="webExample-details-CTA">
-                                <button className="details-CTA-button"><a href={props.href} target="_blank">CLICK TO VISIT</a></button>
-                            </div>
+
+                        <div className="webExample-details-CTA">
+                            <button className="details-CTA-button"><a href={props.href} target="_blank">CLICK TO VISIT</a></button>
                         </div>
-                        
+
                     </div>
-                </div>   
-            </article>)
+
+                    <div className={`webExample-carousel-container ${fullSize ? "webExample-carousel_fullWidth" : ""}`}>
+                        <SlickCarousel 
+                            assetDir={props.assetDir}
+                            imageList={props.imageList}
+                        />
+                        <div 
+                        title={`Click to ${fullSize ? "shrink" : "expand"}`}
+                        className="webExample-carousel-sizeToggle"
+                            onClick={e => {
+                                toggleFullSize(!fullSize)
+                                // e.target.parentNode.classList.toggle("webExample-carousel_fullWidth")
+                            }}
+                        >
+                            <img 
+                            src={`icons/${fullSize ? "shrink_new.png" : "expand_new.png"}`}  
+                            alt={fullSize ? "shrink" : "expand"}/>
+                        </div>
+                    </div>
+    
+                    
+                </div>
+            </div>
+    )
 }
 
 export default WebsiteExample

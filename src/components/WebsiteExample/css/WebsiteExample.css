@@ -34,6 +34,10 @@
   border-bottom: 2px solid #d6d6d645;
 }
 
+.webExample-title {
+  margin-bottom: 20px;
+}
+
 .webExample-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

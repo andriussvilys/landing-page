@@ -8,19 +8,21 @@ const Selector = (props) => {
 
     return(
         <article className={"Selector-container"}>
-            {props.imageList.map(( filename, index ) => {
-                return (
-                    <div 
-                        className={"Selector-image"}
-                        key={`selector-${filename}-index`}
-                    >
-                        <img 
-                            src={`carousel/${props.assetDir}/${filename}`}  
-                            alt={filename}
-                        />
-                    </div>
-                )
-            })}
+            <div className={"Selector-wrapper"}>
+                {props.imageList.map(( filename, index ) => {
+                    return (
+                        <div 
+                            className={"Selector-image"}
+                            key={`selector-${filename}-index`}
+                        >
+                            <img 
+                                src={`carousel/${filename}`}  
+                                alt={filename}
+                            />
+                        </div>
+                    )
+                })}
+            </div>
         </article>
     )
 }
