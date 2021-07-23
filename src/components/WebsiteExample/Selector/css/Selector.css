@@ -1,0 +1,27 @@
+.Selector-container {
+  height: 200px;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  padding: 20px 0px;
+  padding-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.Selector-image {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 20px;
+}
+
+.Selector-image img {
+  height: 100%;
+  width: 100%;
+}
+/*# sourceMappingURL=Selector.css.map */

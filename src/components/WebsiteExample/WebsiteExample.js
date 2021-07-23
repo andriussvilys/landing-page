@@ -2,6 +2,7 @@ import React from 'react'
 import SlickCarousel from './SlickCarousel/SlickCarousel'
 import Badge from '../Tools/Badge'
 import './css/WebsiteExample.css'
+import Selector from './Selector/Selector'
 
 
 const WebsiteExample = (props) => {
@@ -31,6 +32,10 @@ const WebsiteExample = (props) => {
         else return null
     }
     return(<article className={`webExample-container ${open ? "" : "webExample-hide"}`} id={props.id}>
+                <Selector 
+                    imageList={props.imageList}
+                    assetDir={props.assetDir}
+                />
                 <div className="webExample-wrapper">
                     <div 
                     onClick={e => {
