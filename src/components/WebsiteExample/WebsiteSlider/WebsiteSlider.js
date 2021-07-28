@@ -1,8 +1,8 @@
 import React from 'react';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import "../SlickCarousel/css/SlickCarousel.css"
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css"; 
+// import "slick-carousel/slick/slick-theme.css";
+// import "../SlickCarousel/css/SlickCarousel.css"
 import './css/WebsiteSlider.css'
 import WebsiteExample from '../WebsiteExample'
 import Carousel from '../../Carousel/Carousel';
@@ -11,8 +11,6 @@ const WebsiteSlider= (props) => {
 
     const [data, setData] = React.useState(null);
     const [dotImages, setDotImages] = React.useState(null);
-
-    const content = <div className="Content"></div>
 
     const getData = () => {
         fetch('data.json'
@@ -39,9 +37,9 @@ const WebsiteSlider= (props) => {
         customPaging: function(index) {
             const url = `carousel/${data[index].assetDir}/${data[index].imageList[0]}`
             return (
-            <a>
-                <img src={url} />
-            </a>
+            <button>
+                <img src={url} alt={data[index].assetDir}/>
+            </button>
             );
         },
         dots: true,
@@ -68,6 +66,7 @@ const WebsiteSlider= (props) => {
         <div className="WebsiteSlider_container" >
             {data && data.length > 0 ?
                 <Carousel
+                    currentSlide={0}
                     thumbnails = {props.thumbnails}
                     content = {data.map((item, index) => {
                         console.log(item)

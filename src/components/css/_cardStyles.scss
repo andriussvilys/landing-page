@@ -1,0 +1,11 @@
+@mixin card_primary{
+    border: 3px solid black;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: rgba(221, 221, 221, 0.692);
+}
+@mixin  card_secondary{
+    @include card_primary();
+    border: none;
+    background-color: white;
+}

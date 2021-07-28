@@ -46,41 +46,6 @@
       flex-wrap: wrap;
   height: 100%;
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: min-content 1fr;
-      grid-template-rows: -webkit-min-content 1fr;
-      grid-template-rows: min-content 1fr;
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
-  background-color: #161641;
-}
-
-.webExample-wrapper .webExample-details-title {
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 3;
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  grid-row-end: 2;
-}
-
-.webExample-wrapper .webExample-carousel-container {
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 2;
-  -ms-grid-row: 2;
-      grid-row-start: 2;
-  grid-row-end: 3;
-}
-
-.webExample-wrapper .webExample-details-container {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  grid-column-end: 3;
-  -ms-grid-row: 2;
-      grid-row-start: 2;
-  grid-row-end: 3;
 }
 
 .webExample-hide {
@@ -92,9 +57,6 @@
 }
 
 .webExample-content {
-  -ms-grid-row: 2;
-      grid-row-start: 2;
-  grid-row-end: 3;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -106,7 +68,6 @@
 }
 
 .webExample-carousel-container {
-  background-color: #161641;
   min-width: 60%;
   -webkit-box-flex: 2;
       -ms-flex: 2;
@@ -181,13 +142,21 @@
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 30px;
-  background-color: white;
   min-height: calc(100vh - 143px);
 }
 
 .webExample-details-description {
   max-width: 60ch;
   text-indent: 2ch;
+}
+
+.webExample-details-container, .webExample-carousel-container {
+  border: 3px solid black;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: rgba(221, 221, 221, 0.692);
+  border: none;
+  background-color: white;
 }
 
 .webExample-details-badges, .webExample-details-other {
@@ -225,6 +194,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 .details-CTA-button {
@@ -284,19 +256,14 @@
   .webExample-carousel-sizeToggle {
     right: 10px;
   }
-  .webExample-wrapper {
-    height: unset;
-  }
-  .webExample-content {
-    height: unset;
-  }
   .webExample-details-container {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
     min-height: unset;
   }
   .webExample-carousel-container {
     width: 100%;
-    min-width: 100%;
-    max-width: 100%;
     height: 60vh;
     max-height: unset;
   }

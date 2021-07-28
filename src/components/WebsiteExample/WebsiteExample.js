@@ -65,20 +65,8 @@ const WebsiteExample = (props) => {
                         
                         <SlickCarousel
                             assetDir={props.assetDir}
-                            imagesList={props.imagesList}
+                            imageList={props.imageList}
                         />
-                        {/* <div 
-                        title={`Click to ${fullSize ? "shrink" : "expand"}`}
-                        className="webExample-carousel-sizeToggle"
-                            onClick={e => {
-                                toggleFullSize(!fullSize)
-                                // e.target.parentNode.classList.toggle("webExample-carousel_fullWidth")
-                            }}
-                        >
-                            <img 
-                            src={`icons/${fullSize ? "shrink_new.png" : "expand_new.png"}`}  
-                            alt={fullSize ? "shrink" : "expand"}/>
-                        </div> */}
                     </div>
     
                     

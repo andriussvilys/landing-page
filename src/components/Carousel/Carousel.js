@@ -73,7 +73,9 @@ const Carousel = props => {
         })
         return (
             <div ref={dot_container} className={styles.dotContainer}>
+                {arrowPrev()}
                 {imageList.length < 2 ? null : <ul ref={dot_list} className={styles.dotList}>{dots}</ul>}
+                {arrowNext()}
             </div>
         )
     }
@@ -232,7 +234,7 @@ const Carousel = props => {
                     // ref={containerRef}
                     className={styles.container}
                 >
-                    {arrowPrev()}
+                    {/* {arrowPrev()} */}
                 <div 
                     id={"slideContainer"}
                     className={`${styles.slideContainer} ${slidePosition.smooth ? styles.smoothSlide : ""}`}
@@ -244,7 +246,7 @@ const Carousel = props => {
                 >
                     {renderContent(props.content)}
                 </div>
-                    {arrowNext()}
+                    {/* {arrowNext()} */}
             </div>
 
             {dots(props.thumbnails)}

@@ -23,10 +23,8 @@
 }
 
 .container {
-  width: 100%;
   position: relative;
   overflow: hidden;
-  background-color: #f6f6f6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,6 +32,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border: 3px solid black;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: rgba(221, 221, 221, 0.692);
 }
 
 .arrowNext {
@@ -113,12 +115,10 @@
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-  background-color: white;
   will-change: transform;
 }
 
 .slide img {
-  position: absolute;
   max-height: 100%;
   max-width: 100%;
   will-change: transform;
@@ -183,7 +183,6 @@
       -ms-flex: none;
           flex: none;
   border: 2px solid black;
-  background: white;
   margin: 5px;
   padding: 5px;
   cursor: pointer;
