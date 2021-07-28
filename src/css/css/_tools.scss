@@ -23,7 +23,9 @@
     margin: 0 5px 5px 0;
     padding: 8px;
     min-width: 50px;
+    min-height: 50px;
     img{
+        position: unset !important;
         height: 30px;
     }
     span{
@@ -34,7 +36,7 @@
 }
 .details-badge-fullWidth{
     max-width: 80px;
-    height: unset !important;
+    // height: unset !important;
     max-height: 45px;
 }
 .tools-wrapper{

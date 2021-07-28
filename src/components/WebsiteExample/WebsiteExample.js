@@ -1,8 +1,6 @@
 import React from 'react'
-import SlickCarousel from './SlickCarousel/SlickCarousel'
 import Badge from '../Tools/Badge'
 import './css/WebsiteExample.css'
-import Selector from './Selector/Selector'
 
 
 const WebsiteExample = (props) => {
@@ -47,7 +45,6 @@ const WebsiteExample = (props) => {
                         <div className="webExample-details-tags">
                             <div className="webExample-details-badges">
                                 {badges(props.badges.badges)}
-                                {/* {badges(["SASS", "HTML", "JS", "REACT.JS"])} */}
                             </div>
                             <div className="webExample-details-other">
                                 {tags(props.badges.other)}
@@ -61,11 +58,12 @@ const WebsiteExample = (props) => {
                     </div>
 
                     <div className={`webExample-carousel-container ${fullSize ? "webExample-carousel_fullWidth" : ""}`}>
-                        <SlickCarousel 
+                        
+                        {/* <SlickCarousel 
                             assetDir={props.assetDir}
                             imageList={props.imageList}
-                        />
-                        <div 
+                        /> */}
+                        {/* <div 
                         title={`Click to ${fullSize ? "shrink" : "expand"}`}
                         className="webExample-carousel-sizeToggle"
                             onClick={e => {
@@ -76,7 +74,7 @@ const WebsiteExample = (props) => {
                             <img 
                             src={`icons/${fullSize ? "shrink_new.png" : "expand_new.png"}`}  
                             alt={fullSize ? "shrink" : "expand"}/>
-                        </div>
+                        </div> */}
                     </div>
     
                     

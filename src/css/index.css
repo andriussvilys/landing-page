@@ -539,9 +539,11 @@ footer {
   margin: 0 5px 5px 0;
   padding: 8px;
   min-width: 50px;
+  min-height: 50px;
 }
 
 .details-badge img {
+  position: unset !important;
   height: 30px;
 }
 
@@ -553,7 +555,6 @@ footer {
 
 .details-badge-fullWidth {
   max-width: 80px;
-  height: unset !important;
   max-height: 45px;
 }
 

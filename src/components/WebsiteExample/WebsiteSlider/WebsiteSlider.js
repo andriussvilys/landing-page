@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../SlickCarousel/css/SlickCarousel.css"
 import './css/WebsiteSlider.css'
 import WebsiteExample from '../WebsiteExample'
+import Carousel from '../../Carousel/Carousel';
 
 const WebsiteSlider= (props) => {
 
@@ -65,12 +66,13 @@ const WebsiteSlider= (props) => {
 
     return(
         <div className="WebsiteSlider_container" >
-            <Slider {...sliderSettings}>
-                {data && data.length > 0 && data.map((item, index) => {
+            {data ? 
+                <Carousel
+                    thumbnails = {props.thumbnails}
+                    content = {data.map((item, index) => {
                         return (
                             <WebsiteExample 
                                 key={`websiteExample-${index}`}
-                                // open={true}
                                 id={item.id}
                                 title={item.title}
                                 assetDir={item.assetDir}
@@ -80,7 +82,8 @@ const WebsiteSlider= (props) => {
                         />
                         )
                     })}
-            </Slider>
+                    /> : null
+            }
         </div>
     )
 }

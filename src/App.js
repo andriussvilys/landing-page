@@ -6,6 +6,7 @@ import WebsiteExample from './components/WebsiteExample/WebsiteExample'
 import Contact from './components/Contact/Contact';
 import Selector from './components/WebsiteExample/Selector/Selector';
 import WebsiteSlider from './components/WebsiteExample/WebsiteSlider/WebsiteSlider';
+import Carousel from './components/Carousel/Carousel';
 
 function App() {
 
@@ -107,20 +108,19 @@ function App() {
           <h1 className="headline">
             EXAMPLES
           </h1>
-    
-          <Selector 
-              imageList={
-                [
-                  "andriussvilys/personalWebsite-2.png",
-                  "admin/admin-1.png", 
-                  "image-search/Screenshot-desktop-1.png",
-                  "devChallenge/dev-challenge-1.png",
-                  "responsive/responsive-eg-1.jpg",
-                  "t-pose/t-pose-desktop-1.png"
-                ]
-              }
+
+        <WebsiteSlider 
+          thumbnails={[
+            "carousel/admin/admin-1.png", 
+            "carousel/andriussvilys/personalWebsite-2.png", 
+            "carousel/devChallenge/dev-challenge-1.png",
+            "carousel/image-search/Screenshot-desktop-1.png", 
+            "carousel/responsive/responsive-eg-1.jpg",
+            "carousel/t-pose/t-pose-desktop-1.png", 
+          ]}
           />
-          <WebsiteSlider />
+
+
           {/* <WebsiteExample 
             open={true}
             id={"personal-website"}
