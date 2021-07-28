@@ -7,7 +7,7 @@
     overflow: visible !important;
 }
 .smoothSlide {
-	transition: transform .2s;
+	transition: transform .5s;
 }
 .carousel{
     // height: 100%;
@@ -25,45 +25,41 @@
     
 }
 @mixin arrow {
-    position: absolute;
-    height: 20%;
-    top: 40%;
-    opacity: 0.4;
+    opacity: 0.3;
     transition: opacity 0.1s;
     z-index: 999;
+    display: flex;
+    align-items: center;
+    color: black;
+    margin: 10px;
 }
 @mixin arrowAfter{
-    position: absolute;
-    line-height: 20px;
-    top: calc(50% - 10px);
-    font-size: 35px;
+    font-size: 30px;
     cursor: pointer;
+    color: inherit;
 }
-.arrowNext{
+.arrowNext, .arrowPrev{
     @include arrow;
-    right: 5px;
-}
-.arrowPrev{
-    @include arrow;
-    left: 5px;
 }
 .arrowNext:after{
     @include arrowAfter;
-    content: ">";
+    font-family: 'slick';
+    content: '→';
     right: 0;
 }
 .arrowPrev:after{
     @include arrowAfter;
-    content: "<";
+    font-family: 'slick';
+    content: '←';
     left: 0;
 }
 .arrowNext:hover, .arrowPrev:hover{
-    opacity: 0.5;
+    color: blue;
+    opacity: 1;
 }
 .slideContainer{
     top: 0;
     left: 0;
-    // position: absolute;
     z-index: 998;
     height: calc(100% - 70px);
     display: flex;
@@ -105,16 +101,26 @@
 .zoomedIn{
     transform: scale(2);
 }
-.dotContainer{
+@mixin dotContainer{
     width: 100%;
     position: relative;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dotContainer{
+    @include dotContainer();
     height: 100px;
-    // display: flex;
-    // justify-content: center;
+    padding: 10px 20px;
+}
+.dotWrapper{
+    @include dotContainer();
+    width: unset;
+    height: 100%;
+    padding: 0 10px;
 }
 .dotList{
     margin: 0;
@@ -122,31 +128,32 @@
     display: flex;
     align-items: center;
     list-style: none;
-    position: absolute;
-    top: 0;
-    left: 0;
     scroll-behavior: smooth;
     height: 100%;
-}
-.dotWrapper{
-    position: relative;
+    width: 100%;
+    transition: .2s all;
 }
 .dot{
     flex: none;
-    border: 2px solid rgb(0, 0, 0);
     margin: 5px;
-    padding: 5px;
     cursor: pointer;
     height: 100%;
     width: 150px;
     display: flex;
     justify-content: center;
     overflow: hidden;
+    opacity: 0.3;
     img{
         height: 100%;
         width: auto;
     }
 }
+.dot:hover{
+    opacity: 0.8;
+}
 .dot_active{
-    background: lime;
+    opacity: 1;
+}
+.dot_active:hover{
+    opacity: 1;
 }

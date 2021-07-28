@@ -46,7 +46,7 @@
             {"title": null, "img": "mongodb.png"},
             {"title": null, "img": "sass.svg"}
           ],
-          "other": ["Image upload", "CRUD", "Authorization", "Modals", "Progress bar"]
+          "other": ["Image upload", "CRUD", "Modals", "Authorization", "Progress bar"]
         }
     },
     {

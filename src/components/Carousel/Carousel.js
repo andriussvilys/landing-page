@@ -61,20 +61,39 @@ const Carousel = props => {
     const dots = (imageList) => {
         const dots = imageList.map((image, index) => {
             return <li 
-            onClick={() => {
-                slideTo(index)
-            }}
-            ref={index === slidePosition.currentSlide ? dot_active : null}
-            key={`${image}-${index}`} 
-            className={`${styles.dot} ${index === slidePosition.currentSlide ? styles.dot_active : ""}`}
-            >
-                <img src={image} alt={`Click this thumbnail to scroll to slide ${index}`} />
-            </li>
+                    onClick={() => {
+                        slideTo(index)
+                    }}
+                    ref={index === slidePosition.currentSlide ? dot_active : null}
+                    key={`${image}-${index}`} 
+                    className={`${styles.dot} ${index === slidePosition.currentSlide ? styles.dot_active : ""}`}
+                >
+                    <img 
+                        src={image} 
+                        alt={`Click this thumbnail to scroll to slide ${index}`} 
+                    />
+                </li>
         })
         return (
-            <div ref={dot_container} className={styles.dotContainer}>
+            <div
+                className={styles.dotContainer}
+            >
                 {arrowPrev()}
-                {imageList.length < 2 ? null : <ul ref={dot_list} className={styles.dotList}>{dots}</ul>}
+                <div 
+                    className={styles.dotWrapper}
+                    ref={dot_container} 
+                >
+                    {imageList.length < 2 ? null : 
+                        <ul 
+                            ref={dot_list} 
+                            className={styles.dotList}
+                            style={{
+                                transform: `translateX(${slidePosition.currentTransform}%)`
+                            }}
+                        >
+                            {dots}
+                        </ul>}
+                </div>
                 {arrowNext()}
             </div>
         )
@@ -85,12 +104,12 @@ const Carousel = props => {
         if(props.content && props.content.length < 2){
             return
         }
-        return <div 
+        return <button 
             className={styles.arrowNext}
             onClick={() => {
                 slideTo(slidePosition.currentSlide + 1)
             }}
-        ></div>
+        ></button>
     }
 
     const arrowPrev = () => {
@@ -101,12 +120,12 @@ const Carousel = props => {
             return
         }
 
-        return <div 
+        return <button 
             className={styles.arrowPrev}
             onClick={() => {
                 slideTo(slidePosition.currentSlide - 1)
             }}
-        ></div>
+        ></button>
     }
 
     const renderContent = (content) => {
@@ -231,10 +250,8 @@ const Carousel = props => {
             >
                 <div 
                     id="container_main"
-                    // ref={containerRef}
                     className={styles.container}
                 >
-                    {/* {arrowPrev()} */}
                 <div 
                     id={"slideContainer"}
                     className={`${styles.slideContainer} ${slidePosition.smooth ? styles.smoothSlide : ""}`}
@@ -246,7 +263,6 @@ const Carousel = props => {
                 >
                     {renderContent(props.content)}
                 </div>
-                    {/* {arrowNext()} */}
             </div>
 
             {dots(props.thumbnails)}

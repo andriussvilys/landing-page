@@ -33,11 +33,27 @@
 }
 
 .slick-next {
-  right: 15px;
+  right: 5px;
 }
 
 .slick-prev {
-  left: 15px;
+  left: 5px;
+}
+
+.slick-prev, .slick-next {
+  color: black;
+  height: 30px;
+  width: 30px;
+}
+
+.slick-prev:hover, .slick-next:hover {
+  color: blue;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: inherit;
+  opacity: 0.3;
+  font-size: 30px;
 }
 
 .slick-dots {
@@ -48,13 +64,15 @@
 .slick-dots li button:before {
   border: 0;
   border-radius: 22px;
-  background-color: #c8ffc8;
+  border: 2px solid black;
   opacity: 0.5;
   color: #f0f8ff00 !important;
+  height: 15px;
+  width: 15px;
 }
 
 .slick-dots li.slick-active button:before {
-  background-color: #84fc84;
+  background-color: blue;
 }
 
 @media only screen and (max-width: 720px) {
