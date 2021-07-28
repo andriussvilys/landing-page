@@ -14,17 +14,15 @@
 }
 
 .carousel {
-  height: 100%;
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr min-content;
-      grid-template-rows: 1fr -webkit-min-content;
-      grid-template-rows: 1fr min-content;
+  -ms-grid-rows: max-content min-content;
+      grid-template-rows: -webkit-max-content -webkit-min-content;
+      grid-template-rows: max-content min-content;
 }
 
 .container {
-  height: 100%;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -87,7 +85,6 @@
 .slideContainer {
   top: 0;
   left: 0;
-  position: absolute;
   z-index: 998;
   height: calc(100% - 70px);
   display: -webkit-box;

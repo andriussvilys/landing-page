@@ -16,13 +16,14 @@ const SlickCarousel = props => {
     return(
         <Slider {...settings}>
             {
+                props.imageList && props.imageList.length > 0 ?
                 props.imageList.map(fileName => {
                     return <img 
-                    src={`carousel/${props.assetDir}/${fileName}`} 
-                    alt={fileName} 
-                    key={`slickCarousel-${fileName}`}
+                        src={`carousel/${props.assetDir}/${fileName}`} 
+                        alt={fileName} 
+                        key={`slickCarousel-${fileName}`}
                     />
-                })
+                }) : <div style={{height: "50%", width: "50%", backgroundColor: "yellow"}}></div>
             }
         </Slider>
     )

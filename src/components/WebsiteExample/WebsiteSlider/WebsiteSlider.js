@@ -66,10 +66,11 @@ const WebsiteSlider= (props) => {
 
     return(
         <div className="WebsiteSlider_container" >
-            {data ? 
+            {data && data.length > 0 ?
                 <Carousel
                     thumbnails = {props.thumbnails}
                     content = {data.map((item, index) => {
+                        console.log(item)
                         return (
                             <WebsiteExample 
                                 key={`websiteExample-${index}`}

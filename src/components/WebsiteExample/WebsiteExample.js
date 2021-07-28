@@ -1,11 +1,14 @@
 import React from 'react'
 import Badge from '../Tools/Badge'
 import './css/WebsiteExample.css'
+import './SlickCarousel/SlickCarousel'
+import SlickCarousel from './SlickCarousel/SlickCarousel'
 
 
 const WebsiteExample = (props) => {
-    const [open, toggleOpen] = React.useState(props.open)
+
     const [fullSize, toggleFullSize] = React.useState(false)
+
     const badges = (list) => {
         return list.map((listItem, index) => {
             return <Badge 
@@ -29,6 +32,7 @@ const WebsiteExample = (props) => {
         }
         else return null
     }
+    
     return(
             <div className="webExample-wrapper" id={props.id}>
 
@@ -59,10 +63,10 @@ const WebsiteExample = (props) => {
 
                     <div className={`webExample-carousel-container ${fullSize ? "webExample-carousel_fullWidth" : ""}`}>
                         
-                        {/* <SlickCarousel 
+                        <SlickCarousel
                             assetDir={props.assetDir}
-                            imageList={props.imageList}
-                        /> */}
+                            imagesList={props.imagesList}
+                        />
                         {/* <div 
                         title={`Click to ${fullSize ? "shrink" : "expand"}`}
                         className="webExample-carousel-sizeToggle"

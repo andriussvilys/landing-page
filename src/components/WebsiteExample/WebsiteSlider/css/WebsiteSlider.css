@@ -1,15 +1,1 @@
-.WebsiteSlider_container {
-  height: 600px;
-  position: relative;
-}
-
-.WebsiteSlider_container .slick-dots {
-  bottom: -80px;
-}
-
-.WebsiteSlider_container .slick-dots li {
-  overflow: hidden;
-  height: 100px;
-  width: 100px;
-}
-/*# sourceMappingURL=WebsiteSlider.css.map */
+/* No CSS *//*# sourceMappingURL=WebsiteSlider.css.map */
