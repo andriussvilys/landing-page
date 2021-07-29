@@ -1,5 +1,3 @@
-@import '../../css/cardStyles';
-
 $navHeight: 43px;
 $carouselBG: #161641;
 $webExampleTitle: 50px;
@@ -108,9 +106,6 @@ $accordionAccent: white;
 .webExample-details-description{
     width: 40ch;
     text-indent: 2ch;
-}
-.webExample-details-container, .webExample-carousel-container{
-    @include card_secondary();
 }
 .webExample-details-badges, .webExample-details-other{
     display: flex;

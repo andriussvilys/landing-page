@@ -54,6 +54,18 @@ main {
   margin-top: 43px;
 }
 
+section {
+  border-radius: 20px;
+  border: 3px solid black;
+  margin: 10px;
+  background-color: #fafafa;
+  -webkit-box-shadow: 4px 10px 6px rgba(43, 43, 49, 0.3);
+          box-shadow: 4px 10px 6px rgba(43, 43, 49, 0.3);
+  padding: 10px 20px;
+  margin: 40px 20px;
+  overflow: hidden;
+}
+
 .nav-container {
   position: fixed;
   width: 100%;

@@ -1,5 +1,3 @@
-@import '../../css/cardStyles';
-
 .disableBodyScroll{
     overflow: hidden;
 }
@@ -20,8 +18,6 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-
-    @include card_primary();
     
 }
 @mixin arrow {
