@@ -1,13 +1,10 @@
-$navHeight: 43px;
-$carouselBG: #161641;
-$webExampleTitle: 50px;
-$mainHeadlineHeight: 50px;
-$accordionAccent: white;
+@import '../../../css/css/cardStyles';
+@import '../../../css/css/consts';
 
 .webExample-container{
     overflow: hidden;
     position: relative;
-    background: $carouselBG;
+    background: $BG_primary;
     transition: height 0.3s;
     transition-timing-function: ease-in-out;
 }
@@ -19,10 +16,10 @@ $accordionAccent: white;
     cursor: pointer;
     padding-left: 30px;
     background-color: #007;
-    color: $accordionAccent;
+    color: black;
     width: 100%;
     position: relative;
-    height: $webExampleTitle;
+    // height: ;
     display: flex;
     align-items: center;
     border-bottom: 2px solid #d6d6d645;
@@ -92,10 +89,13 @@ $accordionAccent: white;
     top: 0;
     left: 0;
     transition: background-color 0.4s;
-    background-color: $carouselBG;
+    background-color: black;
     .slick-list{
         height: 100% !important;
     }
+}
+.webExample-details-container, .webExample-carousel-container{
+    @include card_noShadow;
 }
 .webExample-details-container{
     flex: 1;
@@ -111,14 +111,6 @@ $accordionAccent: white;
     display: flex;
     flex-wrap: wrap;
 }
-
-.webExample-details-title:after{
-    content: "▲";
-    color: $accordionAccent;
-    position: absolute;
-    right: 35px;
-    top: calc(50% - 7px);
-}
 .webExample-details-badges{
     .details-badge img{
         height: 24px;
@@ -127,7 +119,7 @@ $accordionAccent: white;
 .webExample-details-tags{
     padding: 10px;
     margin: 20px 0;
-    background-color: #dfdfdf;
+    background-color: $BG_secondary;
     border-radius: 10px;
     max-width: 60ch;
 }
@@ -152,27 +144,9 @@ $accordionAccent: white;
         align-items: center;
         border-radius: 25px;
         border: 4px solid blue;
-        // box-shadow: 0 5px 25px rgba(0, 0, 255, 0.30), 0 6px 6px rgba(255, 127, 0, 0.12);
         box-shadow: 2px 6px 6px rgba(43, 43, 49, 0.3);
     }
 }
-// .details-badge_other{
-//     background-color: white;
-//     white-space: nowrap;
-//     height: 30px;
-//     border-radius: 5px;
-//     font-size: 10px;
-//     text-transform: uppercase;
-//     overflow: hidden;
-//     display: flex;
-//     flex-wrap: wrap;
-//     align-items: center;
-//     justify-content: center;
-//     margin: 3px;
-//     border: 1px solid rgb(182, 182, 182);
-//     padding: 0 10px;
-//     color: rgb(54, 54, 54);
-// }
 
 .webExample-content{
     display: grid;
@@ -199,7 +173,9 @@ $accordionAccent: white;
     }
 }
 @media only screen and (max-width: 720px){
-
+    .webExample-details-container, .webExample-carousel-container{
+        margin: 4px;
+    }
     .webExample-carousel-sizeToggle{
         right: 10px;
     }

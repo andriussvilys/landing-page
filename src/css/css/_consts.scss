@@ -1,0 +1,25 @@
+$BG_primary: #f9f9f9;
+$BG_secondary: rgb(210, 210, 210);
+
+$accent_primary: #1a1ad7;
+$accent_secondary: #1ad73a;
+
+$border_primary: 3px solid rgb(153, 153, 153);
+$border_secondary: 2px solid rgb(255, 255, 255);
+
+$horizontal_primary: none;
+$horizontal_secondary: 2px solid rgb(148, 148, 148);
+
+$shadow_primary: 4px 10px 6px rgba(100, 100, 109, 0.3);
+
+$marginLeft: 30px;
+$marginRight: 30px;
+$navHeight: 43px;
+$headlineHeight: 50px;
+$footerHeight: 80px;
+
+@mixin centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

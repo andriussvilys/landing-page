@@ -1,3 +1,4 @@
+@import '../../../../css/css/consts';
 .slick-slider, .slick-track{
     height: 100%;
     width: 100%;
@@ -40,7 +41,7 @@
 .slick-prev:hover, .slick-next:hover
 {
     opacity: 1;
-    color: blue;
+    color: $accent_primary;
 }
 
 .slick-prev:before, .slick-next:before
@@ -65,7 +66,7 @@
     width: 15px;
 }
 .slick-dots li.slick-active button:before {
-    background-color: blue;
+    background-color: $accent_primary;
 }
 @media only screen and (max-width: 720px){
     .slick-list{

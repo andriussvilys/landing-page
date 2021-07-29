@@ -1,3 +1,6 @@
+@import '../../../css/css/consts';
+@import '../../../css/css/cardStyles';
+
 .disableBodyScroll{
     overflow: hidden;
 }
@@ -8,7 +11,6 @@
 	transition: transform .5s;
 }
 .carousel{
-    // height: 100%;
     width: 100%;
     display: grid;
     grid-template-rows: max-content min-content;
@@ -18,7 +20,9 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    
+    // @include card_secondary;
+    background-color: $BG_secondary;
+    margin-top: 5px;
 }
 @mixin arrow {
     opacity: 0.3;
@@ -50,19 +54,17 @@
     left: 0;
 }
 .arrowNext:hover, .arrowPrev:hover{
-    color: blue;
+    color: $accent_primary;
     opacity: 1;
 }
 .slideContainer{
     top: 0;
     left: 0;
-    z-index: 998;
     height: calc(100% - 70px);
     display: flex;
     touch-action: pan-y;
     will-change: transform;
     overflow: hidden;
-    z-index: 998;
     box-shadow: -2px 0px 17px 4px rgba(182,182,182,0.28);
     height: 100%;
 }
@@ -109,8 +111,10 @@
 }
 .dotContainer{
     @include dotContainer();
+    border-top: $horizontal_primary;
     height: 100px;
     padding: 10px 20px;
+    padding-bottom: 0;
 }
 .dotWrapper{
     @include dotContainer();
@@ -119,7 +123,6 @@
     padding: 0 10px;
     align-self: baseline;
     align-items: baseline;
-    margin-top: 5px;
 }
 .dotList{
     margin: 0;
@@ -145,6 +148,7 @@
     img{
         height: 100%;
         width: auto;
+        max-width: 80%;
     }
 }
 .dot:hover{
@@ -152,9 +156,7 @@
 }
 .dot_active{
     opacity: 1;
-    // box-shadow: 0px 6px 6px 6px rgba(182,182,182,0.28);
-    background: rgba(182,182,182,0.28);
-    // border: 3px solid blue;
+    background-color: $BG_secondary;
     border-radius: 10px;
 }
 .dot_active:hover{

@@ -101,107 +101,94 @@ function App() {
         </section>
 
         <section id="examples">
+        
+        <div className={"section-wrapper"}>
           <h1 className="headline">
             EXAMPLES
           </h1>
 
-        <WebsiteSlider 
+          <WebsiteSlider 
           thumbnails={[
-            "carousel/admin/admin-1.png", 
             "carousel/andriussvilys/personalWebsite-2.png", 
-            "carousel/devChallenge/dev-challenge-1.png",
+            "carousel/admin/admin-1.png", 
             "carousel/image-search/Screenshot-desktop-1.png", 
+            "carousel/devChallenge/dev-challenge-1.png",
             "carousel/responsive/responsive-eg-1.jpg",
             "carousel/t-pose/t-pose-desktop-1.png", 
           ]}
           />
+        </div>
 
-
-          {/* <WebsiteExample 
-            open={true}
-            id={"personal-website"}
-            title={"Image archive"}
-            assetDir={"andriussvilys"}
-            href={"https://andriussvilys.com"}
-            imageList={
-              [
-                "personalWebsite-2.png", 
-                "personalWebsite-3.png", 
-                "personalWebsite-4.png",
-                "personalWebsite-5.png", 
-                "personalWebsite-6.jpg",
-                "personalWebsite-7.jpg", 
-                "personalWebsite-8.jpg",
-                "personalWebsite-9.jpg", 
-                "personalWebsite-10.jpg",
-              ]
-            }
-            badges={{
-              badges: [{title: "React JS", img: "react.svg"}, {title: null, img: "sass.svg"}, {title: "Digital Ocean", img: "digital-ocean.png"}, ],
-              other: ["React-slick", "filters", "Tags", "Related images"]
-            }}
-          />*/}
         </section>
 
         <section id="tools" >
+
+          <div className={"section-wrapper"}>
+
           <h1 className="headline">Toolbox</h1>
-            <Tools 
-              data={[
-                {
-                  title: "Front-end", 
-                  list: [
-                    {title: "HTML5", img: "HTML5.png"},
-                    {title: "JavaScript", img: "js.png"},
-                    {title: "React JS", img: "react.svg"}, 
-                    {title: "Redux", img: "redux.svg"},
-                    {title: "CSS3", img: "CSS3.png"},
-                    {title: null,
-                    // title: null, 
-                    img: "sass.svg"},
-                  ]
-                },
-                {title: "Back-end",
-                  list: [
-                    {title: null,
-                    // title: "Node.js", 
-                    img: "node-js.svg"},
-                    {title: "Postman", img: "postman.png"},
-                    {title: "express.js"},
-                  ]
-                },
-                {
-                  title: "Graphic design", 
-                  list: [
-                    {title: "PhotoShop", img: "photoshop.png"}, 
-                    {title: "Illustrator", img: "illustrator.png"},
-                    {title: "Figma", img: "figma.png"},
-                  ]
-                },
-                {
-                  title: "Other",
-                  list: [
-                    {title: null,
-                    // title: "git", 
-                    img: "git.png"},
-                    {title: null, 
-                    // title: "NPM", 
-                    img: "npm.png"},
-                    {title: null,
-                    // title: "MongoDB", 
-                    img: "mongodb.png"},
-                    {title: "Digital Ocean", img: "digital-ocean.png"},
-                    {title: "AEM", img: "AEM.png"},
-                    {title: "VSCode", img: "vscode.png"},
-                    {title: null,
-                    // title: "Jira", 
-                    img: "jira.png"},
-                  ]
-                }
+          <Tools 
+            data={[
+              {
+                title: "Front-end", 
+                list: [
+                  {title: "HTML5", img: "HTML5.png"},
+                  {title: "JavaScript", img: "js.png"},
+                  {title: "React JS", img: "react.svg"}, 
+                  {title: "Redux", img: "redux.svg"},
+                  {title: "CSS3", img: "CSS3.png"},
+                  {title: null,
+                  // title: null, 
+                  img: "sass.svg"},
+                ]
+              },
+              {title: "Back-end",
+                list: [
+                  {title: null,
+                  // title: "Node.js", 
+                  img: "node-js.svg"},
+                  {title: "Postman", img: "postman.png"},
+                  {title: "express.js"},
+                ]
+              },
+              {
+                title: "Graphic design", 
+                list: [
+                  {title: "PhotoShop", img: "photoshop.png"}, 
+                  {title: "Illustrator", img: "illustrator.png"},
+                  {title: "Figma", img: "figma.png"},
+                ]
+              },
+              {
+                title: "Other",
+                list: [
+                  {title: null,
+                  // title: "git", 
+                  img: "git.png"},
+                  {title: null, 
+                  // title: "NPM", 
+                  img: "npm.png"},
+                  {title: null,
+                  // title: "MongoDB", 
+                  img: "mongodb.png"},
+                  {title: "Digital Ocean", img: "digital-ocean.png"},
+                  {title: "AEM", img: "AEM.png"},
+                  {title: "VSCode", img: "vscode.png"},
+                  {title: null,
+                  // title: "Jira", 
+                  img: "jira.png"},
+                ]
+              }
             ]}
-            />
+          />
+
+          </div>
+
         </section>
         
         <section className="about-container" id="about">
+
+        <div className={"section-wrapper"}>
+
           <h1 className="headline">
             ABOUT
           </h1>
@@ -221,6 +208,9 @@ function App() {
                 </button>
               </div>
             </div>
+
+          </div>
+
         </section>
 
       <footer></footer>

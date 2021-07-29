@@ -3,15 +3,17 @@
 @import './css/cardStyles';
 @import './css/kv';
 @import './css/nav';
-// $backgroundColor: rgb(226, 233, 243);
+@import './css//consts';
+@import 'css/tools';
+
 $backgroundColor: #f9f9f9;
 $accentColor: #1a1ad7;
 $primary: #1a1ad7;
 $marginLeft: 30px;
 $marginRight: 30px;
-$navHeight: 43px;
 $headlineHeight: 50px;
 $footerHeight: 80px;
+
 *{
     padding: 0;
     margin: 0;
@@ -34,14 +36,9 @@ html,body,#root,.App{
 body{
     background-color: $backgroundColor;
 }
-@mixin centered{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-@mixin squareCTA{
+
+@mixin CTA{
     bottom: 0;
-    // position: absolute;
     background: white;
     text-transform: uppercase;
     white-space: nowrap;
@@ -55,14 +52,17 @@ body{
 .headline{
     display: flex;
     align-items: center;
-    width: 100%;
     font-size: 24px;
     text-transform: uppercase;
     height: $headlineHeight;
     background: $accentColor;
     color: white;
     padding: 25px $marginLeft;
-    max-height: $headlineHeight;
+    margin: 2px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+
+
 }
 main{
     // overflow-y: auto;
@@ -74,15 +74,18 @@ main{
     margin-top: $navHeight;
 }
 section{
-    @include card_primary();
-    padding: 10px 20px;
-    margin: 40px 20px;
+    padding: 10px 0;
+}
+.section-wrapper{
+    @include card_primary;
+    margin: 20px 20px;
     overflow: hidden;
 }
 
 .CTA-contact{
-    @include squareCTA;
+    @include CTA;
 }
+
 @keyframes CTA-seemore{
     0%{
         transform: translateY(0px);
@@ -176,11 +179,8 @@ footer{
     grid-column-start: 1;
     grid-column-end: 5;
 }
-.nav-links-hamburger{
-    display: none;
-}
 
-@media only screen and (max-width: 801px){
+@media only screen and (max-width: 720px){
     .CTA-seemore{
         display: none;
     }
@@ -199,6 +199,12 @@ footer{
         margin-right: 10px;
         margin-bottom: 5px;
     }
-}
 
-@import 'css/tools'
+    section{
+        padding: 0;
+    }
+    .section-wrapper{
+        margin: 7px;
+        margin-bottom: 16px;
+    }
+}

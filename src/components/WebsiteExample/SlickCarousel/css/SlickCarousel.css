@@ -50,7 +50,7 @@
 
 .slick-prev:hover, .slick-next:hover {
   opacity: 1;
-  color: blue;
+  color: #1a1ad7;
 }
 
 .slick-prev:before, .slick-next:before {
@@ -74,7 +74,7 @@
 }
 
 .slick-dots li.slick-active button:before {
-  background-color: blue;
+  background-color: #1a1ad7;
 }
 
 @media only screen and (max-width: 720px) {

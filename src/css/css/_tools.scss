@@ -60,8 +60,10 @@
 }
 .tools-wrapper{
     flex-wrap: wrap;
+    align-items: center;
     border-bottom: 1px solid rgb(189, 189, 189);
     padding: 15px 20px 15px 0;
+    text-transform: uppercase;
 }
 .tools-wrapper:last-of-type{
     border-bottom: 0;

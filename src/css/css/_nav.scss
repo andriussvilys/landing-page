@@ -1,3 +1,7 @@
+@import './consts';
+
+$navHeight: 43px;
+
 .nav-container{
     position: fixed;
     width: 100%;
@@ -5,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $accentColor;
+    background-color: $accent_primary;
     box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
     z-index: 899;
 }
@@ -34,6 +38,19 @@
     margin-right: $marginRight / 2;
     margin-left: 10px;
     padding: 10px 0;
+    button{
+        font-size: inherit;
+        font-weight: inherit;
+        letter-spacing: inherit;
+        color: inherit;
+        text-transform: inherit;
+        white-space: inherit;
+        cursor: inherit;
+        user-select: inherit;
+        display: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+    }
 }
 .nav-links-listItem:after{
     content: "";
@@ -66,14 +83,18 @@
     padding: 0 $marginLeft;
     @include centered;
 }
-@media only screen and (max-width: 720){
+.nav-links-hamburger{
+    display: none;
+}
+
+@media only screen and (max-width: 720px){
     .nav-links-list{
         width: 70vw;
         max-width: 300px;
         height: calc(100vh - #{$navHeight});
         position: absolute;
         top: $navHeight;
-        background-color: blue;
+        background-color: $accent_primary;
         flex-direction: column;
         justify-content: flex-start;
         z-index: 8;

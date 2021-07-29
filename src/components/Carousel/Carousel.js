@@ -250,24 +250,23 @@ const Carousel = props => {
                 className={styles.carousel}
                 ref={containerRef}
             >
+                {dots(props.thumbnails)}
                 <div 
                     id="container_main"
                     className={styles.container}
                 >
-                <div 
-                    id={"slideContainer"}
-                    className={`${styles.slideContainer} ${slidePosition.smooth ? styles.smoothSlide : ""}`}
-                    ref={slideContainerRef}
-                    style={{
-                        width: `${100 * props.content.length}%`,
-                        transform: `translateX(${slidePosition.currentTransform}%)`
-                    }}
-                >
-                    {renderContent(props.content)}
+                    <div 
+                        id={"slideContainer"}
+                        className={`${styles.slideContainer} ${slidePosition.smooth ? styles.smoothSlide : ""}`}
+                        ref={slideContainerRef}
+                        style={{
+                            width: `${100 * props.content.length}%`,
+                            transform: `translateX(${slidePosition.currentTransform}%)`
+                        }}
+                    >
+                        {renderContent(props.content)}
+                    </div>
                 </div>
-            </div>
-
-            {dots(props.thumbnails)}
         </div>
     )
 }

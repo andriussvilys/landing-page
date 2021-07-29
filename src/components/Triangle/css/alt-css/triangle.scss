@@ -1,5 +1,7 @@
-$borderColor: blue;
-$animationDuration: 6.3s;
+@import '../../../../css/css/consts';
+
+$borderColor: $accent_primary;
+$animationDuration: 7.3s;
 
 $circleBoundRadius: 100%;
 
