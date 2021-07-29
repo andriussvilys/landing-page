@@ -29,19 +29,23 @@
 .slick-prev{
     left: 5px;
 }
-.slick-prev, .slick-next{
+.slick-prev, .slick-next,
+.slick-prev:focus, .slick-next:focus
+{
+    opacity: 0.3;
     color: black;
     height: 30px;
     width: 30px;
 }
-.slick-prev:hover, .slick-next:hover{
+.slick-prev:hover, .slick-next:hover
+{
+    opacity: 1;
     color: blue;
 }
 
 .slick-prev:before, .slick-next:before
 {
     color: inherit;
-    opacity: 0.3;
     font-size: 30px;
 }
 
@@ -50,6 +54,7 @@
     left: 0;
     bottom: 10px;
 }
+
 .slick-dots li button:before{
     border: 0;
     border-radius: 22px;

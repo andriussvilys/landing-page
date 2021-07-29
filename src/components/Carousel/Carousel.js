@@ -27,10 +27,12 @@ const Carousel = props => {
 
     const slideTo_dot = () => {
         if(dot_active && dot_active.current){
-            const slide_indent = dot_list.current.clientWidth / props.content.length
-            // let left = (slidePosition.currentSlide - 1) * 20
-            let left = (slidePosition.currentSlide - 1) * slide_indent
+
+            const dot_width = dot_active.current.getBoundingClientRect().width;
+            const left = ((slidePosition.currentSlide) * ( dot_width )) - (dot_width / 2) 
+            console.log(`left: ${left}`)
             dot_container.current.scroll(left, 0);
+
         }
     }
 
@@ -87,9 +89,9 @@ const Carousel = props => {
                         <ul 
                             ref={dot_list} 
                             className={styles.dotList}
-                            style={{
-                                transform: `translateX(${slidePosition.currentTransform}%)`
-                            }}
+                            // style={{
+                            //     transform: `translateX(${slidePosition.currentTransform}%)`
+                            // }}
                         >
                             {dots}
                         </ul>}

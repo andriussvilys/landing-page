@@ -2,11 +2,7 @@ import React from 'react';
 import Modal from './components/Modal/Modal'
 import Triangle from './components/Triangle/triangle';
 import Tools from './components/Tools/Tools'
-import WebsiteExample from './components/WebsiteExample/WebsiteExample'
-import Contact from './components/Contact/Contact';
-import Selector from './components/WebsiteExample/Selector/Selector';
 import WebsiteSlider from './components/WebsiteExample/WebsiteSlider/WebsiteSlider';
-import Carousel from './components/Carousel/Carousel';
 
 function App() {
 

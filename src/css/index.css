@@ -522,7 +522,7 @@ footer {
 .details-badge {
   background-color: #1c1c23;
   border-radius: 10px;
-  color: #cbcbcb;
+  color: #d8d8d8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -551,6 +551,35 @@ footer {
   white-space: nowrap;
   font-size: 12px;
   margin-top: 5px;
+}
+
+.details-badge_other {
+  background-color: white;
+  white-space: nowrap;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 3px;
+  border: 1px solid #b6b6b6;
+  padding: 0 10px;
+  color: #363636;
+}
+
+.details-badge_other, .details-badge {
+  font-weight: 600;
 }
 
 .details-badge-fullWidth {

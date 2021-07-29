@@ -40,19 +40,21 @@
   left: 5px;
 }
 
-.slick-prev, .slick-next {
+.slick-prev, .slick-next,
+.slick-prev:focus, .slick-next:focus {
+  opacity: 0.3;
   color: black;
   height: 30px;
   width: 30px;
 }
 
 .slick-prev:hover, .slick-next:hover {
+  opacity: 1;
   color: blue;
 }
 
 .slick-prev:before, .slick-next:before {
   color: inherit;
-  opacity: 0.3;
   font-size: 30px;
 }
 
