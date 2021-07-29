@@ -1,8 +1,11 @@
+@import '../../css/cardStyles';
+
 $navHeight: 43px;
 $carouselBG: #161641;
 $webExampleTitle: 50px;
 $mainHeadlineHeight: 50px;
 $accordionAccent: white;
+
 .webExample-container{
     overflow: hidden;
     position: relative;
@@ -26,33 +29,15 @@ $accordionAccent: white;
     align-items: center;
     border-bottom: 2px solid #d6d6d645;
 }
+.webExample-title{
+    margin-bottom: 20px;
+}
 .webExample-wrapper{
+    padding: 5px;
     display: flex;
     flex-wrap: wrap;
     height: 100%;
-    display: grid;
-    grid-template-rows: min-content 1fr;
-    grid-template-columns: 100%;
-    background-color: $carouselBG;
-    // grid-template-columns: minmax(480px, 60%) 1fr;
-    .webExample-details-title{
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 2;
-    }
-    .webExample-carousel-container{
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
-    .webExample-details-container{
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
+    width: 100%;
 }
 .webExample-hide{
     height: 50px !important;
@@ -61,8 +46,6 @@ $accordionAccent: white;
     }
 }
 .webExample-content{
-    grid-row-start: 2;
-    grid-row-end: 3;
     width: 100%;
     height: 100%;
     display: flex;
@@ -70,13 +53,8 @@ $accordionAccent: white;
     overflow: hidden;
 }
 .webExample-carousel-container{
-    background-color: $carouselBG;
-    min-width: 60%;
-    flex: 2;
-    height: 100%;
     position: relative;
     overflow: hidden;
-    max-height: calc(100vh - (#{$navHeight + $webExampleTitle + $mainHeadlineHeight}));
 }
 .webExample-carousel-slide{
     position: relative;
@@ -126,13 +104,13 @@ $accordionAccent: white;
     display: flex;
     flex-direction: column;
     padding: 30px;
-    background-color: white;
-    min-height: calc(100vh - #{$navHeight + $webExampleTitle + $mainHeadlineHeight});
 }
 .webExample-details-description{
-    // min-width: 35ch;
-    max-width: 60ch;
+    width: 40ch;
     text-indent: 2ch;
+}
+.webExample-details-container, .webExample-carousel-container{
+    @include card_secondary();
 }
 .webExample-details-badges, .webExample-details-other{
     display: flex;
@@ -161,6 +139,7 @@ $accordionAccent: white;
 .webExample-details-CTA{
     flex: 1;
     display: flex;
+    align-items: baseline;
 }
 .details-CTA-button{
     text-transform: uppercase;
@@ -178,7 +157,8 @@ $accordionAccent: white;
         align-items: center;
         border-radius: 25px;
         border: 4px solid blue;
-        box-shadow: 0 5px 25px rgba(0, 0, 255, 0.30), 0 6px 6px rgba(255, 127, 0, 0.12);
+        // box-shadow: 0 5px 25px rgba(0, 0, 255, 0.30), 0 6px 6px rgba(255, 127, 0, 0.12);
+        box-shadow: 2px 6px 6px rgba(43, 43, 49, 0.3);
     }
 }
 .details-badge_other{
@@ -199,27 +179,34 @@ $accordionAccent: white;
     color: rgb(54, 54, 54);
 }
 
-// @media only screen and (max-width: 720px){
-@media only screen and (max-width: 720px){
-    .webExample-carousel-sizeToggle{
-        right: 10px;
-    }
+.webExample-content{
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: min-content 1fr;
+}
 
-    .webExample-wrapper{
-        height: unset;
-    }
+@media only screen and (max-width: 1024px){
     .webExample-content{
-        height: unset;
+        grid-template-rows: min-content 1fr;
+        grid-template-columns: 100%;
     }
     .webExample-details-container{
         min-height: unset;
+        order: 2;
+    }
+    .webExample-details-description{
+        width: unset;
+        max-width: 60ch;;
     }
     .webExample-carousel-container{
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
         height: 60vh;
         max-height: unset;
+    }
+}
+@media only screen and (max-width: 720px){
+
+    .webExample-carousel-sizeToggle{
+        right: 10px;
     }
     .webExample-details-CTA{
         flex: unset;

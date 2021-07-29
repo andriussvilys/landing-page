@@ -1,30 +1,31 @@
 import React from 'react'
 
 const Badge = props => {
-    if(!props.img){
-        return <div 
-        // className={"details-badge_other"}
-        className="details-badge"
-        key={`${props.section}-badge-${props.title}`}
+    var icon = null;
+    var title = null;
+
+    if(props.img)
+    {
+        var className = props.title ? "details-badge" : "details-badge-fullWidth"
+        icon = <img 
+                    // className={className}
+                    src={`badges/${props.img}`} 
+                    alt={props.img}
+                />
+    }
+
+    if(props.title)
+        title = <span>{props.title}</span>
+        
+    return (
+        <div 
+            className="details-badge"
+            key={`${props.section}-badge-${props.title}`}
         >
-            <span>{props.title}</span>
+            {icon}
+            {title}
         </div>
-    }
-    if(!props.title){
-        return <div 
-        className="details-badge"
-        key={`${props.section}-badge-${props.title}`}
-        >
-        <img className="details-badge-fullWidth" src={`badges/${props.img}`} alt={props.img}/>
-    </div>                            
-    }
-    return <div 
-        className="details-badge"
-        key={`${props.section}-badge-${props.title}`}
-        >
-        <img src={`badges/${props.img}`} alt={props.title}/>
-        <span>{props.title}</span>
-    </div>
+    )
 }
 
 export default Badge
