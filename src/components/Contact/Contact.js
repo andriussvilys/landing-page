@@ -39,7 +39,7 @@ const Contact = (props) => {
                 </div>
 
 
-            <input className="CTA-contact"  type="submit" value="Send" />
+            <input className="CTA-contact CTA"  type="submit" value="Send" />
             </form>
         </Fragment>
       );

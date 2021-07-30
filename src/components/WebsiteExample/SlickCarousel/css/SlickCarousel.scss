@@ -5,6 +5,7 @@
     position: absolute;
 }
 .slick-slider{
+    background-color: #e5e5e5;
     padding: 30px 40px 40px 40px;
 }
 .slick-list{
@@ -41,7 +42,7 @@
 .slick-prev:hover, .slick-next:hover
 {
     opacity: 1;
-    color: $accent_primary;
+    color: $accent_secondary;
 }
 
 .slick-prev:before, .slick-next:before
@@ -59,14 +60,15 @@
 .slick-dots li button:before{
     border: 0;
     border-radius: 22px;
-    border: 2px solid black;
+    border: 2px solid rgb(129, 129, 129);
     opacity: 0.5;
     color: #f0f8ff00 !important;
     height: 15px;
     width: 15px;
 }
 .slick-dots li.slick-active button:before {
-    background-color: $accent_primary;
+    opacity: 1;
+    background-color: $accent_secondary;
 }
 @media only screen and (max-width: 720px){
     .slick-list{

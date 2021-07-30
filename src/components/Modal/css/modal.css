@@ -1,20 +1,21 @@
 .modal-container {
   position: fixed;
-  display: none;
   height: 100%;
   width: 100%;
   top: -100%;
   background-color: rgba(0, 0, 0, 0);
   z-index: 799;
+  -webkit-transition: .2s all;
+  transition: .2s all;
 }
 
 .modal-close {
   height: 22px;
   width: 22px;
   border-radius: 999px;
-  border: 3px solid red;
-  color: red;
-  background-color: #ff000038;
+  border: 3px solid #494949;
+  color: #494949;
+  background-color: #a4a4a4;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -22,6 +23,8 @@
           box-sizing: content-box;
   opacity: 0.3;
   cursor: pointer;
+  -webkit-transition: .3s all;
+  transition: .3s all;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,8 +40,11 @@
   line-height: 10px;
 }
 
-.modal-close:hover {
-  opacity: 0.8;
+.modal-close:hover, .modal-close:focus {
+  border: 3px solid #c4001d;
+  color: #c4001d;
+  background-color: #ff616f;
+  opacity: 0.5;
 }
 
 .modal-wrapper {
@@ -93,17 +99,8 @@
 }
 
 .show-container {
-  display: block;
-  -webkit-animation-name: modalShow;
-          animation-name: modalShow;
-  -webkit-animation-duration: 0.4s;
-          animation-duration: 0.4s;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  top: 0;
+  background-color: rgba(14, 14, 14, 0.9);
 }
 
 .contact-form {
@@ -115,13 +112,9 @@
   border-radius: 20px;
   -webkit-box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
           box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
-  max-width: 80ch;
-  min-width: 90%;
+  width: 60ch;
+  max-width: 90%;
   will-change: transform;
-}
-
-.contact-form .CTA-contact {
-  position: unset;
 }
 
 .contact-greeting {

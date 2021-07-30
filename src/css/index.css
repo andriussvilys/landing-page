@@ -111,7 +111,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #1a1ad7;
+  background-color: #0100ca;
   -webkit-box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
           box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
   z-index: 899;
@@ -210,7 +210,7 @@
 
 .nav-logo {
   font-size: 20px;
-  color: blue;
+  color: #0100ca;
   text-transform: uppercase;
   letter-spacing: 2px;
   background: white;
@@ -241,7 +241,7 @@
     height: calc(100vh - 43px);
     position: absolute;
     top: 43px;
-    background-color: #1a1ad7;
+    background-color: #651fff;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -463,12 +463,9 @@ body {
   font-size: 24px;
   text-transform: uppercase;
   height: 50px;
-  background: #1a1ad7;
+  background: #651fff;
   color: white;
   padding: 25px 30px;
-  margin: 2px;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
 }
 
 main {
@@ -481,33 +478,42 @@ main {
   margin-top: 43px;
 }
 
-section {
-  padding: 10px 0;
-}
-
 .section-wrapper {
-  border-radius: 20px;
-  border: 3px solid #999999;
-  margin: 10px;
-  background-color: #f9f9f9;
-  -webkit-box-shadow: 4px 10px 6px rgba(100, 100, 109, 0.3);
-          box-shadow: 4px 10px 6px rgba(100, 100, 109, 0.3);
-  margin: 20px 20px;
   overflow: hidden;
+  padding: 20px 0;
 }
 
 .CTA-contact {
-  bottom: 0;
+  position: relative;
+  font-weight: 600;
   background: white;
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
   padding: 15px 30px;
-  border-radius: 99px;
-  border: 4px solid #1a1ad7;
-  background-color: white;
-  -webkit-box-shadow: 0px 3px 10px rgba(14, 14, 14, 0.3), 0 6px 6px rgba(255, 255, 255, 0.12);
-          box-shadow: 0px 3px 10px rgba(14, 14, 14, 0.3), 0 6px 6px rgba(255, 255, 255, 0.12);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 25px;
+  border: 6px solid #00e676;
+  -webkit-box-shadow: 2px 6px 6px rgba(43, 43, 49, 0.3);
+          box-shadow: 2px 6px 6px rgba(43, 43, 49, 0.3);
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.CTA:hover {
+  background-color: #66ffa6;
+  top: 2px;
 }
 
 @-webkit-keyframes CTA-seemore {
@@ -574,7 +580,7 @@ section {
 
 .CTA-seemore-line {
   width: 100%;
-  border-bottom: 3px solid #1a1ad7;
+  border-bottom: 3px solid #651fff;
   position: relative;
   z-index: -2;
 }
@@ -583,8 +589,8 @@ section {
   content: "";
   height: 12px;
   width: 12px;
-  border-right: 3px solid #1a1ad7;
-  border-bottom: 3px solid #1a1ad7;
+  border-right: 3px solid #651fff;
+  border-bottom: 3px solid #651fff;
   position: absolute;
   left: calc(50% - 6px);
   top: -5px;
@@ -623,11 +629,11 @@ section {
   min-width: 15vw;
   min-height: 15vw;
   border-radius: 999px;
-  background-color: #1a1ad7;
   float: left;
   margin-right: 30px;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  background-color: #651fff;
 }
 
 .about-image-wrapper img {
@@ -643,7 +649,7 @@ section {
 footer {
   height: 80px;
   width: 100%;
-  background: #1a1ad7;
+  background: #651fff;
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 5;
@@ -670,10 +676,6 @@ footer {
   }
   section {
     padding: 0;
-  }
-  .section-wrapper {
-    margin: 7px;
-    margin-bottom: 16px;
   }
 }
 /*# sourceMappingURL=index.css.map */

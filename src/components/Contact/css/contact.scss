@@ -1,14 +1,12 @@
+@import '../../../css/css/consts';
+
 .contact-form{
-    // display: flex;
     padding: 15px 30px 30px 30px;
     margin: 30px 30px 30px 30px;
     position: relative;
     border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
+    box-shadow: $shadow_primary;
     max-width: 80ch;
-    .CTA-contact{
-        position: unset;
-    }
 }
 .contact-greeting{
     padding: 15px;

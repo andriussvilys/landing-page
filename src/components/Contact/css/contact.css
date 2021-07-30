@@ -3,13 +3,9 @@
   margin: 30px 30px 30px 30px;
   position: relative;
   border-radius: 20px;
-  -webkit-box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
-          box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
+  -webkit-box-shadow: 4px 10px 6px rgba(100, 100, 109, 0.3);
+          box-shadow: 4px 10px 6px rgba(100, 100, 109, 0.3);
   max-width: 80ch;
-}
-
-.contact-form .CTA-contact {
-  position: unset;
 }
 
 .contact-greeting {

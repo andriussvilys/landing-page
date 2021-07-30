@@ -9,7 +9,7 @@ $navHeight: 43px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $accent_primary;
+    background-color: $accent_primary_dark;
     box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
     z-index: 899;
 }
@@ -72,7 +72,7 @@ $navHeight: 43px;
 }
 .nav-logo{
     font-size: 20px;
-    color: blue;
+    color: $accent_primary_dark;
     text-transform: uppercase;
     letter-spacing: 2px;
     background: white;

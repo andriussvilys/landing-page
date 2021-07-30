@@ -1,11 +1,15 @@
+$accent_primary: #651fff;
+$accent_primary_light: #a255ff;
+$accent_primary_dark: #0100ca;
+$accent_secondary: #00e676;
+$accent_secondary_light: #66ffa6;
+$accent_secondary_dark: #00b248;
+
 $BG_primary: #f9f9f9;
-$BG_secondary: rgb(210, 210, 210);
+$BG_secondary: #a255ff;
 
-$accent_primary: #1a1ad7;
-$accent_secondary: #1ad73a;
-
-$border_primary: 3px solid rgb(153, 153, 153);
-$border_secondary: 2px solid rgb(255, 255, 255);
+$border_primary: 2px solid rgb(0, 0, 0);
+$border_secondary: 2px solid rgb(97, 97, 97);
 
 $horizontal_primary: none;
 $horizontal_secondary: 2px solid rgb(148, 148, 148);
@@ -22,4 +26,25 @@ $footerHeight: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin CTA{
+    position: relative;
+    font-weight: 600;
+    background: white;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    border: 6px solid $accent_secondary;
+    box-shadow: 2px 6px 6px rgba(43, 43, 49, 0.3);
+    transition: .3s all;
+
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
 }

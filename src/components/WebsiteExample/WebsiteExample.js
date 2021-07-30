@@ -56,7 +56,7 @@ const WebsiteExample = (props) => {
                         </div>
 
                         <div className="webExample-details-CTA">
-                            <button className="details-CTA-button"><a href={props.href} target="_blank">CLICK TO VISIT</a></button>
+                            <button className="details-CTA-button CTA"><a href={props.href} target="_blank">CLICK TO VISIT</a></button>
                         </div>
 
                     </div>

@@ -70,7 +70,7 @@
   height: 100%;
   width: 100%;
   border-radius: 999px;
-  border: 2px solid #1a1ad7;
+  border: 2px solid #651fff;
   -webkit-transform: rotate(-60deg);
           transform: rotate(-60deg);
 }
@@ -91,7 +91,7 @@
   width: 70px;
   border-radius: 999px;
   background-color: white;
-  border: 3px solid #1a1ad7;
+  border: 3px solid #651fff;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;

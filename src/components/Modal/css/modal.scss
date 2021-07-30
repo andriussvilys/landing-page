@@ -1,25 +1,30 @@
+@import '../../../css/css/consts';
+
 .modal-container{
     position: fixed;
-    display: none;
+    // display: none;
     height: 100%;
     width: 100%;
     top: -100%;
     background-color: rgba(0, 0, 0, 0);
     z-index: 799;
+    transition: .2s all;
+
 }
 .modal-close{
     height: 22px;
     width: 22px;
     border-radius: 999px;
-    border: 3px solid red;
-    color: red;
-    background-color: #ff000038;
+    border: 3px solid #494949;
+    color: #494949;
+    background-color: #a4a4a4;
     position: absolute;
     top: 10px;
     right: 10px;
     box-sizing: content-box;
     opacity: 0.3;
     cursor: pointer;
+    transition: .3s all;
 
     display: flex;
     justify-content: center;
@@ -28,8 +33,11 @@
         line-height: 10px;
     }
 }
-.modal-close:hover{
-    opacity: 0.8;
+.modal-close:hover, .modal-close:focus{
+  border: 3px solid #c4001d;
+  color: #c4001d;
+  background-color: #ff616f;
+  opacity: 0.5;
 }
 .modal-wrapper{
     padding: 20px;
@@ -58,21 +66,14 @@
     }
 }
 .show-container{
-    display: block;
-    animation-name: modalShow;
-    animation-duration: 0.4s;
-    animation-direction: normal;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+  top: 0;
+  background-color: rgba(14, 14, 14, 0.9);
 }
-// .show-wrapper{
-//     top: 0;
-// }
 
-
+.hide-container{
+}
 
 .contact-form{
-    // display: flex;
     position: relative;
     background-color: white;
     padding: 15px 30px 30px 30px;
@@ -80,19 +81,14 @@
     position: relative;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
-    max-width: 80ch;
-    min-width: 90%;
-    
+    width: 60ch;
+    max-width: 90%;
     will-change: transform;
-    .CTA-contact{
-        position: unset;
-    }
 }
 .contact-greeting{
     padding: 15px;
     padding-left: 0;
     margin-bottom: 15px;
-    // text-transform: uppercase;
 }
 .contact-item{
     display: flex;

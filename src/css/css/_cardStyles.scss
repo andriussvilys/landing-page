@@ -2,10 +2,9 @@
 
 @mixin card_primary{
     border-radius: 20px;
-    border: $border_primary;
-    margin: 10px;
-    background-color: $BG_primary;
-    box-shadow: $shadow_primary;
+    // border: $border_primary;
+    margin: 5px;
+    background-color: $BG_secondary;
 }
 @mixin  card_secondary{
     border-radius: 20px;

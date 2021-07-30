@@ -20,18 +20,18 @@ const Modal = props => {
         }
 
     return<div id="modal-container" 
-            // className="modal-container"
-            className={`modal-container ${props.showModal ? "show-container" : ""}`}
+                // className="modal-container"
+                className={`modal-container ${props.showModal ? "show-container" : "hide-container"}`}
             >
             <div id="modal-wrapper" 
-            // className="modal-wrapper"
-            className={`modal-wrapper ${props.showModal ? "show-wrapper" : ""}`}
+                // className="modal-wrapper"
+                className={`modal-wrapper ${props.showModal ? "show-wrapper" : ""}`}
             >
                 <form className="contact-form" onSubmit={sendEmail}>
                 <button className="modal-close" 
                 onClick={() => {
                     props.close()
-                    updateSubmitMessage("Leave me a message")
+                    updateSubmitMessage("Let's get in touch :^)")
                 }}><span>✖</span></button>
                     <p className="contact-greeting">{submitMessage}</p> 
                     <div className="contact-item">
@@ -50,7 +50,7 @@ const Modal = props => {
                     </div>
 
                     {/* <div class="loader">Please wait while the message is being sent...</div> */}
-                    <input className="CTA-contact"  type="submit" value="Send" />
+                    <input className="CTA-contact CTA"  type="submit" value="Send" />
                 </form>
             </div>
         </div>

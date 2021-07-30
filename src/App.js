@@ -44,8 +44,6 @@ function App() {
         <div className="nav-links-container">
           <div className="nav-links-hamburger"
             onClick={() => {
-              // toggleModal()
-              // document.querySelector(".nav-links-list").classList.toggle("links-list-display")
               closeNavList()
             }}
           >
@@ -80,7 +78,7 @@ function App() {
               <h3>I am a front-end developer.</h3>
 
               <button 
-                  className="CTA-contact"
+                  className="CTA-contact CTA"
                   onClick={() => {
                     toggleModal()
                   }}>
@@ -102,10 +100,11 @@ function App() {
 
         <section id="examples">
         
+        <h1 className="headline">
+          EXAMPLES
+        </h1>
+
         <div className={"section-wrapper"}>
-          <h1 className="headline">
-            EXAMPLES
-          </h1>
 
           <WebsiteSlider 
           thumbnails={[
@@ -123,9 +122,12 @@ function App() {
 
         <section id="tools" >
 
+          <h1 className="headline">
+            Toolbox
+          </h1>
+
           <div className={"section-wrapper"}>
 
-          <h1 className="headline">Toolbox</h1>
           <Tools 
             data={[
               {
@@ -187,29 +189,31 @@ function App() {
         
         <section className="about-container" id="about">
 
-        <div className={"section-wrapper"}>
-
           <h1 className="headline">
             ABOUT
           </h1>
-          <div className="about-wrapper">
-            <div className="about-image-wrapper">
-              <img className="about-image" alt="portrait" />
-            </div>
-            <div className="about-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-                <button 
-                  className="CTA-contact"
-                  onClick={() => {
-                    toggleModal()
-                  }}>
-                  get in touch
-                </button>
-              </div>
-            </div>
 
-          </div>
+          <div className={"section-wrapper"}>
+
+            <div className="about-wrapper">
+              <div className="about-image-wrapper">
+                <img className="about-image" alt="portrait" />
+              </div>
+              <div className="about-description">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                  </p>
+                  <button 
+                    className="CTA-contact CTA"
+                    onClick={() => {
+                      toggleModal()
+                    }}>
+                    get in touch
+                  </button>
+                </div>
+              </div>
+
+            </div>
 
         </section>
 
