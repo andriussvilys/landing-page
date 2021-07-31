@@ -127,7 +127,7 @@
 .webExample-details-container, .webExample-carousel-container {
   border-radius: 20px;
   margin: 5px;
-  background-color: #a255ff;
+  background-color: #0100ca;
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -168,7 +168,7 @@
 .webExample-details-tags {
   padding: 10px;
   margin: 20px 0;
-  background-color: #a255ff;
+  background-color: #0100ca;
   border-radius: 10px;
   max-width: 60ch;
 }

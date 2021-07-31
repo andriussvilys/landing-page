@@ -5,8 +5,13 @@
   top: -100%;
   background-color: rgba(0, 0, 0, 0);
   z-index: 799;
-  -webkit-transition: .2s all;
-  transition: .2s all;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 .modal-close {
@@ -68,15 +73,12 @@
 
 @-webkit-keyframes modalShow {
   0% {
-    display: block;
   }
   50% {
     top: 0;
-    display: block;
     background-color: rgba(0, 0, 0, 0);
   }
   100% {
-    display: block;
     top: 0;
     background-color: rgba(0, 0, 0, 0.85);
   }
@@ -84,15 +86,12 @@
 
 @keyframes modalShow {
   0% {
-    display: block;
   }
   50% {
     top: 0;
-    display: block;
     background-color: rgba(0, 0, 0, 0);
   }
   100% {
-    display: block;
     top: 0;
     background-color: rgba(0, 0, 0, 0.85);
   }
@@ -101,6 +100,11 @@
 .show-container {
   top: 0;
   background-color: rgba(14, 14, 14, 0.9);
+  -webkit-user-select: unset;
+     -moz-user-select: unset;
+      -ms-user-select: unset;
+          user-select: unset;
+  pointer-events: unset;
 }
 
 .contact-form {

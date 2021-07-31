@@ -217,7 +217,7 @@ const Carousel = props => {
             // },
             // onWheel: (state) => {
 
-            //     state.event.preventDefault()
+            //     // state.event.preventDefault()
 
             //     if(props.content.length < 2){
             //         return

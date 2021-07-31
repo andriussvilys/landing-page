@@ -92,19 +92,19 @@ function App() {
 
           </div>
 
-            <div className="CTA-seemore">
+            {/* <div className="CTA-seemore">
               <a href="#examples" className="CTA-seemore-text">See my work</a>
               <span className="CTA-seemore-line"></span>
-            </div>
+            </div> */}
         </section>
 
-        <section id="examples">
+        <section>
         
         <h1 className="headline">
           EXAMPLES
         </h1>
 
-        <div className={"section-wrapper"}>
+        <div id="examples" className={"section-wrapper"}>
 
           <WebsiteSlider 
           thumbnails={[
@@ -120,13 +120,13 @@ function App() {
 
         </section>
 
-        <section id="tools" >
+        <section>
 
           <h1 className="headline">
             Toolbox
           </h1>
 
-          <div className={"section-wrapper"}>
+          <div id="tools" className={"section-wrapper"}>
 
           <Tools 
             data={[
@@ -187,13 +187,13 @@ function App() {
 
         </section>
         
-        <section className="about-container" id="about">
+        <section className="about-container">
 
           <h1 className="headline">
             ABOUT
           </h1>
 
-          <div className={"section-wrapper"}>
+          <div id="about" className={"section-wrapper"}>
 
             <div className="about-wrapper">
               <div className="about-image-wrapper">

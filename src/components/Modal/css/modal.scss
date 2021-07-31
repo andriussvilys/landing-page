@@ -2,14 +2,15 @@
 
 .modal-container{
     position: fixed;
-    // display: none;
     height: 100%;
     width: 100%;
     top: -100%;
     background-color: rgba(0, 0, 0, 0);
     z-index: 799;
-    transition: .2s all;
-
+    // opacity: 0;
+    transition: .3s all;
+    user-select: none;
+    pointer-events: none;
 }
 .modal-close{
     height: 22px;
@@ -52,15 +53,15 @@
 }
 @keyframes modalShow{
     0%{
-        display: block;
+        // display: block;
     }
     50%{
         top: 0;
-        display: block;
+        // display: block;
         background-color: rgba(0, 0, 0, 0);
     }
     100%{
-        display: block;
+        // display: block;
         top: 0;
         background-color: rgba(0, 0, 0, 0.85);
     }
@@ -68,9 +69,8 @@
 .show-container{
   top: 0;
   background-color: rgba(14, 14, 14, 0.9);
-}
-
-.hide-container{
+  user-select: unset;
+  pointer-events: unset;
 }
 
 .contact-form{

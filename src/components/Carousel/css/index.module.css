@@ -102,7 +102,7 @@
   will-change: transform;
   border-radius: 20px;
   margin: 5px;
-  background-color: #a255ff;
+  background-color: #0100ca;
 }
 
 .slide img {
@@ -154,6 +154,9 @@
   height: 100px;
   padding: 10px 20px;
   padding-bottom: 0;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
 .dotWrapper {
@@ -228,7 +231,7 @@
 
 .dot_active {
   opacity: 1;
-  background-color: #a255ff;
+  background-color: #0100ca;
   border-radius: 10px;
 }
 
