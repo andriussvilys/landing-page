@@ -1,6 +1,5 @@
 $accent_primary: #651fff;
-$accent_primary_light: #0100ca;
-// $accent_primary_light: #a255ff;
+$accent_primary_light: #651fff;
 $accent_primary_dark: #0100ca;
 $accent_secondary: #00e676;
 $accent_secondary_light: #66ffa6;
@@ -8,14 +7,15 @@ $accent_secondary_dark: #00b248;
 
 $BG_primary: #f9f9f9;
 $BG_secondary: $accent_primary_light;
+$BG_gray: #e5e5e5;
 
-$border_primary: 2px solid rgb(0, 0, 0);
+$border_primary: 3px solid $accent_primary_dark;
 $border_secondary: 2px solid rgb(97, 97, 97);
 
 $horizontal_primary: none;
 $horizontal_secondary: 2px solid rgb(148, 148, 148);
 
-$shadow_primary: 4px 10px 6px rgba(100, 100, 109, 0.3);
+$shadow_primary: 4px 10px 6px rgba(100, 100, 109, 0.1);
 
 $marginLeft: 30px;
 $marginRight: 30px;

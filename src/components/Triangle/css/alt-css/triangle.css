@@ -373,16 +373,20 @@
           animation-play-state: paused;
 }
 
+.circle-label-wrapper {
+  left: 70px;
+}
+
+.circle-label {
+  left: 0;
+}
+
 @media only screen and (max-width: 801px) {
   .spinner-container {
     right: 0;
   }
   .circle:before {
     display: none;
-  }
-  .kv-image {
-    left: 180px;
-    padding: 0;
   }
 }
 /*# sourceMappingURL=triangle.css.map */

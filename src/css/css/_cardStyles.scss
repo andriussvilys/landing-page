@@ -2,7 +2,6 @@
 
 @mixin card_primary{
     border-radius: 20px;
-    // border: $border_primary;
     margin: 5px;
     background-color: $BG_secondary;
 }
@@ -14,6 +13,7 @@
 
 @mixin card_noShadow{
     @include card_primary();
+    border-radius: 10px;
     border: none;
     box-shadow: none;
     background-color: rgba(255, 255, 255, 0.8);

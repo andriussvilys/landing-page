@@ -58,8 +58,6 @@ const WebsiteSlider= (props) => {
     }, []);
 
     React.useEffect(() => {
-        console.log("DATA CHANGED")
-        console.log(data)
     })
 
     return(
@@ -69,7 +67,6 @@ const WebsiteSlider= (props) => {
                     currentSlide={0}
                     thumbnails = {props.thumbnails}
                     content = {data.map((item, index) => {
-                        console.log(item)
                         return (
                             <WebsiteExample 
                                 key={`websiteExample-${index}`}

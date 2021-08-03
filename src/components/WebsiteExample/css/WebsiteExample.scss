@@ -119,7 +119,7 @@
 .webExample-details-tags{
     padding: 10px;
     margin: 20px 0;
-    background-color: $BG_secondary;
+    background-color: $BG_gray;
     border-radius: 10px;
     max-width: 60ch;
 }
@@ -157,6 +157,9 @@
 @media only screen and (max-width: 720px){
     .webExample-details-container, .webExample-carousel-container{
         margin: 4px;
+    }
+    .webExample-details-container{
+        padding: 5px;
     }
     .webExample-carousel-sizeToggle{
         right: 10px;

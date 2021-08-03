@@ -19,7 +19,6 @@ $navHeight: 43px;
 .nav-links-list{
     list-style: none;
     @include centered;
-
 }
 .nav-links-listItem{
     position: relative;
@@ -94,7 +93,7 @@ $navHeight: 43px;
         height: calc(100vh - #{$navHeight});
         position: absolute;
         top: $navHeight;
-        background-color: $accent_primary;
+        background-color: $accent_primary_dark;
         flex-direction: column;
         justify-content: flex-start;
         z-index: 8;

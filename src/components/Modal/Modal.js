@@ -4,7 +4,6 @@ import './css/modal.css'
 
 const Modal = props => {
     const [submitMessage, updateSubmitMessage] = React.useState("Leave me a message")
-    // const [submitMessage, updateSubmitMessage] = React.useState(<div class="loader">Please wait while the message is being sent...</div>)
 
     function sendEmail(e) {
         e.preventDefault();
@@ -21,18 +20,28 @@ const Modal = props => {
 
     return<div id="modal-container" 
                 // className="modal-container"
-                className={`modal-container ${props.showModal ? "show-container" : "hide-container"}`}
+                className={`modal-container 
+                    ${props.triggered ? 
+                        props.showModal ? "show-container" : "hide-container" 
+                    : ""}
+                `}
             >
             <div id="modal-wrapper" 
                 // className="modal-wrapper"
-                className={`modal-wrapper ${props.showModal ? "show-wrapper" : ""}`}
+                className={`modal-wrapper 
+                    ${props.triggered ? 
+                        props.showModal ? "show-wrapper" : "hide-wrapper"
+                    : ""}
+                `}
             >
                 <form className="contact-form" onSubmit={sendEmail}>
                 <button className="modal-close" 
-                onClick={() => {
-                    props.close()
-                    updateSubmitMessage("Let's get in touch :^)")
-                }}><span>✖</span></button>
+                    onClick={() => {
+                        props.close()
+                        updateSubmitMessage("Let's get in touch :^)")
+                    }}
+                >
+                    <span>✖</span></button>
                     <p className="contact-greeting">{submitMessage}</p> 
                     <div className="contact-item">
                         <label className="contact-label">Name</label>

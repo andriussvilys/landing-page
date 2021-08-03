@@ -56,7 +56,8 @@ main{
 
 .section-wrapper{
     overflow: hidden;
-    padding: 20px 0;
+    // padding: 20px 0;
+    padding-bottom: 20px;
 }
 
 .CTA-contact{
@@ -171,7 +172,6 @@ footer{
         padding-bottom: 60px;
         p{
             max-width: 60ch;
-            font-size: 14px;
         }
     }
     .about-image-wrapper{
