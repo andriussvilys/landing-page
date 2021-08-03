@@ -30,7 +30,6 @@ const Carousel = props => {
 
             const dot_width = dot_active.current.getBoundingClientRect().width;
             const left = ((slidePosition.currentSlide) * ( dot_width )) - (dot_width / 2) 
-            console.log(`left: ${left}`)
             dot_container.current.scroll(left, 0);
 
         }
@@ -197,8 +196,6 @@ const Carousel = props => {
         if(index > slideCount -1){
             index = slideCount - 1
         }
-
-        console.log("move end")
 
         slideTo(index)
     }

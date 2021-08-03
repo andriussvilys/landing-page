@@ -257,6 +257,14 @@ $labelHeight: 30px;
 .anim-pause{
     animation-play-state: paused;
 }
+
+.circle-label-wrapper{
+    left: $circleWidth;
+}
+.circle-label{
+    left: 0;
+}
+
 @media only screen and (max-width: 801px){
     .spinner-container{
         right: 0;
@@ -264,14 +272,4 @@ $labelHeight: 30px;
     .circle:before{
         display: none;
     }
-    .kv-image{
-        left: 180px;
-        padding: 0;
-    }
-}
-
-@media only screen and (max-width: 688px){
-    // .spinner-container{
-    //     left: 180px;
-    // }
 }

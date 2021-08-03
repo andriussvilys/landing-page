@@ -13,9 +13,6 @@ const SlickCarousel = props => {
         slidesToScroll: 1,
         lazyLoading: "progressive",
       };
-    
-      console.log("slick carousel IMAGELIST")
-      console.log(props.imageList)
 
     return(
         <Slider {...settings}>

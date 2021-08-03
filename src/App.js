@@ -9,6 +9,8 @@ function App() {
   const burgerList = document.querySelector(".nav-links-list")
 
   const [showModal, toggleShowModal] = React.useState(null)
+  const [modalTrigger, triggerModal] = React.useState(null)
+
   const closeNavList = () => {
   const burgerList = document.querySelector(".nav-links-list")
     if(showModal){
@@ -27,15 +29,18 @@ function App() {
         delay = 200
       }
       setTimeout(() => {
+        triggerModal(true);
         toggleShowModal(!showModal)
       }, delay);
   
   }
+
   return (
     <div className="App">
       <Modal 
        close={toggleShowModal}
        showModal={showModal}
+       triggered={modalTrigger}
       />
       <nav id="nav" className="nav-container">
         <div className="nav-logo">
