@@ -25,6 +25,7 @@
 }
 
 .spinner-container {
+  cursor: pointer;
   -ms-grid-column: 2;
       grid-column-start: 2;
   grid-column-end: 3;
@@ -291,7 +292,7 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  font-size: 30px;
+  font-size: calc(min(28px, 5vw));
   width: 120px;
   margin: 0 20px;
   height: 30px;

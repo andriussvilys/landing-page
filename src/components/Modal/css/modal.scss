@@ -91,18 +91,22 @@
 
 @keyframes wrapperShow{
   0%{
+    display: block;
     top: -100%;
   }
   100%{
+    display: block;
     top: 0;
   }
 }
 @keyframes wrapperHide{
   0%{
+    display: block;
     top: 0;
   }
   100%{
     top: -100%;
+    display: none;
   }
 }
 
@@ -129,6 +133,7 @@
     width: 60ch;
     max-width: 90%;
     will-change: transform;
+    font-size: 16px;
 }
 .contact-greeting{
     padding: 15px;
@@ -170,11 +175,47 @@
     animation-iteration-count: 1;
 }
 
+.modal-buttons{
+  display: flex;
+  justify-content: space-between;
+  max-width: 60ch;
+  .CTA-contact{
+    order: 2;
+  }
+}
+
+.CTA_secondary{
+  @include CTA_secondary;
+  align-self: center;
+  order: 1;
+}
+
+.CTA_secondary:hover{
+  // background-color: rgb(130, 130, 130);
+  background-color: $accent_primary_light;
+  color: white;
+}
+
+.modal-alternative{
+  font-size: 14px;
+  margin-top: 20px;
+  span{
+    color: $text_secondary;
+  }
+  a{
+    color: $accent_primary_light;
+  }
+}
 
 
 @media only screen and (max-width: 720px){
     .contact-form{
         margin: 15px;
+        padding-bottom: 15px;
+        padding-top: 0;
+    }
+    .modal-alternative{
+      margin-top: 5px;
     }
 }
 

@@ -33,6 +33,7 @@ $circle-3-angle: -60deg;
 }
 //circle bound to center the triangle
 .spinner-container{
+    cursor: pointer;
     grid-column-start: 2;
     grid-column-end: 3;
     position: absolute;
@@ -208,7 +209,7 @@ $labelHeight: 30px;
     position: absolute;
     flex: 1 1;
     justify-content: flex-start;
-    font-size: $labelHeight;
+    font-size: calc(min(28px, 5vw));
     width: 120px;
     margin: 0 20px;
     height: $labelHeight;

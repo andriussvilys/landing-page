@@ -123,8 +123,19 @@
     border-radius: 10px;
     max-width: 60ch;
 }
+.webExample-details-CTA{
+    @include CTA_container;
+}
 .details-CTA-button{
     @include CTA;
+}
+.CTA-secondary{
+    @include CTA_secondary;
+}
+.CTA-secondary:hover,
+.CTA-secondary:focus{
+    background-color: $accent_primary_light;
+    color: white;
 }
 
 .webExample-content{

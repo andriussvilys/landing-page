@@ -5,7 +5,6 @@
     position: absolute;
 }
 .slick-slider{
-    background-color: $BG_gray;
     padding: 30px 40px 40px 40px;
 }
 .slick-list{
@@ -25,20 +24,20 @@
         }
     }
 }
+.slick-arrow
+{
+    color: $accent_secondary_light;
+    height: 30px;
+    width: 30px;
+}
 .slick-next{
     right: 5px;
 }
 .slick-prev{
     left: 5px;
 }
-.slick-prev, .slick-next,
-.slick-prev:focus, .slick-next:focus
-{
-    opacity: 0.3;
-    color: black;
-    height: 30px;
-    width: 30px;
-}
+
+.slick-prev:focus, .slick-next:focus,
 .slick-prev:hover, .slick-next:hover
 {
     opacity: 1;
@@ -49,6 +48,7 @@
 {
     color: inherit;
     font-size: 30px;
+    opacity: 1;
 }
 
 //DOTS style
@@ -56,20 +56,57 @@
     left: 0;
     bottom: 10px;
 }
-
-.slick-dots li button:before{
-    border: 0;
-    border-radius: 22px;
-    border: 2px solid rgb(129, 129, 129);
-    opacity: 0.5;
-    color: #f0f8ff00 !important;
-    height: 15px;
+.slick-dots li{
     width: 15px;
+    height: 15px;
+    border-radius: 999px;
+    opacity: 0.5;
+    background-color: rgb(116, 116, 116);
 }
-.slick-dots li.slick-active button:before {
+.slick-dots li:hover,
+.slick-dots li:focus{
+    opacity: 0.8;
+    background-color: $accent_secondary_light;
+    border-color: $accent_secondary_light;
+}
+.slick-dots .slick-active{
     opacity: 1;
     background-color: $accent_secondary;
+    border-color: $accent_secondary;
 }
+.slick-dots .slick-active:hover,
+.slick-dots .slick-active:focus{
+    background-color: $accent_secondary;
+    border-color: $accent_secondary;
+}
+
+.slick-dots li button:before{
+    display: none;
+}
+
+
+// .slick-dots li button{
+//     border-radius: 999px;
+// }
+
+// .slick-dots li button:before{
+//     border: 0;
+//     border-radius: 22px;
+//     border: 2px solid rgb(129, 129, 129);
+//     opacity: 0.5;
+//     color: #f0f8ff00 !important;
+//     height: 15px;
+//     width: 15px;
+// }
+// .slick-dots li button:hover,
+// .slick-dots li button:focus{
+//     background-color: $accent_secondary_light;
+//     opacity: 0.7;
+// }
+// .slick-dots li.slick-active button:before {
+//     opacity: 1;
+//     background-color: $accent_secondary;
+// }
 @media only screen and (max-width: 720px){
     .slick-list{
         // height: unset;

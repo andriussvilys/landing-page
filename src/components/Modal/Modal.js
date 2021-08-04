@@ -35,13 +35,6 @@ const Modal = props => {
                 `}
             >
                 <form className="contact-form" onSubmit={sendEmail}>
-                <button className="modal-close" 
-                    onClick={() => {
-                        props.close()
-                        updateSubmitMessage("Let's get in touch :^)")
-                    }}
-                >
-                    <span>✖</span></button>
                     <p className="contact-greeting">{submitMessage}</p> 
                     <div className="contact-item">
                         <label className="contact-label">Name</label>
@@ -58,8 +51,23 @@ const Modal = props => {
                         <textarea required className="contact-input contact-input_textArea" name="message" />
                     </div>
 
-                    {/* <div class="loader">Please wait while the message is being sent...</div> */}
-                    <input className="CTA-contact CTA"  type="submit" value="Send" />
+                    <div className="modal-buttons">
+
+                        <input className="CTA-contact CTA"  type="submit" value="Send" />
+                        <button className="CTA_secondary" 
+                            onClick={() => {
+                                props.close()
+                                updateSubmitMessage("Let's get in touch 🐸")
+                            }}
+                        >
+                            Cancel
+                        </button>
+                    </div>
+
+                    <div className={"modal-alternative"}>
+                        <span>Or open your own email client by <a href = "mailto: andriussvilys@gmail.com">clicking here</a>. </span>
+                    </div>
+
                 </form>
             </div>
         </div>

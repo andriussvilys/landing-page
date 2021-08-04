@@ -37,7 +37,6 @@
 }
 
 .arrowNext, .arrowPrev {
-  opacity: 0.3;
   -webkit-transition: opacity 0.1s;
   transition: opacity 0.1s;
   display: -webkit-box;
@@ -46,7 +45,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: black;
+  color: #66ffa6;
   margin: 10px;
 }
 

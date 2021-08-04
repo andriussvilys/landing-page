@@ -56,7 +56,18 @@ const WebsiteExample = (props) => {
                         </div>
 
                         <div className="webExample-details-CTA">
-                            <button className="details-CTA-button CTA"><a href={props.href} target="_blank">CLICK TO VISIT</a></button>
+                            <button className="details-CTA-button CTA">
+                                <a href={props.href} target="_blank" rel="noopener noreferrer">
+                                    live site
+                                </a>
+                            </button>
+                            {props.gh_link ?                             
+                                <button className="CTA-secondary">
+                                    <a href={props.gh_link} target="_blank" rel="noopener noreferrer">
+                                        GH repository
+                                    </a>
+                                </button>
+                            : null}
                         </div>
 
                     </div>

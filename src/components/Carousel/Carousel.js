@@ -144,61 +144,6 @@ const Carousel = props => {
                 )
             })
     }
-    
-    const moveHandler = (state, options) => {
-
-        const containerWidth = containerRef.current.clientWidth;
-        const slideCount = props.content.length
-        const slideWidth = 100 / slideCount
-
-        let  transform = slidePosition.currentTransform + ((state.delta[0] * options.direction * options.moveSpeed * 100 / containerWidth) / slideCount)
-        transform = Math.round((transform + Number.EPSILON) * 10) / 10
-
-        const margin = (slideWidth / 3)
-
-        if(transform > 0){
-            transform = 0
-        }
-        if(transform < -100 + slideWidth){
-            transform = -100 + slideWidth
-        }
-        // if(transform > margin){
-
-        //     transform = 0
-        // }
-        if(transform < -100 + margin){
-            transform = -100 + slideWidth
-        }
-
-        let index = Math.abs(Math.round(transform / slideWidth))
-        if(index > slideCount -1){
-            index = slideCount - 1
-        }
-
-        return setSlidePosition({ 
-            ...slidePosition,  
-            currentSlide: index,
-            currentTransform: transform,
-            smooth: false
-        })
-    }
-    const moveEndHandler = (state) => {
-
-        const slideCount = props.content.length
-        const slideWidth = 100 / slideCount
-
-        let currentTransform = slidePosition.currentTransform
-
-        let index = Math.abs(Math.round(currentTransform / slideWidth))
-
-
-
-        if(index > slideCount -1){
-            index = slideCount - 1
-        }
-
-        slideTo(index)
-    }
     const genericOptions = {
         domTarget: slideContainerRef,
         filterTaps: true,

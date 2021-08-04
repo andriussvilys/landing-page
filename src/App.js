@@ -6,8 +6,6 @@ import WebsiteSlider from './components/WebsiteExample/WebsiteSlider/WebsiteSlid
 
 function App() {
 
-  const burgerList = document.querySelector(".nav-links-list")
-
   const [showModal, toggleShowModal] = React.useState(null)
   const [modalTrigger, triggerModal] = React.useState(null)
 
@@ -56,7 +54,7 @@ function App() {
           </div>
           <ul className="nav-links-list">
               <li className="nav-links-listItem" >
-                <a onClick={() => closeNavList()} href="#examples">Examples</a>
+                <a onClick={() => closeNavList()} href="#projects">projects</a>
               </li>
               <li className="nav-links-listItem" >
                 <a onClick={() => closeNavList()} href="#tools">Toolbox</a>
@@ -79,16 +77,28 @@ function App() {
           <div className="kv-wrapper">
 
             <div className="kv-text">
+
               <h1>My name is Andrius.</h1>
               <h3>I am a front-end developer.</h3>
 
-              <button 
+              <div className={"kv-buttons"}>
+
+                <button className="CTA_secondary">
+                  <a href="#projects">
+                    see my work
+                  </a>
+                </button>
+
+                <button 
                   className="CTA-contact CTA"
                   onClick={() => {
                     toggleModal()
                   }}>
-                  get in touch
+                  <span>get in touch</span>
                 </button>
+
+              </div>
+
             </div>
 
             <div className="kv-image">
@@ -96,20 +106,16 @@ function App() {
             </div>
 
           </div>
-
-            {/* <div className="CTA-seemore">
-              <a href="#examples" className="CTA-seemore-text">See my work</a>
-              <span className="CTA-seemore-line"></span>
-            </div> */}
+          
         </section>
 
         <section>
         
         <h1 className="headline">
-          EXAMPLES
+          projects
         </h1>
 
-        <div id="examples" className={"section-wrapper"}>
+        <div id="projects" className={"section-wrapper"}>
 
           <WebsiteSlider 
           thumbnails={[
