@@ -7,7 +7,6 @@ const Modal = props => {
 
     function sendEmail(e) {
         e.preventDefault();
-        // updateSubmitMessage(<div class="loader">Please wait while the message is being sent...</div>)
         const form = e.target
         emailjs.sendForm('default_service', 'template_tqknj9b', e.target, 'user_JWcm4lveU05DWLfNas9iM')
             .then((result) => {
@@ -55,7 +54,8 @@ const Modal = props => {
 
                         <input className="CTA-contact CTA"  type="submit" value="Send" />
                         <button className="CTA_secondary" 
-                            onClick={() => {
+                            onClick={(e) => {
+                                e.preventDefault()
                                 props.close()
                                 updateSubmitMessage("Let's get in touch 🐸")
                             }}

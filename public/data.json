@@ -44,7 +44,7 @@
         "badges":  {
           "badges": [
             {"title": "React JS", "img": "react.svg"}, 
-            {"title": null, "img": "node-js.svg"}, 
+            {"title": null, "img": "nodejs.png"}, 
             {"title": null, "img": "mongodb.png"},
             {"title": null, "img": "sass.svg"}
           ],

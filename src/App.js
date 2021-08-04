@@ -158,7 +158,7 @@ function App() {
                 list: [
                   {title: null,
                   // title: "Node.js", 
-                  img: "node-js.svg"},
+                  img: "nodejs.png"},
                   {title: "Postman", img: "postman.png"},
                   {title: "express.js"},
                 ]
