@@ -13,9 +13,12 @@
     flex: 1;
 }
 .details-badge{
-    background-color: #1c1c23;
+    // background-color: #1c1c23;
+    // color: #d8d8d8;
+    background-color: white;
+    color: $text_secondary;
+    border: 2px solid #c4c4c4;
     border-radius: 10px;
-    color: #d8d8d8;
     display: flex;
     flex-direction: column;
     justify-content: center;

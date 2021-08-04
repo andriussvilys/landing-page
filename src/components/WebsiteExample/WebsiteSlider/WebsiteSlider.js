@@ -76,6 +76,7 @@ const WebsiteSlider= (props) => {
                                 href={item.href}
                                 imageList={item.imageList}
                                 badges={item.badges}
+                                gh_link={item.gh_link}
                         />
                         )
                     })}

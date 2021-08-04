@@ -145,37 +145,45 @@
 
 @-webkit-keyframes wrapperShow {
   0% {
+    display: block;
     top: -100%;
   }
   100% {
+    display: block;
     top: 0;
   }
 }
 
 @keyframes wrapperShow {
   0% {
+    display: block;
     top: -100%;
   }
   100% {
+    display: block;
     top: 0;
   }
 }
 
 @-webkit-keyframes wrapperHide {
   0% {
+    display: block;
     top: 0;
   }
   100% {
     top: -100%;
+    display: none;
   }
 }
 
 @keyframes wrapperHide {
   0% {
+    display: block;
     top: 0;
   }
   100% {
     top: -100%;
+    display: none;
   }
 }
 
@@ -213,6 +221,7 @@
   width: 60ch;
   max-width: 90%;
   will-change: transform;
+  font-size: 16px;
 }
 
 .contact-greeting {
@@ -270,9 +279,94 @@
           animation-iteration-count: 1;
 }
 
+.modal-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 60ch;
+}
+
+.modal-buttons .CTA-contact {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.CTA_secondary {
+  position: relative;
+  font-weight: 600;
+  background: white;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 12px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 25px;
+  border: 4px solid #00e676;
+  -webkit-box-shadow: 2px 6px 6px rgba(43, 43, 49, 0.3);
+          box-shadow: 2px 6px 6px rgba(43, 43, 49, 0.3);
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  margin-bottom: 15px;
+  color: #5f5f5f;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-color: #651fff;
+  padding: 8px 18px;
+  border-width: 3px;
+  font-size: 14px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  align-self: center;
+  order: 1;
+}
+
+.CTA_secondary:hover {
+  background-color: #651fff;
+  color: white;
+}
+
+.modal-alternative {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.modal-alternative span {
+  color: #5f5f5f;
+}
+
+.modal-alternative a {
+  color: #651fff;
+}
+
 @media only screen and (max-width: 720px) {
   .contact-form {
     margin: 15px;
+    padding-bottom: 15px;
+    padding-top: 0;
+  }
+  .modal-alternative {
+    margin-top: 5px;
   }
 }
 

@@ -29,12 +29,12 @@
     }
     h3{
         margin-bottom: 30px;
-        color: rgb(95, 95, 95);
+        // color: rgb(95, 95, 95);
+        color: $text_secondary;
     }
 }
 .kv-image{
     height: 100%;
-    // width: 100%;
     width: 40%;
     margin-left: 140px;
     position: relative;
@@ -45,19 +45,20 @@
     display: flex;
     justify-content: center;
 
-    // display: grid;
-    // grid-template-columns: minmax(180px, 1fr) 1fr 65px;
+}
+.kv-buttons{
+    @include CTA_container;
 }
 
 @media only screen and (max-width: 801px){
+
     .kv-container{
         padding: 0;
+        height: unset;
+        min-height: 100%;
     }
     .kv-wrapper{
         flex-direction: column;
-        .CTA-contact{
-            position: static;
-        }
     }
     .kv-text{
         white-space: normal;
@@ -76,11 +77,24 @@
             margin-bottom: 15px;
         }
     }
+    .kv-buttons{
+        justify-content: space-around;
+        flex-direction: column;
+        button{
+            min-width: 200px;
+        }
+        .CTA_secondary{
+            order: 2;
+        }
+        .CTA{
+            order: 1;
+        }
+    }
     .kv-image{
         margin: 0;
         flex: unset;
         grid-template-columns: unset;
-        width: 250px;
-        height: 320px;
+        width: calc(min(60vw, 250px));
+        height: calc(min(60vw, 250px) + 70px);
     }
 }

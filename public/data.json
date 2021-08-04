@@ -5,6 +5,7 @@
         "title": "Image archive",
         "assetDir": "andriussvilys",
         "href": "https://andriussvilys.com",
+        "gh_link": "https://github.com/andriussvilys/clientOnly",
         "imageList": [
             "personalWebsite-2.png", 
             "personalWebsite-3.png", 
@@ -31,6 +32,7 @@
         "title":  "Image archive (admin page)",
         "assetDir":  "admin",
         "href":  "https://andriussvilys.com/admin",
+        "gh_link": "https://github.com/andriussvilys/backend-svetaine",
         "imageList":  
           [
             "admin-1.png", 
@@ -42,7 +44,7 @@
         "badges":  {
           "badges": [
             {"title": "React JS", "img": "react.svg"}, 
-            {"title": null, "img": "node-js.svg"}, 
+            {"title": null, "img": "nodejs.png"}, 
             {"title": null, "img": "mongodb.png"},
             {"title": null, "img": "sass.svg"}
           ],
@@ -55,6 +57,7 @@
         "title": "Image search API",
         "assetDir": "image-search",
         "href": "https://andriussvilys.github.io/image-search/",
+        "gh_link": "https://github.com/andriussvilys/image-search",
         "imageList": 
           [
             "Screenshot-desktop-1.png",
@@ -77,6 +80,7 @@
         "title": "Built from a mockup",
         "assetDir": "devChallenge",
         "href": "https://andriussvilys.github.io/bmb-challenge/",
+        "gh_link": "https://github.com/andriussvilys/bmb-challenge",
         "imageList": 
           [
             "dev-challenge-1.png",
@@ -101,6 +105,7 @@
         "title": "Responsive design",
         "assetDir": "responsive",
         "href": "https://andriussvilys.github.io/responsive-eg1/",
+        "gh_link": "https://github.com/andriussvilys/responsive-eg1",
         "imageList": 
           [
             "responsive-eg-1.jpg",
@@ -120,6 +125,7 @@
         "title": "T-Pose",
         "assetDir": "t-pose",
         "href": "https://andriussvilys.github.io/t-pose/",
+        "gh_link": "https://github.com/andriussvilys/t-pose",
         "imageList": 
           [
             "t-pose-desktop-1.png",
