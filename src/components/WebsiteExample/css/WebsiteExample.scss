@@ -119,9 +119,8 @@
 .webExample-details-tags{
     padding: 10px;
     margin: 20px 0;
-    background-color: $BG_gray;
-    border-radius: 10px;
     max-width: 60ch;
+    @include card_secondary;
 }
 .webExample-details-CTA{
     @include CTA_container;

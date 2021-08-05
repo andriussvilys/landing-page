@@ -71,11 +71,9 @@
     align-items: center;
     overflow: hidden;
     will-change: transform;
-    // @include card_primary;
-    border: $border_primary;
-    border-radius: 15px;
     margin: 10px;
     margin-bottom: 15px;
+    @include card_primary;
     img{
         max-height: 100%;
         max-width: 100%;
@@ -156,8 +154,7 @@
 }
 .dot_active{
     opacity: 1;
-    border: $border_primary;
-    border-radius: 10px;
+    @include card_primary;
 }
 .dot_active:hover{
     opacity: 1;

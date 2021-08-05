@@ -125,9 +125,8 @@
 }
 
 .webExample-details-container, .webExample-carousel-container {
-  border-radius: 20px;
-  margin: 5px;
-  background-color: #651fff;
+  border-radius: 15px;
+  border: 3px solid #651fff;
   border-radius: 10px;
   border: none;
   -webkit-box-shadow: none;
@@ -169,9 +168,10 @@
 .webExample-details-tags {
   padding: 10px;
   margin: 20px 0;
+  max-width: 60ch;
   background-color: #e5e5e5;
   border-radius: 10px;
-  max-width: 60ch;
+  border: 2px solid #c4c4c4;
 }
 
 .webExample-details-CTA {
@@ -192,7 +192,6 @@
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
-  padding: 12px 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -217,6 +216,14 @@
   margin-bottom: 15px;
 }
 
+.details-CTA-button span, .details-CTA-button a {
+  padding: 12px 30px;
+}
+
+.details-CTA-button input {
+  display: none;
+}
+
 .CTA-secondary {
   position: relative;
   font-weight: 600;
@@ -224,7 +231,6 @@
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
-  padding: 12px 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,7 +257,6 @@
   -webkit-box-shadow: none;
           box-shadow: none;
   border-color: #651fff;
-  padding: 8px 18px;
   border-width: 3px;
   font-size: 14px;
   -ms-flex-item-align: center;
@@ -259,6 +264,18 @@
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+}
+
+.CTA-secondary span, .CTA-secondary a {
+  padding: 12px 30px;
+}
+
+.CTA-secondary input {
+  display: none;
+}
+
+.CTA-secondary span, .CTA-secondary a {
+  padding: 8px 18px;
 }
 
 .CTA-secondary:hover,

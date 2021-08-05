@@ -99,10 +99,10 @@
           align-items: center;
   overflow: hidden;
   will-change: transform;
-  border: 3px solid #0100ca;
-  border-radius: 15px;
   margin: 10px;
   margin-bottom: 15px;
+  border-radius: 15px;
+  border: 3px solid #651fff;
 }
 
 .slide img {
@@ -231,8 +231,8 @@
 
 .dot_active {
   opacity: 1;
-  border: 3px solid #0100ca;
-  border-radius: 10px;
+  border-radius: 15px;
+  border: 3px solid #651fff;
 }
 
 .dot_active:hover {

@@ -184,7 +184,7 @@ const Carousel = props => {
         slideTo_dot()
     }, [slidePosition])
 
-    useEffect(bind, [bind])
+    // useEffect(bind, [bind])
 
 
     return(
