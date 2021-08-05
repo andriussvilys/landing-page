@@ -39,7 +39,6 @@ $footerHeight: 80px;
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
-    padding: 12px 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,19 +54,30 @@ $footerHeight: 80px;
     order: 2;
 
     margin-bottom: 15px;
+
+    span, a{
+        padding: 12px 30px;
+    }
+    input{
+        display: none;
+    }
 }
 
 @mixin CTA_secondary{
+
     @include CTA;
     color: $text_secondary;
     box-shadow: none;
     border-color: $accent_primary_light;
-    padding: 8px 18px;
     border-width: 3px;
     font-size: 14px;
     align-self: center;
-
+    
     order: 1;
+
+    span, a{
+        padding: 8px 18px;
+    }
 }
 
 @mixin CTA_container{

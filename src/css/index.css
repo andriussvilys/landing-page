@@ -322,7 +322,7 @@
   }
   .nav-links-listItem {
     height: 40px;
-    width: 80%;
+    width: 120px;
     margin-bottom: 9vh;
     border: none;
     border-bottom: 2px solid white;
@@ -548,7 +548,6 @@ main {
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
-  padding: 12px 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -571,6 +570,14 @@ main {
       -ms-flex-order: 2;
           order: 2;
   margin-bottom: 15px;
+}
+
+.CTA-contact span, .CTA-contact a {
+  padding: 12px 30px;
+}
+
+.CTA-contact input {
+  display: none;
 }
 
 .CTA:hover {

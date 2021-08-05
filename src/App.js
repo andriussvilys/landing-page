@@ -9,23 +9,40 @@ function App() {
   const [showModal, toggleShowModal] = React.useState(null)
   const [modalTrigger, triggerModal] = React.useState(null)
 
-  const closeNavList = () => {
-  const burgerList = document.querySelector(".nav-links-list")
-    if(showModal){
+  const toggleNavList = (options) => {
+
+    const burgerList = document.querySelector(".nav-links-list")
+
+    let delay = showModal ? 200 : 0;
+
+    if(showModal)
+    {
       toggleModal()
     }
+
     setTimeout(() => {
-      burgerList.classList.toggle("links-list-display")
-    }, 200);
+      if(options && options.onlyClose === true){
+        burgerList.classList.remove("links-list-display")
+      }
+      else
+      {
+        burgerList.classList.toggle("links-list-display")
+      }
+    }, delay);
+
   }
 
   const toggleModal = () => {
+
       let delay = 0
+
       const burgerList = document.querySelector(".nav-links-list")
+
       if(burgerList.classList.contains("links-list-display")){
         burgerList.classList.remove("links-list-display")
         delay = 200
       }
+
       setTimeout(() => {
         triggerModal(true);
         toggleShowModal(!showModal)
@@ -35,39 +52,71 @@ function App() {
 
   return (
     <div className="App">
+
       <Modal 
        close={toggleShowModal}
        showModal={showModal}
        triggered={modalTrigger}
       />
+
       <nav id="nav" className="nav-container">
+
         <div className="nav-logo">
-          <a onClick={() => { if(showModal)toggleModal() } } href="#kv">Andrius Svilys</a>
+          <a 
+            onClick={() => { 
+              // if(showModal)toggleModal() 
+              toggleNavList({onlyClose: true})
+            }}  
+            href="#kv"
+          >
+            Andrius Svilys
+          </a>
         </div>
+
         <div className="nav-links-container">
+
           <div className="nav-links-hamburger"
             onClick={() => {
-              closeNavList()
+              toggleNavList()
             }}
           >
             <img src="icons/burger.svg" alt="hamburger menu icon" />
+
           </div>
+
           <ul className="nav-links-list">
               <li className="nav-links-listItem" >
-                <a onClick={() => closeNavList()} href="#projects">projects</a>
+                <a 
+                  onClick={() => toggleNavList({onlyClose: true})} 
+                  href="#projects">
+                    Projects
+                </a>
               </li>
+
               <li className="nav-links-listItem" >
-                <a onClick={() => closeNavList()} href="#tools">Toolbox</a>
+                <a 
+                  onClick={() => toggleNavList({onlyClose: true})} 
+                  href="#tools">
+                    Toolbox
+                </a>
               </li>
+
               <li className="nav-links-listItem" >
-                <a onClick={() => closeNavList()} href="#about">About</a>
+                <a 
+                  onClick={() => toggleNavList({onlyClose: true})} 
+                  href="#about">
+                    About
+                </a>
               </li>
+
               <li className="nav-links-listItem" >
-                {/* <a onClick={() => closeNavList()} href="#contact">Contact</a> */}
                 <button onClick={() => {
                   toggleModal()
-                }}>Contact</button>
+                }}>
+                  <span>Contact</span>
+                </button>
               </li>
+
           </ul>
         </div>
       </nav>
@@ -219,7 +268,7 @@ function App() {
                     onClick={() => {
                       toggleModal()
                     }}>
-                    get in touch
+                    <span>get in touch</span>
                   </button>
                 </div>
               </div>

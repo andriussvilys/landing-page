@@ -1,14 +1,16 @@
 @import './consts';
 
 @mixin card_primary{
-    border-radius: 20px;
-    margin: 5px;
-    background-color: $BG_secondary;
+    border-radius: 15px;
+    border: 3px solid $accent_primary;
 }
 @mixin  card_secondary{
-    border-radius: 20px;
-    background-color: $BG_secondary;
-    margin: 10px;
+    // border-radius: 20px;
+    // background-color: $BG_secondary;
+    // margin: 10px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    border: 2px solid #c4c4c4;
 }
 
 @mixin card_noShadow{

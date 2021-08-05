@@ -1,4 +1,5 @@
 @import '../../../css/css/consts';
+@import '../../../css/css/cardStyles';
 
 .modal-container{
     position: fixed;
@@ -86,6 +87,41 @@
 }
 .hide-container{
   animation-name: containerHide;
+  @include animation_options();
+}
+
+@keyframes containerShow_white{
+  0%{
+    display: block;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  100%{
+    display: block;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+@keyframes containerHide_white{
+  0%{
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  99%{
+    top: 0;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  100%{
+    top: -100%;
+  }
+}
+
+.show-container_white{
+  animation-name: containerShow_white;
+  @include animation_options();
+}
+.hide-container_white{
+  animation-name: containerHide_white;
   @include animation_options();
 }
 
@@ -191,9 +227,16 @@
 }
 
 .CTA_secondary:hover{
-  // background-color: rgb(130, 130, 130);
   background-color: $accent_primary_light;
   color: white;
+}
+
+.CTA_disabled{
+  pointer-events: none !important;
+  color: $text_secondary !important;
+  border-color: $text_secondary !important;
+  background-color: white !important;
+  opacity: 0.6 !important;
 }
 
 .modal-alternative{
@@ -202,9 +245,36 @@
   span{
     color: $text_secondary;
   }
+}
+
+.modal-alternative_text{
   a{
     color: $accent_primary_light;
   }
+}
+
+.form-container{
+  position: relative;
+}
+.submitResponse{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.submitResponse_wrapper{
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  position: relative;
+  @include card_primary;
 }
 
 
@@ -234,7 +304,6 @@
 .loader {
   color: #1100ff;
   font-size: 10px;
-//   margin: 80px auto;
   position: relative;
   text-indent: -9999em;
   -webkit-animation-delay: -0.16s;
