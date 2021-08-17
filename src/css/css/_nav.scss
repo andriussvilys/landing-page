@@ -10,7 +10,7 @@ $navHeight: 43px;
     justify-content: space-between;
     align-items: center;
     background-color: $accent_primary_dark;
-    box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
+    // box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
     z-index: 899;
 }
 .nav-links-container{
@@ -53,12 +53,11 @@ $navHeight: 43px;
 }
 .nav-links-listItem:after{
     content: "";
-    height: 2px;
+    height: 3px;
     width: 100%;
     background: white;
     position: absolute;
-    bottom: 5px;
-    // left: -100%;
+    bottom: 6px;
     transform: translateX(-120%);
     transition-timing-function: ease-in-out;
 }

@@ -5,7 +5,7 @@
     display: flex;
 }
 .webExample-tools-wrapper{
-    padding: 30px;
+    padding: 0 30px;
 }
 .tools-items{
     display: flex;
@@ -65,8 +65,8 @@
     flex-wrap: wrap;
     align-items: center;
     border-bottom: 1px solid rgb(189, 189, 189);
-    padding: 15px 20px 15px 0;
     text-transform: uppercase;
+    padding: 20px 0;
 }
 .tools-wrapper:last-of-type{
     border-bottom: 0;
@@ -76,13 +76,20 @@
 }
 .tools-title{
     font-weight: 600;
-    padding-right: 30px;
     white-space: nowrap;
-    width: 150px;
-    margin-bottom: 15px;
+    width: 200px;
+    margin-left: 20px;
 }
 
 @media only screen and (max-width: 720px){
+    .tools-title{
+        margin-bottom: 20px;
+        margin-left: unset;
+    }
+    .section-wrapper{
+        padding: unset;
+        padding-top: 10px;
+    }
     .details-badge{
         margin: 0 3px 3px 0;
     }

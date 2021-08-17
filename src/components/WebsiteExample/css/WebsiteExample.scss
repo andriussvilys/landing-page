@@ -94,9 +94,6 @@
         height: 100% !important;
     }
 }
-.webExample-details-container, .webExample-carousel-container{
-    @include card_noShadow;
-}
 .webExample-details-container{
     flex: 1;
     display: flex;
@@ -104,8 +101,12 @@
     padding: 30px;
 }
 .webExample-details-description{
+    p:first-of-type{
+        text-indent: 2ch;
+    }
     width: 40ch;
-    text-indent: 2ch;
+    max-height: 30ch;
+    overflow-y: auto;
 }
 .webExample-details-badges, .webExample-details-other{
     display: flex;
@@ -124,9 +125,12 @@
 }
 .webExample-details-CTA{
     @include CTA_container;
+    justify-content: unset;
 }
 .details-CTA-button{
     @include CTA;
+    order: unset;
+    margin-right: 20px;
 }
 .CTA-secondary{
     @include CTA_secondary;
@@ -157,7 +161,8 @@
     }
     .webExample-details-description{
         width: unset;
-        max-width: 60ch;;
+        max-width: 60ch;
+        max-height: unset;
     }
     .webExample-carousel-container{
         height: 60vh;
@@ -165,6 +170,13 @@
     }
 }
 @media only screen and (max-width: 720px){
+    .webExample-details-CTA{
+        flex-direction: column;
+        margin-bottom: 10px;
+        button{
+            align-self: baseline;
+        }
+    }
     .webExample-details-container, .webExample-carousel-container{
         margin: 4px;
     }
