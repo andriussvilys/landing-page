@@ -38,10 +38,12 @@
         "description": [
           "This is the admin page of my image archive. The backend uploads images to the server and creates resized versions of them. It also takes in various information about each image: basics, such as title and description, but also filter tags and relations to other images (images can be grouped into \"families\" or linked together with the \"see also\" functionality). The order of images within a family can be set manually. Images also contain \"display triggers\" that control whether an image is visible in the main gallery, the carousel, or shouldn't be seen anywhere at all). All of this information is uploaded to online database (MongoDB). To help with load times, a JSON copy of the database is stored on the server.",
           "In addition to creating records, other CRUD operations (update and delete) are also implemented.",
-          "The image archive currently does not make use of this backend because of the hosting solution (gh pages, which does not permit dynamic uploads)."
+          "You may view this page by clicking the button below. You will be redirected to login page. Please use the following login details:",
+          "username: guest",
+          "password: guest"
         ],
         "assetDir":  "admin",
-        "href":  "https://andriussvilys.com/admin",
+        "href":  "https://secure-savannah-07139.herokuapp.com/admin",
         "gh_link": "https://github.com/andriussvilys/backend-svetaine",
         "imageList":  
           [
