@@ -169,8 +169,6 @@
       -ms-flex-align: center;
           align-items: center;
   background-color: #0100ca;
-  -webkit-box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
-          box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
   z-index: 899;
 }
 
@@ -360,7 +358,7 @@
 }
 
 .webExample-tools-wrapper {
-  padding: 30px;
+  padding: 0 30px;
 }
 
 .tools-items {
@@ -450,8 +448,8 @@
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid #bdbdbd;
-  padding: 15px 20px 15px 0;
   text-transform: uppercase;
+  padding: 20px 0;
 }
 
 .tools-wrapper:last-of-type {
@@ -464,13 +462,20 @@
 
 .tools-title {
   font-weight: 600;
-  padding-right: 30px;
   white-space: nowrap;
-  width: 150px;
-  margin-bottom: 15px;
+  width: 200px;
+  margin-left: 20px;
 }
 
 @media only screen and (max-width: 720px) {
+  .tools-title {
+    margin-bottom: 20px;
+    margin-left: unset;
+  }
+  .section-wrapper {
+    padding: unset;
+    padding-top: 10px;
+  }
   .details-badge {
     margin: 0 3px 3px 0;
   }
@@ -512,6 +517,7 @@ body {
 }
 
 .headline {
+  color: #413f3f;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -520,11 +526,10 @@ body {
           align-items: center;
   font-size: 18px;
   text-transform: uppercase;
-  background: #1717ad;
-  color: white;
-  padding: 7px 30px;
-  -webkit-box-shadow: 0px 6px 10px rgba(43, 43, 49, 0.25);
-          box-shadow: 0px 6px 10px rgba(43, 43, 49, 0.25);
+  padding: 10px 30px;
+  -webkit-box-shadow: 0px 8px 20px rgba(43, 43, 49, 0.15);
+          box-shadow: 0px 8px 20px rgba(43, 43, 49, 0.15);
+  margin: 30px 0;
 }
 
 main {
@@ -571,6 +576,9 @@ main {
       -ms-flex-order: 2;
           order: 2;
   margin-bottom: 15px;
+  -webkit-box-ordinal-group: unset;
+      -ms-flex-order: unset;
+          order: unset;
 }
 
 .CTA-contact span, .CTA-contact a {
@@ -725,7 +733,7 @@ main {
 footer {
   height: 80px;
   width: 100%;
-  background: #1717ad;
+  background: #e5e5e5;
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 5;
@@ -737,7 +745,7 @@ footer {
   }
   .about-wrapper {
     display: block;
-    padding: 20px;
+    padding: 30px;
     padding-bottom: 60px;
   }
   .about-wrapper p {
@@ -751,6 +759,12 @@ footer {
   }
   section {
     padding: 0;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .headline {
+    margin: 16px 0;
   }
 }
 /*# sourceMappingURL=index.css.map */

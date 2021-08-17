@@ -125,12 +125,11 @@
 .webExample-details-CTA{
     @include CTA_container;
     justify-content: unset;
-    .details-CTA-button{
-        margin-left: 20px;
-    }
 }
 .details-CTA-button{
     @include CTA;
+    order: unset;
+    margin-right: 20px;
 }
 .CTA-secondary{
     @include CTA_secondary;
@@ -169,6 +168,13 @@
     }
 }
 @media only screen and (max-width: 720px){
+    .webExample-details-CTA{
+        flex-direction: column;
+        margin-bottom: 10px;
+        button{
+            align-self: baseline;
+        }
+    }
     .webExample-details-container, .webExample-carousel-container{
         margin: 4px;
     }

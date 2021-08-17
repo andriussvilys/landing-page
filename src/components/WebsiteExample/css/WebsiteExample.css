@@ -188,10 +188,6 @@
           justify-content: unset;
 }
 
-.webExample-details-CTA .details-CTA-button {
-  margin-left: 20px;
-}
-
 .details-CTA-button {
   position: relative;
   font-weight: 600;
@@ -221,6 +217,10 @@
       -ms-flex-order: 2;
           order: 2;
   margin-bottom: 15px;
+  -webkit-box-ordinal-group: unset;
+      -ms-flex-order: unset;
+          order: unset;
+  margin-right: 20px;
 }
 
 .details-CTA-button span, .details-CTA-button a {
@@ -330,6 +330,17 @@
 }
 
 @media only screen and (max-width: 720px) {
+  .webExample-details-CTA {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .webExample-details-CTA button {
+    -ms-flex-item-align: baseline;
+        align-self: baseline;
+  }
   .webExample-details-container, .webExample-carousel-container {
     margin: 4px;
   }
