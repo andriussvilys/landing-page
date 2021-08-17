@@ -32,6 +32,10 @@ const Carousel = props => {
             const left = ((slidePosition.currentSlide) * ( dot_width )) - (dot_width / 2) 
             dot_container.current.scroll(left, 0);
 
+            setTimeout(() => {
+                
+            }, 200);
+
         }
     }
 
@@ -48,6 +52,8 @@ const Carousel = props => {
         const newTransfrom = -((100 / props.content.length) * slideToIndex)
 
         let nextImage = null;
+
+        document.querySelector("#slideContainer").scrollIntoView()
        
         setSlidePosition({
             ...slidePosition,
@@ -64,6 +70,9 @@ const Carousel = props => {
             return <li 
                     onClick={() => {
                         slideTo(index)
+                        // setTimeout(() => {
+                        //     slideContainerRef.current.scrollIntoView(true);
+                        // }, 800);
                     }}
                     ref={index === slidePosition.currentSlide ? dot_active : null}
                     key={`${image}-${index}`} 

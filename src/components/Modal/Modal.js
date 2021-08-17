@@ -156,7 +156,7 @@ const Modal = props => {
                     </div>
 
                     <div className={"modal-alternative"}>
-                        <span className={"modal-alternative_text"} >Or open your email client by
+                        <span className={"modal-alternative_text"} >Use your email client by
                             <a href = "mailto: andriussvilys@gmail.com"> clicking here</a>
                         </span>
                     </div>

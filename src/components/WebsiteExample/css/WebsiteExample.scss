@@ -124,6 +124,10 @@
 }
 .webExample-details-CTA{
     @include CTA_container;
+    justify-content: unset;
+    .details-CTA-button{
+        margin-left: 20px;
+    }
 }
 .details-CTA-button{
     @include CTA;

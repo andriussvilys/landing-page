@@ -37,12 +37,12 @@ body{
 .headline{
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 18px;
     text-transform: uppercase;
-    height: $headlineHeight;
     background: $accent_primary;
     color: white;
-    padding: 25px $marginLeft;
+    padding: 7px $marginLeft;
+    box-shadow: 0px 6px 10px rgba(43, 43, 49, 0.25);
 }
 
 main{
@@ -66,8 +66,12 @@ main{
 
 .CTA:hover{
     background-color: $accent_secondary;
+    // background-color: $accent_secondary_dark;
+    // border-color: $accent_secondary_dark;
     color: white;
-    top: 2px;
+    transform: scale(1.08);
+    transform-origin: center;
+    box-shadow: 0px 6px 6px rgba(43, 43, 49, 0.4);
 }
 
 @keyframes CTA-seemore{
