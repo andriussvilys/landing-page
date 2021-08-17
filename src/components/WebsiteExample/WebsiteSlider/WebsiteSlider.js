@@ -72,6 +72,7 @@ const WebsiteSlider= (props) => {
                                 key={`websiteExample-${index}`}
                                 id={item.id}
                                 title={item.title}
+                                description={item.description}
                                 assetDir={item.assetDir}
                                 href={item.href}
                                 imageList={item.imageList}

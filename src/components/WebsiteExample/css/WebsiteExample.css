@@ -124,16 +124,6 @@
   height: 100% !important;
 }
 
-.webExample-details-container, .webExample-carousel-container {
-  border-radius: 15px;
-  border: 3px solid #1717ad;
-  border-radius: 10px;
-  border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
 .webExample-details-container {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -150,6 +140,11 @@
 
 .webExample-details-description {
   width: 40ch;
+  max-height: 30ch;
+  overflow-y: auto;
+}
+
+.webExample-details-description p:first-of-type {
   text-indent: 2ch;
 }
 
@@ -322,6 +317,7 @@
   .webExample-details-description {
     width: unset;
     max-width: 60ch;
+    max-height: unset;
   }
   .webExample-carousel-container {
     height: 60vh;

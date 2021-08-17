@@ -3,6 +3,11 @@
         "open": true,
         "id": "personal-website",
         "title": "Image archive",
+        "description": [
+          "This is a website for my artwork. It is the reason why I started learning web development. I wanted to created an album of images that works and looks exactly how I need it to. This website went through (probably) hundreds of interface iterations, versions, complete refactors, feature creep... My sandbox par excellence!",
+          "The current version contains a custom carousel. It needed to be truly responsive, because a number of interactions on the website force changes of carousel's measurements. The carousel also makes use of various buttons as well as trackpad/touch inputs for flicking through images as well as viewing the info drawer. Pinch-to-zoom and pan features are available for mobile users.",
+          "In addition to the carousel, a filter system is implemented. Users may choose the \"COMBINE FILTERS\" option for fine grained exploration."
+        ],
         "assetDir": "andriussvilys",
         "href": "https://andriussvilys.com",
         "gh_link": "https://github.com/andriussvilys/clientOnly",
@@ -30,6 +35,11 @@
         "open": false,
         "id":  "personal-website-admin",
         "title":  "Image archive (admin page)",
+        "description": [
+          "This is the admin page of my image archive. The backend uploads images to the server and creates resized versions of them. It also takes in various information about each image: basics, such as title and description, but also filter tags and relations to other images (images can be grouped into \"families\" or linked together with the \"see also\" functionality). The order of images within a family can be set manually. Images also contain \"display triggers\" that control whether an image is visible in the main gallery, the carousel, or shouldn't be seen anywhere at all). All of this information is uploaded to online database (MongoDB). To help with load times, a JSON copy of the database is stored on the server.",
+          "In addition to creating records, other CRUD operations (update and delete) are also implemented.",
+          "The image archive currently does not make use of this backend because of the hosting solution (gh pages, which does not permit dynamic uploads)."
+        ],
         "assetDir":  "admin",
         "href":  "https://andriussvilys.com/admin",
         "gh_link": "https://github.com/andriussvilys/backend-svetaine",
@@ -54,7 +64,12 @@
     {
         "open": false,
         "id": "image-search",
-        "title": "Image search API",
+        "title": "Image search interface",
+        "description": [
+          "A rather simple excercise in Redux and use of APIs (I used unsplash in this case).",
+          "To be perfectly clear, this was a challenge for a job advertisement. I really liked the barebones wireframe design I'd been provided with. The combination of sharp edged boxes and rounded borders seemed just so striking to me. One can probably see impressions of this design in my personal projects. I'd always been a fan of similar design language, for example Material design or whatever they'd been doing at Microsoft since Windows 8.",
+          "I couldn't remember if the yellow highlights were part of the brief, nevertheless it's quite an achievement. I don't see much of yellow in web design (probably due to contrast/readability issues), and even less so when it comes to its pastel shades. However, a small project like this is just the home for a morning-sun-ray-warming-the-pavement of colour such as this one."
+        ],
         "assetDir": "image-search",
         "href": "https://andriussvilys.github.io/image-search/",
         "gh_link": "https://github.com/andriussvilys/image-search",
@@ -77,7 +92,10 @@
     {
         "open": false,
         "id": "dev-challenge",
-        "title": "Built from a mockup",
+        "title": "Dev challenge",
+        "description": ["This was the first time I got a chance to work from a full-fledged PSD design document. We had a call at the workplace for an internal promotion, and this was the trial task. I came in second, too!",
+        "I've been so pleased with myself for managing to hook up the Google maps API, something I'd never done before by that time. Configuring special map skin, making the pointer point to where it needed to... Moments like these, breaking new ground and gaining new knowledge, are what attract me to programming/development."
+        ],
         "assetDir": "devChallenge",
         "href": "https://andriussvilys.github.io/bmb-challenge/",
         "gh_link": "https://github.com/andriussvilys/bmb-challenge",
@@ -103,6 +121,8 @@
         "open": false,
         "id": "responsive",
         "title": "Responsive design",
+        "description": ["An excercise in responsive design. No matter the scale of a project, I always pay attention to detail. For example, the subtle snap scroll or the way images on home page slide underneath navigation bar. It's the small things for me!", 
+        "I had fun picking out silly pictures, too 😋."],
         "assetDir": "responsive",
         "href": "https://andriussvilys.github.io/responsive-eg1/",
         "gh_link": "https://github.com/andriussvilys/responsive-eg1",
@@ -123,6 +143,8 @@
         "open": false,
         "id": "t-pose",
         "title": "T-Pose",
+        "description": ["I saw this static pic online and loved its aesthetic. Techno-occult?. Then I thought it would be fun to have some interaction! I cut up the image into icon-sized squares, shot out some code and... you can now pick-and-choose body parts and abilities for your alter-life. Mind the budget, though!",
+        "This one was an opportunity to try out react hooks (they were still somewhat of a novelty as I recall) and practice responsive design once again."],
         "assetDir": "t-pose",
         "href": "https://andriussvilys.github.io/t-pose/",
         "gh_link": "https://github.com/andriussvilys/t-pose",

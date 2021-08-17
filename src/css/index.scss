@@ -44,7 +44,7 @@ body{
     font-size: 18px;
     text-transform: uppercase;
     padding: 10px $marginLeft;
-    box-shadow: 0px 8px 20px rgba(43, 43, 49, 0.15);
+    box-shadow: 0px 19px 41px rgba(43, 43, 49, 0.15);
     margin: 30px 0;
 }
 
@@ -154,8 +154,9 @@ $caretHeight: 12px;
     margin-right: 30px;
     align-self: flex-start;
     background-color: $accent_primary;
+    border: 2px solid $accent_primary;
     img{
-        opacity: 0;
+        border-radius: 999px;
         height: 100%;
         width: 100%;
     }
@@ -166,7 +167,7 @@ $caretHeight: 12px;
 footer{
     height: $footerHeight;
     width: 100%;
-    background: $BG_gray;
+    background: #eeeeee;
     grid-column-start: 1;
     grid-column-end: 5;
 }
@@ -186,8 +187,8 @@ footer{
     .about-image-wrapper{
         height: 25vw;
         width: 25vw;
-        margin-right: 10px;
-        margin-bottom: 5px;
+        // margin-right: 10px;
+        // margin-bottom: 5px;
     }
 
     section{

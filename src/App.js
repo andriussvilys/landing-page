@@ -128,7 +128,7 @@ function App() {
             <div className="kv-text">
 
               <h1>My name is Andrius.</h1>
-              <h3>I am a front-end developer.</h3>
+              <h3>I am a web developer.</h3>
 
               <div className={"kv-buttons"}>
 
@@ -257,12 +257,20 @@ function App() {
 
             <div className="about-wrapper">
               <div className="about-image-wrapper">
-                <img className="about-image" alt="portrait" />
+                <img className="about-image" alt="portrait" src="20201208_010458.jpg"/>
+                {/* <img className="about-image" alt="portrait" /> */}
               </div>
               <div className="about-description">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                  <p>
+                    I've first become interested in web development in 2018. Since then, I have completed an introductory course to digital design (2018) and worked at an international marketing agency in Warsaw (2019 - 2020). During my free time I kept on learning and trained my skills on a number of personal web projects. Finally I decided that I have to dive deeper into this discipline and in 2020 joined a computer science course in Vilnius University!
+                  <br/>
+                  <br/>
+                    Before all this, I lived a handful of years in London, where I earned a bachelor's degree in Fine Art. In fact, my interest in digital development began with a simple wish to make a website for my artwork. 
+                  <br/>
+                  <br/>
+                    Please feel free to get in touch for collaborations or job offers. 
                   </p>
+
                   <button 
                     className="CTA-contact CTA"
                     onClick={() => {

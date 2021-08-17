@@ -7,7 +7,7 @@ import SlickCarousel from './SlickCarousel/SlickCarousel'
 
 const WebsiteExample = (props) => {
 
-    const [fullSize, toggleFullSize] = React.useState(false)
+    const [fullSize] = React.useState(false)
 
     const badges = (list) => {
         return list.map((listItem, index) => {
@@ -43,7 +43,16 @@ const WebsiteExample = (props) => {
                         <h3 className={"webExample-title"}>{props.title}</h3>
 
                         <div className="webExample-details-description">
-                            {props.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."}
+                            {
+                                props.description ? 
+                                    props.description.map(paragraph => {
+                                        return <p>
+                                            {paragraph}
+                                            <br/><br/>
+                                        </p>
+                                    }) : 
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                            }
                         </div>
 
                         <div className="webExample-details-tags">
