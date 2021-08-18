@@ -4,11 +4,15 @@ import { useGesture } from 'react-use-gesture'
 import styles from './css/index.module.scss'
 
 const Carousel = props => {
+
     const containerRef = React.useRef()
     const dot_active = React.useRef()
     const dot_container = React.useRef()
     const dot_list = React.useRef()
     const slideContainerRef = React.useRef()
+    const activeSlideRef = React.useRef()
+
+
     const [mobile, setMobile] = useState(window.document.body.getBoundingClientRect().width > 720 ? false : true)
     function checkDocumentSize() {
         setMobile(window.document.body.getBoundingClientRect().width > 720 ? false : true);
@@ -28,13 +32,10 @@ const Carousel = props => {
     const slideTo_dot = () => {
         if(dot_active && dot_active.current){
 
-            const dot_width = dot_active.current.getBoundingClientRect().width;
+            const dot_width = dot_active.current.offsetWidth;
             const left = ((slidePosition.currentSlide) * ( dot_width )) - (dot_width / 2) 
-            dot_container.current.scroll(left, 0);
 
-            setTimeout(() => {
-                
-            }, 200);
+            dot_container.current.scroll(left, 0);
 
         }
     }
@@ -52,8 +53,6 @@ const Carousel = props => {
         const newTransfrom = -((100 / props.content.length) * slideToIndex)
 
         let nextImage = null;
-
-        document.querySelector("#slideContainer").scrollIntoView()
        
         setSlidePosition({
             ...slidePosition,
@@ -97,9 +96,6 @@ const Carousel = props => {
                         <ul 
                             ref={dot_list} 
                             className={styles.dotList}
-                            // style={{
-                            //     transform: `translateX(${slidePosition.currentTransform}%)`
-                            // }}
                         >
                             {dots}
                         </ul>}
@@ -144,6 +140,7 @@ const Carousel = props => {
                 return (
                     <div
                         id={`SLIDE-${index}`}
+                        ref={index === slidePosition.currentSlide ? activeSlideRef : null}
                         className={styles.slide}
                         key={`slideContent-${index}`}
                         style={{width: `${100 / props.content.length}%`}}
@@ -153,48 +150,31 @@ const Carousel = props => {
                 )
             })
     }
-    const genericOptions = {
-        domTarget: slideContainerRef,
-        filterTaps: true,
-        lockDirection: true,
-        eventOptions: {
-            passive: false
+
+    const resizeContainer = () => {
+        if(activeSlideRef && activeSlideRef.current)
+        {
+            setTimeout(() => {
+
+                const slideHeight = activeSlideRef.current.offsetHeight;
+                slideContainerRef.current.style.height = `${slideHeight + 2}px`
+
+            }, 500);
         }
     }
-    const bind = useGesture(
-        {
-            // onWheelStart: state => {
-            //     state.event.preventDefault()
-            // },
-            // onWheel: (state) => {
 
-            //     // state.event.preventDefault()
+    window.addEventListener('resize', () => {
+            resizeContainer()
+            slideTo_dot()
+    });
 
-            //     if(props.content.length < 2){
-            //         return
-            //     }
-
-            //     moveHandler(state, {moveSpeed: 2, direction: -1})
-
-            // },
-            // onWheelEnd: state => {
-            //     state.event.preventDefault()
-            //     moveEndHandler(state)
-            // },
-        },
-        {...genericOptions},
-    )
 
     useEffect(() => {
-        slideTo(props.currentSlide)
-    }, [props.counter])
 
-    useEffect(() => {
+        resizeContainer();
         slideTo_dot()
+
     }, [slidePosition])
-
-    // useEffect(bind, [bind])
-
 
     return(
             <div 

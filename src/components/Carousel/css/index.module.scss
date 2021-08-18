@@ -12,17 +12,13 @@
 }
 .carousel{
     width: 100%;
-    display: grid;
-    grid-template-rows: max-content min-content;
 }
 .container{
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    margin-top: 5px;
-    max-height: calc(100vh - 50px);
-    // @include card_primary;
+    margin-top: 10px;
 }
 @mixin arrow {
     transition: opacity 0.1s;
@@ -64,17 +60,17 @@
     will-change: transform;
     overflow: hidden;
     height: 100%;
+    align-items: baseline;
 }
 .slide{
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
     will-change: transform;
-    margin: 10px;
-    margin-bottom: 15px;
     @include card_primary;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    padding: 30px;
+    margin: 0 10px;
     img{
         max-height: 100%;
         max-width: 100%;
@@ -110,10 +106,8 @@
 .dotContainer{
     @include dotContainer();
     border-top: $horizontal_primary;
-    height: 100px;
-    padding: 10px 20px;
-    padding-bottom: 0;
-    order: 2;
+    height: 90px;
+    padding: 0 20px;
 }
 .dotWrapper{
     @include dotContainer();
@@ -161,8 +155,15 @@
     opacity: 1;
 }
 
-@media only screen and (max-width: 720px){
+@media only screen and (max-width: 1024px){
     .container{
         max-height: unset;
+    }
+}
+
+@media only screen and (max-width: 720px){
+    .slide{
+        padding: 5px;
+        padding-top: 20px;
     }
 }

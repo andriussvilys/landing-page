@@ -61,64 +61,68 @@ function App() {
 
       <nav id="nav" className="nav-container">
 
-        <div className="nav-logo">
-          <a 
-            onClick={() => { 
-              // if(showModal)toggleModal() 
-              toggleNavList({onlyClose: true})
-            }}  
-            href="#kv"
-          >
-            Andrius Svilys
-          </a>
-        </div>
+        <div className={"nav-wrapper"}>
 
-        <div className="nav-links-container">
-
-          <div className="nav-links-hamburger"
-            onClick={() => {
-              toggleNavList()
-            }}
-          >
-            <img src="icons/burger.svg" alt="hamburger menu icon" />
-
+          <div className="nav-logo">
+            <a 
+              onClick={() => { 
+                toggleNavList({onlyClose: true})
+              }}  
+              href="#kv"
+            >
+              Andrius Svilys
+            </a>
           </div>
 
-          <ul className="nav-links-list">
-              <li className="nav-links-listItem" >
-                <a 
-                  onClick={() => toggleNavList({onlyClose: true})} 
-                  href="#projects">
-                    Projects
-                </a>
-              </li>
+          <div className="nav-links-container">
 
-              <li className="nav-links-listItem" >
-                <a 
-                  onClick={() => toggleNavList({onlyClose: true})} 
-                  href="#tools">
-                    Toolbox
-                </a>
-              </li>
+            <div className="nav-links-hamburger"
+              onClick={() => {
+                toggleNavList()
+              }}
+            >
+              <img src="icons/burger.svg" alt="hamburger menu icon" />
 
-              <li className="nav-links-listItem" >
-                <a 
-                  onClick={() => toggleNavList({onlyClose: true})} 
-                  href="#about">
-                    About
-                </a>
-              </li>
+            </div>
 
-              <li className="nav-links-listItem" >
-                <button onClick={() => {
-                  toggleModal()
-                }}>
-                  <span>Contact</span>
-                </button>
-              </li>
+            <ul className="nav-links-list">
+                <li className="nav-links-listItem" >
+                  <a 
+                    onClick={() => toggleNavList({onlyClose: true})} 
+                    href="#projects">
+                      Projects
+                  </a>
+                </li>
 
-          </ul>
+                <li className="nav-links-listItem" >
+                  <a 
+                    onClick={() => toggleNavList({onlyClose: true})} 
+                    href="#tools">
+                      Toolbox
+                  </a>
+                </li>
+
+                <li className="nav-links-listItem" >
+                  <a 
+                    onClick={() => toggleNavList({onlyClose: true})} 
+                    href="#about">
+                      About
+                  </a>
+                </li>
+
+                <li className="nav-links-listItem" >
+                  <button onClick={() => {
+                    toggleModal()
+                  }}>
+                    <span>Contact</span>
+                  </button>
+                </li>
+
+            </ul>
+          </div>
         </div>
+
+
       </nav>
 
       <main>

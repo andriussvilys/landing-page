@@ -5,6 +5,9 @@
     display: flex;
 }
 .webExample-tools-wrapper{
+    .tools-wrapper:first-of-type{
+        padding-top: 0;
+    }
     padding: 0 30px;
 }
 .tools-items{
@@ -85,10 +88,6 @@
     .tools-title{
         margin-bottom: 20px;
         margin-left: unset;
-    }
-    .section-wrapper{
-        padding: unset;
-        padding-top: 10px;
     }
     .details-badge{
         margin: 0 3px 3px 0;

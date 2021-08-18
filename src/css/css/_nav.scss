@@ -6,12 +6,19 @@ $navHeight: 43px;
     position: fixed;
     width: 100%;
     height: $navHeight;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: $accent_primary_dark;
-    // box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
     z-index: 899;
+
+    display: flex;
+    justify-content: center;
+}
+.nav-wrapper{
+    height: 100%;
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    justify-content: space-between;
 }
 .nav-links-container{
     margin-right: $marginRight;
