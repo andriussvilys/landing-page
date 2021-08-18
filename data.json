@@ -56,8 +56,8 @@
           "badges": [
             {"title": "React JS", "img": "react.svg"}, 
             {"title": null, "img": "nodejs.png"}, 
-            {"title": null, "img": "mongodb.png"},
-            {"title": null, "img": "sass.svg"}
+            {"title": null, "img": "sass.svg"},
+            {"title": null, "img": "mongodb.png"}
           ],
           "other": ["Image upload", "CRUD", "Modals", "Authorization", "Progress bar"]
         }
