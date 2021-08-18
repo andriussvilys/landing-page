@@ -215,6 +215,10 @@
   max-width: 80%;
 }
 
+.dot:last-of-type {
+  margin-right: 10px;
+}
+
 .dot:hover {
   opacity: 0.8;
 }
@@ -239,6 +243,12 @@
   .slide {
     padding: 5px;
     padding-top: 20px;
+  }
+  .dotContainer {
+    padding: 0 15px;
+  }
+  .dotWrapper {
+    padding: 0;
   }
 }
 /*# sourceMappingURL=index.module.css.map */
