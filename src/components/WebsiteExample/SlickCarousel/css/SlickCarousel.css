@@ -99,6 +99,9 @@
   .slick-list {
     min-height: 200px;
   }
+  .slick-slider {
+    padding: 0 0 40px 0;
+  }
   .slick-arrow {
     display: none !important;
   }
