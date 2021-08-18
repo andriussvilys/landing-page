@@ -1,4 +1,5 @@
 import React from 'react'
+import { Fragment } from 'react'
 import Badge from '../Tools/Badge'
 import './css/WebsiteExample.css'
 import './SlickCarousel/SlickCarousel'
@@ -34,13 +35,24 @@ const WebsiteExample = (props) => {
     }
     
     return(
+        <Fragment>
+
+            <h3 className={"webExample-title"}>{props.title}</h3>
+
             <div className="webExample-wrapper" id={props.id}>
 
                 <div className="webExample-content">
 
-                    <div className="webExample-details-container">
+                    <div className={`webExample-carousel-container ${fullSize ? "webExample-carousel_fullWidth" : ""}`}>
+                        
+                        <SlickCarousel
+                            assetDir={props.assetDir}
+                            imageList={props.imageList}
+                        />
+                        
+                    </div>
 
-                        <h3 className={"webExample-title"}>{props.title}</h3>
+                    <div className="webExample-details-container">
 
                         <div className="webExample-details-description">
                             {
@@ -80,18 +92,10 @@ const WebsiteExample = (props) => {
                         </div>
 
                     </div>
-
-                    <div className={`webExample-carousel-container ${fullSize ? "webExample-carousel_fullWidth" : ""}`}>
-                        
-                        <SlickCarousel
-                            assetDir={props.assetDir}
-                            imageList={props.imageList}
-                        />
-                    </div>
-    
                     
                 </div>
             </div>
+        </Fragment>
     )
 }
 

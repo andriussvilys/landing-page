@@ -5,7 +5,8 @@
 }
 
 .slick-slider {
-  padding: 30px 40px 40px 40px;
+  padding: 40px;
+  padding-top: 0;
 }
 
 .slick-list {
@@ -97,9 +98,6 @@
 @media only screen and (max-width: 720px) {
   .slick-list {
     min-height: 200px;
-  }
-  .slick-slider {
-    padding: 10px 10px 40px 10px;
   }
   .slick-arrow {
     display: none !important;
