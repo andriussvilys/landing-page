@@ -4,7 +4,7 @@
         "id": "personal-website",
         "title": "Image archive",
         "description": [
-          "This is a website for my artwork. It is the reason why I started learning web development. I wanted to created an album of images that works and looks exactly how I need it to. This website went through (probably) hundreds of interface iterations, versions, complete refactors, feature creep... My sandbox par excellence!",
+          "This is a website for my artwork. It is the reason why I started learning web development. I wanted to create an album of images that works and looks exactly how I need it to. This website went through (probably) hundreds of interface iterations, versions, complete refactors, feature creep... My sandbox par excellence!",
           "The current version contains a custom carousel. It needed to be truly responsive, because a number of interactions on the website force changes of carousel's measurements. The carousel also makes use of various buttons as well as trackpad/touch inputs for flicking through images as well as viewing the info drawer. Pinch-to-zoom and pan features are available for mobile users.",
           "In addition to the carousel, a filter system is implemented. Users may choose the \"COMBINE FILTERS\" option for fine grained exploration."
         ],
@@ -36,11 +36,10 @@
         "id":  "personal-website-admin",
         "title":  "Image archive (admin page)",
         "description": [
-          "This is the admin page of my image archive. The backend uploads images to the server and creates resized versions of them. It also takes in various information about each image: basics, such as title and description, but also filter tags and relations to other images (images can be grouped into \"families\" or linked together with the \"see also\" functionality). The order of images within a family can be set manually. Images also contain \"display triggers\" that control whether an image is visible in the main gallery, the carousel, or shouldn't be seen anywhere at all). All of this information is uploaded to online database (MongoDB). To help with load times, a JSON copy of the database is stored on the server.",
+          "This is the admin page of my image archive. The backend uploads images to the server and creates resized versions of them. It also takes in various information about each image: basics, such as title and description, but also filter tags and relations to other images (images can be grouped into \"families\" or linked together with the \"see also\" functionality). The order of images within a family can be set manually. Images also contain \"display triggers\" that control which filter tags will display the image. All of this information is uploaded to online database (MongoDB). To help with loading times, a JSON copy of the database is stored on the server.",
           "In addition to creating records, other CRUD operations (update and delete) are also implemented.",
           "You may view this page by clicking the button below. You will be redirected to login page. Please use the following login details:",
-          "username: guest",
-          "password: guest"
+          "username: guest / password: guest"
         ],
         "assetDir":  "admin",
         "href":  "https://secure-savannah-07139.herokuapp.com/admin",
