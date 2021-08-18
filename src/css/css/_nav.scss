@@ -1,17 +1,46 @@
 @import './consts';
+@import './animations';
 
 $navHeight: 43px;
+
+//THEME 1
+$background_color:  white;
+$font_color: $accent_primary_dark;
+$background_color_accent:  $font_color;
+$font_color_accent: $background_color;
+
+// THEME 2
+// $background_color: $accent_primary;
+// $font_color: white;
+// $background_color_accent:  white;
+// $font_color_accent: $accent_primary;
+
+//THEME 3
+// $background_color: white;
+// $font_color: rgb(37, 37, 37);
+// $background_color_accent:  $background_color;
+// $font_color_accent: $font_color;
+
+//THEME 4
+// $background_color_accent:  rgb(19, 19, 19);
+// $font_color_accent: $BG_primary;
+// $background_color: $font_color_accent;
+// $font_color: $background_color_accent;
 
 .nav-container{
     position: fixed;
     width: 100%;
     height: $navHeight;
     align-items: center;
-    background-color: $accent_primary_dark;
     z-index: 899;
 
     display: flex;
     justify-content: center;
+    background: $background_color_accent;
+
+    // border-bottom: 3px solid $font_color_accent;
+    box-sizing: content-box;
+
 }
 .nav-wrapper{
     height: 100%;
@@ -33,7 +62,7 @@ $navHeight: 43px;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 1.9px;
-    color: white;
+    color: $font_color_accent;
     text-transform: uppercase;
     white-space: nowrap;
     cursor: pointer;
@@ -62,7 +91,7 @@ $navHeight: 43px;
     content: "";
     height: 3px;
     width: 100%;
-    background: white;
+    background: $font_color_accent;
     position: absolute;
     bottom: 6px;
     transform: translateX(-120%);
@@ -77,10 +106,9 @@ $navHeight: 43px;
 }
 .nav-logo{
     font-size: 20px;
-    color: $accent_primary_dark;
+    color: $font_color_accent;
     text-transform: uppercase;
     letter-spacing: 2px;
-    background: white;
     font-weight: 600;
     border: 0 !important;
     margin-left: 0;
@@ -91,23 +119,31 @@ $navHeight: 43px;
 .nav-links-hamburger{
     display: none;
 }
+.nav-links-list-wrapper{
+  height: 100%;
+}
 
 @media only screen and (max-width: 720px){
-    .nav-links-list{
-        width: 70vw;
-        max-width: 300px;
+    .nav-links-list-wrapper{
+        width: 100%;
         height: calc(100vh - #{$navHeight});
-        position: absolute;
-        top: $navHeight;
-        background-color: $accent_primary_dark;
+        position: fixed;
+        right: 0;
+        top: -100%;
+    }
+    .nav-links-list{
         flex-direction: column;
         justify-content: flex-start;
         z-index: 8;
-        right: 0;
-        transform: translateX(115%);
         transition: transform 0.2s;
-        box-shadow: inset 0 10px 20px rgba(9, 47, 44, 0.3), 0 6px 6px rgba(9, 4, 44, 0.68);
+        height: 100%;
+        width: 70vw;
+        max-width: 300px;
+        position: absolute;
+        right: 0;
+        background-color: $background_color;
     }
+
     .nav-links-container{
         margin: 0;
     }
@@ -116,7 +152,8 @@ $navHeight: 43px;
         width: 120px;
         margin-bottom: 9vh;
         border: none;
-        border-bottom: 2px solid white;
+        border-bottom: 3px solid $font_color;
+        color: $font_color;
     }
     .nav-links-listItem:first-of-type{
         margin-top: 15vh;
@@ -129,7 +166,7 @@ $navHeight: 43px;
         display:block;
         height: $navHeight;
         width: $navHeight;
-        background-color: white;
+        background-color: $background_color;
         img{
             height: 100%;
             width: 100%;
@@ -139,4 +176,3 @@ $navHeight: 43px;
         display: none;
     }
 }
-

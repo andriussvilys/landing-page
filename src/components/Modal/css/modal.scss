@@ -91,41 +91,6 @@
   @include animation_options();
 }
 
-@keyframes containerShow_white{
-  0%{
-    display: block;
-    top: 0;
-    background-color: rgba(255, 255, 255, 0);
-  }
-  100%{
-    display: block;
-    top: 0;
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-}
-@keyframes containerHide_white{
-  0%{
-    top: 0;
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-  99%{
-    top: 0;
-    background-color: rgba(255, 255, 255, 0);
-  }
-  100%{
-    top: -100%;
-  }
-}
-
-.show-container_white{
-  animation-name: containerShow_white;
-  @include animation_options();
-}
-.hide-container_white{
-  animation-name: containerHide_white;
-  @include animation_options();
-}
-
 @keyframes wrapperShow{
   0%{
     display: block;

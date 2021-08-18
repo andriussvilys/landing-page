@@ -1,0 +1,72 @@
+@mixin animation_options{
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-duration: 0.3s;
+  }
+  
+  @keyframes fadeIn{
+    0%{
+      display: block;
+      top: $navHeight;
+      background-color: rgba(14, 14, 14, 0);
+    }
+    100%{
+      display: block;
+      top: $navHeight;
+      background-color: rgba(14, 14, 14, 0.9);
+    }
+  }
+  
+  @keyframes fadeOut{
+    0%{
+      top: $navHeight;
+      background-color: rgba(14, 14, 14, 0.9);
+    }
+    99%{
+      top: $navHeight;
+      background-color: rgba(14, 14, 14, 0);
+    }
+    100%{
+      top: -100%;
+    }
+  }
+  
+  .fadeIn{
+    animation-name: fadeIn;
+    @include animation_options();
+  }
+  .fadeOut{
+    animation-name: fadeOut;
+    @include animation_options();
+  }
+    
+    @keyframes slideIn_rightToLeft{
+      0%{
+        display: block;
+        right: -100%;
+      }
+      100%{
+        display: block;
+        right: 0;
+      }
+    }
+    @keyframes slideOut_leftToRight{
+      0%{
+        display: block;
+        right: 0;
+      }
+      100%{
+        right: -100%;
+        display: none;
+      }
+    }
+  
+    .slideIn_rightToLeft{
+      animation-name: slideIn_rightToLeft;
+      @include animation_options();
+    }
+    .slideOut_leftToRight{
+      animation-name: slideOut_leftToRight;
+      @include animation_options();
+    }
+  

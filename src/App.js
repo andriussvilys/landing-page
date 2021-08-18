@@ -9,9 +9,11 @@ function App() {
   const [showModal, toggleShowModal] = React.useState(null)
   const [modalTrigger, triggerModal] = React.useState(null)
 
-  const toggleNavList = (options) => {
+  const [navLinks, showLinks] = React.useState(null)
 
-    const burgerList = document.querySelector(".nav-links-list")
+  const linksListRef = React.useRef()
+
+  const toggleNavList = (options) => {
 
     let delay = showModal ? 200 : 0;
 
@@ -22,11 +24,11 @@ function App() {
 
     setTimeout(() => {
       if(options && options.onlyClose === true){
-        burgerList.classList.remove("links-list-display")
+        showLinks(false)
       }
       else
       {
-        burgerList.classList.toggle("links-list-display")
+        showLinks(!navLinks)
       }
     }, delay);
 
@@ -36,10 +38,8 @@ function App() {
 
       let delay = 0
 
-      const burgerList = document.querySelector(".nav-links-list")
-
-      if(burgerList.classList.contains("links-list-display")){
-        burgerList.classList.remove("links-list-display")
+      if(navLinks){
+        toggleNavList(false)
         delay = 200
       }
 
@@ -85,40 +85,52 @@ function App() {
 
             </div>
 
-            <ul className="nav-links-list">
-                <li className="nav-links-listItem" >
-                  <a 
-                    onClick={() => toggleNavList({onlyClose: true})} 
-                    href="#projects">
-                      Projects
-                  </a>
-                </li>
+              <div 
+                className={`nav-links-list-wrapper ${navLinks ? "fadeIn" : "fadeOut"}`}
+                ref={linksListRef}
+              >
 
-                <li className="nav-links-listItem" >
-                  <a 
-                    onClick={() => toggleNavList({onlyClose: true})} 
-                    href="#tools">
-                      Toolbox
-                  </a>
-                </li>
+                <ul 
+                  className={`nav-links-list ${navLinks ? "slideIn_rightToLeft" : "slideOut_leftToRight"}`}
+                >
+                    <li className="nav-links-listItem" >
+                      <a 
+                        onClick={() => toggleNavList({onlyClose: true})} 
+                        href="#projects">
+                          Projects
+                      </a>
+                    </li>
 
-                <li className="nav-links-listItem" >
-                  <a 
-                    onClick={() => toggleNavList({onlyClose: true})} 
-                    href="#about">
-                      About
-                  </a>
-                </li>
+                    <li className="nav-links-listItem" >
+                      <a 
+                        onClick={() => toggleNavList({onlyClose: true})} 
+                        href="#tools">
+                          Toolbox
+                      </a>
+                    </li>
 
-                <li className="nav-links-listItem" >
-                  <button onClick={() => {
-                    toggleModal()
-                  }}>
-                    <span>Contact</span>
-                  </button>
-                </li>
+                    <li className="nav-links-listItem" >
+                      <a 
+                        onClick={() => toggleNavList({onlyClose: true})} 
+                        href="#about">
+                          About
+                      </a>
+                    </li>
 
-            </ul>
+                    <li className="nav-links-listItem" >
+                      <button onClick={() => {
+                        toggleModal()
+                        // toggleNavList({onlyClose: true})
+
+                      }}>
+                        <span>Contact</span>
+                      </button>
+                    </li>
+
+                </ul>
+
+              </div>
+          
           </div>
         </div>
 
