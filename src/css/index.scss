@@ -54,6 +54,7 @@ main{
     height: calc(100% - #{$navHeight});
     scroll-behavior: smooth;
     margin-top: $navHeight;
+    width: 100%;
     max-width: 1920px;
 }
 
