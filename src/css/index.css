@@ -897,6 +897,9 @@ main {
       align-self: flex-start;
   background-color: #1717ad;
   border: 2px solid #1717ad;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .about-image-wrapper img {
