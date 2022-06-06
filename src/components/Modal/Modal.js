@@ -83,23 +83,23 @@ const Modal = props => {
 
                     <div className={"form-container"}>
                         <div className="contact-item">
-                            <label className="contact-label">Name</label>
+                            <label className="contact-label" value="" onChange={e => {console.log(e.target)}}>Name</label>
                             <input required className="contact-input" type="text" name="name" />
                         </div>
 
                         <div className="contact-item">
-                            <label className="contact-label">Email</label>
+                            <label className="contact-label" value="" onChange={e => {}}>Email</label>
                             <input required className="contact-input" type="email" name="email" />
                         </div>
 
                         <div className="contact-item">
-                            <label className="contact-label">Message</label>
+                            <label className="contact-label" value="" onChange={e => {}}>Message</label>
                             <textarea required className="contact-input contact-input_textArea" name="message" />
                         </div>
 
                         <div className={
                             `submitResponse 
-                            ${status ? "submitResponse-show" : null}
+                            ${status ? "submitResponse-show" : "submitResponse-hide"}
                             ${status ? "show-container_white" : "hide-container_white"}
                             `} >
                                 <div className={`

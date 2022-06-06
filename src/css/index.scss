@@ -161,6 +161,7 @@ $caretHeight: 12px;
     align-self: flex-start;
     background-color: $accent_primary;
     border: 2px solid $accent_primary;
+    flex: 0 0 auto;
     img{
         border-radius: 999px;
         height: 100%;
