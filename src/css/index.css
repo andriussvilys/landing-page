@@ -694,6 +694,7 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
 }
 
 .about-description {
@@ -745,7 +746,6 @@ footer {
     display: none;
   }
   .about-wrapper {
-    display: block;
     padding: 30px;
     padding-bottom: 60px;
   }

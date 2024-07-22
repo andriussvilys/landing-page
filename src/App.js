@@ -278,10 +278,10 @@ function App() {
                     }}>
                     <span>get in touch</span>
                   </button>
-                </div>
               </div>
-
             </div>
+
+          </div>
 
         </section>
 

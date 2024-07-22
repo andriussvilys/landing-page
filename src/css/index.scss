@@ -134,6 +134,7 @@ $caretHeight: 12px;
     padding: 30px;
     padding-bottom: 60px;
     display: flex;
+    justify-content: center;
 }
 .about-description{
     position: relative;
@@ -177,7 +178,6 @@ footer{
         display: none;
     }
     .about-wrapper{
-        display: block;
         padding: 30px;
         padding-bottom: 60px;
         p{
