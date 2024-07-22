@@ -3,6 +3,7 @@ import Modal from './components/Modal/Modal'
 import Triangle from './components/Triangle/triangle';
 import Tools from './components/Tools/Tools'
 import WebsiteSlider from './components/WebsiteExample/WebsiteSlider/WebsiteSlider';
+import portraiPic from './20201208_010458.jpg'
 
 function App() {
 
@@ -257,8 +258,7 @@ function App() {
 
             <div className="about-wrapper">
               <div className="about-image-wrapper">
-                <img className="about-image" alt="portrait" src="20201208_010458.jpg"/>
-                {/* <img className="about-image" alt="portrait" /> */}
+                <img className="about-image" alt="portrait" src={portraiPic}/>
               </div>
               <div className="about-description">
                   <p>

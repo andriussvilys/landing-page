@@ -3,6 +3,7 @@ import Badge from '../Tools/Badge'
 import './css/WebsiteExample.css'
 import './SlickCarousel/SlickCarousel'
 import SlickCarousel from './SlickCarousel/SlickCarousel'
+import { v4 as uuidv4 } from 'uuid';
 
 
 const WebsiteExample = (props) => {
@@ -45,8 +46,8 @@ const WebsiteExample = (props) => {
                         <div className="webExample-details-description">
                             {
                                 props.description ? 
-                                    props.description.map(paragraph => {
-                                        return <p>
+                                    props.description.map((paragraph) => {
+                                        return <p key={uuidv4()}>
                                             {paragraph}
                                             <br/><br/>
                                         </p>
