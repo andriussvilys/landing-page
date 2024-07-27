@@ -70,9 +70,6 @@ const Carousel = props => {
             return <li 
                     onClick={() => {
                         slideTo(index)
-                        // setTimeout(() => {
-                        //     slideContainerRef.current.scrollIntoView(true);
-                        // }, 800);
                     }}
                     ref={index === slidePosition.currentSlide ? dot_active : null}
                     key={`${image}-${index}`} 
@@ -97,9 +94,6 @@ const Carousel = props => {
                         <ul 
                             ref={dot_list} 
                             className={styles.dotList}
-                            // style={{
-                            //     transform: `translateX(${slidePosition.currentTransform}%)`
-                            // }}
                         >
                             {dots}
                         </ul>}
@@ -162,38 +156,13 @@ const Carousel = props => {
         }
     }
     const bind = useGesture(
-        {
-            // onWheelStart: state => {
-            //     state.event.preventDefault()
-            // },
-            // onWheel: (state) => {
-
-            //     // state.event.preventDefault()
-
-            //     if(props.content.length < 2){
-            //         return
-            //     }
-
-            //     moveHandler(state, {moveSpeed: 2, direction: -1})
-
-            // },
-            // onWheelEnd: state => {
-            //     state.event.preventDefault()
-            //     moveEndHandler(state)
-            // },
-        },
+        {},
         {...genericOptions},
     )
 
     useEffect(() => {
-        slideTo(props.currentSlide)
-    }, [props.counter])
-
-    useEffect(() => {
         slideTo_dot()
     }, [slidePosition])
-
-    // useEffect(bind, [bind])
 
 
     return(

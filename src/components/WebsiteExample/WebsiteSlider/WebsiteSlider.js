@@ -57,9 +57,6 @@ const WebsiteSlider= (props) => {
         }
     }, []);
 
-    React.useEffect(() => {
-    })
-
     return(
         <div className="WebsiteSlider_container" >
             {data && data.length > 0 ?
@@ -78,7 +75,7 @@ const WebsiteSlider= (props) => {
                                 imageList={item.imageList}
                                 badges={item.badges}
                                 gh_link={item.gh_link}
-                        />
+                            />
                         )
                     })}
                     /> : null
