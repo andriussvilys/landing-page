@@ -48,8 +48,6 @@ const Carousel = props => {
         const newTransfrom = -((100 / props.content.length) * slideToIndex)
 
         let nextImage = null;
-
-        document.querySelector("#slideContainer").scrollIntoView()
        
         setSlidePosition({
             ...slidePosition,
