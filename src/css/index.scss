@@ -29,6 +29,7 @@ html,body,#root,.App{
     height: 100%;
     width: 100%;
     overflow: hidden;
+    scroll-behavior: smooth;
 }
 body{
     background-color: $BG_primary;
@@ -59,8 +60,6 @@ main{
 
 .section-wrapper{
     overflow: hidden;
-    // padding: 20px 0;
-    padding-bottom: 20px;
 }
 
 .CTA-contact{
@@ -135,6 +134,7 @@ $caretHeight: 12px;
     padding-bottom: 60px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .about-description{
     position: relative;
@@ -180,15 +180,20 @@ footer{
     .about-wrapper{
         padding: 30px;
         padding-bottom: 60px;
+        flex-wrap: wrap;
         p{
             max-width: 60ch;
         }
     }
     .about-image-wrapper{
-        height: 25vw;
-        width: 25vw;
-        // margin-right: 10px;
-        // margin-bottom: 5px;
+        height: 33vw;
+        width: 33vw;
+        margin: 30px;
+    }
+    .about-description{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     section{

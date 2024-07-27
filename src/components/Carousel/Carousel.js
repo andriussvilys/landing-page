@@ -32,10 +32,6 @@ const Carousel = props => {
             const left = ((slidePosition.currentSlide) * ( dot_width )) - (dot_width / 2) 
             dot_container.current.scroll(left, 0);
 
-            setTimeout(() => {
-                
-            }, 200);
-
         }
     }
 

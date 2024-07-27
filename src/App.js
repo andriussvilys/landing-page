@@ -1,16 +1,18 @@
+import "./css/index.scss"
 import React from 'react';
 import Modal from './components/Modal/Modal'
 import Triangle from './components/Triangle/triangle';
 import Tools from './components/Tools/Tools'
 import WebsiteSlider from './components/WebsiteExample/WebsiteSlider/WebsiteSlider';
 import portraiPic from './20201208_010458.jpg'
+import Link from "./components/Link";
 
 function App() {
 
   const [showModal, toggleShowModal] = React.useState(null)
   const [modalTrigger, triggerModal] = React.useState(null)
 
-  const toggleNavList = (options) => {
+  const toggleNavList = (e, options) => {
 
     const burgerList = document.querySelector(".nav-links-list")
 
@@ -63,15 +65,12 @@ function App() {
       <nav id="nav" className="nav-container">
 
         <div className="nav-logo">
-          <a 
-            onClick={() => { 
-              // if(showModal)toggleModal() 
-              toggleNavList({onlyClose: true})
-            }}  
-            href="#kv"
-          >
+          {/* <a onClick={(e) => {toggleNavList(e, {onlyClose: true})}} href="#kv">
             Andrius Svilys
-          </a>
+          </a> */}
+          <Link clickCallback={() => {toggleNavList({onlyClose: true})}} href="#kv">
+            Andrius Svilys
+          </Link>
         </div>
 
         <div className="nav-links-container">
@@ -88,7 +87,7 @@ function App() {
           <ul className="nav-links-list">
               <li className="nav-links-listItem" >
                 <a 
-                  onClick={() => toggleNavList({onlyClose: true})} 
+                  onClick={(e) => toggleNavList(e, {onlyClose: true})} 
                   href="#projects">
                     Projects
                 </a>
@@ -168,14 +167,14 @@ function App() {
         <div id="projects" className={"section-wrapper"}>
 
           <WebsiteSlider 
-          thumbnails={[
-            "carousel/andriussvilys/personalWebsite-2.png", 
-            "carousel/admin/admin-1.png", 
-            "carousel/image-search/Screenshot-desktop-1.png", 
-            "carousel/devChallenge/dev-challenge-1.png",
-            "carousel/responsive/responsive-eg-1.jpg",
-            "carousel/t-pose/t-pose-desktop-1.png", 
-          ]}
+            thumbnails={[
+              "carousel/andriussvilys/personalWebsite-2.png", 
+              "carousel/admin/admin-1.png", 
+              "carousel/image-search/Screenshot-desktop-1.png", 
+              "carousel/devChallenge/dev-challenge-1.png",
+              "carousel/responsive/responsive-eg-1.jpg",
+              "carousel/t-pose/t-pose-desktop-1.png", 
+            ]}
           />
         </div>
 
