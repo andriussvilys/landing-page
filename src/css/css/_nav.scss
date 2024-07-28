@@ -1,7 +1,5 @@
 @import './consts';
 
-$navHeight: 43px;
-
 .nav-container{
     position: fixed;
     width: 100%;
@@ -10,8 +8,8 @@ $navHeight: 43px;
     justify-content: space-between;
     align-items: center;
     background-color: $accent_primary_dark;
-    // box-shadow: 0 10px 20px rgba(13, 41, 142, 0.09), 0 6px 6px rgba(9, 4, 44, 0.05);
     z-index: 899;
+    max-width: $lg;
 }
 .nav-links-container{
     margin-right: $marginRight;

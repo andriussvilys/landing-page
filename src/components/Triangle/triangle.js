@@ -1,21 +1,9 @@
 import React from 'react';
-import './css/alt-css/triangle.css'
+import './css/triangle.scss'
 
 const Triangle = () => {
 
-    // const [containerHeight, setContainerHeight] = React.useState(null)
-
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     var container = document.querySelector(".spinner-container");
-    //     (window.onresize = function() {
-    //         setContainerHeight(container.clientHeight)
-    //     })();
-    // });
-
-    return <div 
-            className="spinner-container"
-            // style={{width: `${containerHeight}px`}}
-            >
+    return <div className="spinner-container">
                 <div className="circleBound"
                     onClick={(e) => {
                         e.stopPropagation()

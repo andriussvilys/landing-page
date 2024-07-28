@@ -1,7 +1,15 @@
 // $accent_primary: #651fff;
-$accent_primary: #1717ad;
-$accent_primary_light: #651fff;
-$accent_primary_dark: #0100ca;
+// $accent_primary: #1717ad;
+// $accent_primary_light: #651fff;
+// $accent_primary_dark: #0100ca;
+
+$accent_primary: #121858;
+$accent_primary_dark: #1a237e;
+$accent_primary_light: #474f97;
+
+// $accent_primary_light: #b0bec5;
+// $accent_primary: #78909c;
+// $accent_primary_dark: #455a64;
 
 $accent_secondary: #00e676;
 $accent_secondary_light: #66ffa6;
@@ -26,6 +34,8 @@ $marginRight: 30px;
 $navHeight: 43px;
 $headlineHeight: 50px;
 $footerHeight: 80px;
+
+$lg: 1260px;
 
 @mixin centered{
     display: flex;

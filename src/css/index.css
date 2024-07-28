@@ -684,10 +684,6 @@ main {
   z-index: -1;
 }
 
-.about-container {
-  min-height: calc(100% - 80px);
-}
-
 .about-wrapper {
   padding: 30px;
   padding-bottom: 60px;

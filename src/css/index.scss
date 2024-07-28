@@ -10,6 +10,8 @@ $marginLeft: 30px;
 $marginRight: 30px;
 $headlineHeight: 50px;
 $footerHeight: 80px;
+$primary: #1a2150;
+$lg: 1260px;
 
 *{
     padding: 0;
@@ -28,24 +30,30 @@ button{
 html,body,#root,.App{
     height: 100%;
     width: 100%;
-    overflow: hidden;
     scroll-behavior: smooth;
 }
 body{
+    background-color: $accent_primary;
+}
+#root{
+    display: flex;
+    justify-content: center;
+}
+.App{
+    display: flex;
+    max-width: $lg;
     background-color: $BG_primary;
 }
 
 .headline{
-    // background: $accent_primary;
-    // color: white;
-    // background: $BG_gray;
     color: #413f3f;
     display: flex;
     align-items: center;
     font-size: 18px;
     text-transform: uppercase;
     padding: 10px $marginLeft;
-    box-shadow: 0px 19px 41px rgba(43, 43, 49, 0.15);
+    // box-shadow: 0px 19px 41px rgba(43, 43, 49, 0.15);
+    box-shadow: 0px 5px 5px rgba(43, 43, 49, 0.06);
     margin: 30px 0;
 }
 
@@ -56,6 +64,8 @@ main{
     height: calc(100% - #{$navHeight});
     scroll-behavior: smooth;
     margin-top: $navHeight;
+    max-width: $lg;
+    background-color: $BG_primary;
 }
 
 .section-wrapper{
@@ -69,8 +79,6 @@ main{
 
 .CTA:hover{
     background-color: $accent_secondary;
-    // background-color: $accent_secondary_dark;
-    // border-color: $accent_secondary_dark;
     color: white;
     transform: scale(1.08);
     transform-origin: center;
@@ -120,7 +128,6 @@ $caretHeight: 12px;
     border-bottom: 3px solid $accent_primary;
     position: absolute;
     left: calc(50% - #{$caretHeight / 2});
-    // top: -$caretHeight / 2;
     top: -5px;
     transform: rotate(45deg);
     background-color: $BG_primary;
@@ -128,12 +135,21 @@ $caretHeight: 12px;
 }
 .about-container{
     min-height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+}
+.about-container .section-wrapper{
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 .about-wrapper{
+    flex: 1;
     padding: 30px;
     padding-bottom: 60px;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 .about-description{
@@ -152,7 +168,7 @@ $caretHeight: 12px;
     min-height: 15vw;
     border-radius: 999px;
     float: left;
-    margin-right: 30px;
+    margin: 0 30px 30px 0;
     align-self: flex-start;
     background-color: $accent_primary;
     border: 2px solid $accent_primary;
@@ -188,7 +204,6 @@ footer{
     .about-image-wrapper{
         height: 33vw;
         width: 33vw;
-        margin: 30px;
     }
     .about-description{
         display: flex;
